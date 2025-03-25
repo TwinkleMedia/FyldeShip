@@ -37,6 +37,7 @@ body {
 .logo img {
     height: 50px;
     margin-left: 50px;
+    width: auto;
 }
 
 .nav-links {
@@ -56,6 +57,22 @@ body {
     color: #002b5c;
     font-weight: bold;
 }
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
 
 .video-container {
     position: relative;
@@ -81,8 +98,6 @@ body {
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
-
-/* Add this CSS below your existing styles */
 
 /* Hamburger Menu - Hidden on Desktop */
 .menu-toggle {
@@ -111,6 +126,7 @@ body {
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: flex;
+
     }
 
     .nav-links {
@@ -129,6 +145,8 @@ body {
 
     .nav-links.active {
         display: flex;
+        gap: 5px;
+        margin-top: 65px;
     }
 
     .nav-links li {
@@ -329,7 +347,7 @@ button :hover {
     }
 }
 
-/* ==================================================================== */
+/* =========================================================================================================================================================================================== */
 /* Services Section */
 .custom-services-wrapper {
     padding: 50px 10%;
@@ -585,7 +603,7 @@ button:hover {
 
 .contact-info-container-unique h2 {
     margin-bottom: 15px;
-    font-size: 24px;
+    font-size: 3rem;
 }
 
 .contact-info-container-unique p {
@@ -603,5 +621,243 @@ button:hover {
 @media (max-width: 480px) {
     .contact-form-container-unique, .contact-info-container-unique {
         padding: 20px;
+    }
+}
+
+
+
+/* ====================================================footer======================================================================= */
+
+/* .footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    position: relative;
+}
+
+.wave-container {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    animation: wave-animation 5s infinite linear;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.boat {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.boat:hover {
+    transform: translateX(-50%) rotate(-5deg);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    background-color: #ddd;
+}
+
+.about-us {
+    max-width: 250px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 786px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-section, .nav-links, .contact-info {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .boat {
+        width: 100px;
+    }
+
+    .wave {
+        height: 70px;
+    }
+} */
+
+
+/* Footer Section */
+.footer {
+    background: #001755;
+    color: #2c3e50;
+    padding: 50px 10%;
+    font-size: 18px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+/* Footer Columns */
+.footer-about, .footer-links, .footer-services, .footer-contact {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.footer h3 {
+    font-size: 1.3rem;
+    color: #141b14;
+    margin-bottom: 15px;
+}
+
+.footer-links ul,
+.footer-services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li,
+.footer-services ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a,
+.footer-services ul li a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover,
+.footer-services ul li a:hover {
+    color: #1d2b1d;
+}
+
+/* Contact Info */
+.footer-contact p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+    color: #060c06;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-about, .footer-links, .footer-services, .footer-contact {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 5%;
+        font-size: 16px;
+    }
+
+    .footer h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
     }
 }

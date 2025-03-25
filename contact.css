@@ -1,0 +1,284 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.upper-navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #00244d;
+    color: white;
+    padding: 10px 20px;
+}
+.upper-navbar.phone{
+    margin-right: 20px;
+    
+}
+.social-icons{
+    margin-right: 70px;
+}
+
+.social-icons a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    
+}
+
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+    margin-left: 50px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-right: 50px;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #002b5c;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+/* Hamburger Menu - Hidden on Desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* .menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background: #002b5c;
+    margin: 5px 0;
+    transition: 0.3s;
+} */
+.bar {
+    width: 30px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #ecf0f1;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+        gap: 5px;
+        margin-top: 65px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Further Optimization for 480px Screens */
+@media screen and (max-width: 480px) {
+    .main-navbar {
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .menu-toggle {
+        margin-right: 10px;
+    }
+
+    .nav-links {
+        top: 55px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .headline {
+        font-size: 1.8rem;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+.fylde-contact-bg {
+    background-image: url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fylde-contact-container {
+    display: flex;
+    background-color: white;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.fylde-contact-info {
+    background-color: #001885;
+    color: white;
+    padding: 40px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fylde-contact-details {
+    margin-bottom: 30px;
+}
+
+.fylde-contact-details h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.fylde-contact-details p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.fylde-contact-details i {
+    margin-right: 10px;
+}
+
+.fylde-contact-form {
+    width: 60%;
+    padding: 40px;
+    background-color: white;
+}
+
+.fylde-contact-form h2 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.fylde-form-group {
+    margin-bottom: 20px;
+}
+
+.fylde-input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.fylde-input-field:focus {
+    outline: none;
+    border-color: #0d00c5;
+}
+
+.fylde-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #001ec5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fylde-submit-btn:hover {
+    background-color: #e55500;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 786px) {
+    .fylde-contact-container {
+        flex-direction: column;
+    }
+
+    .fylde-contact-info,
+    .fylde-contact-form {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fylde-contact-details h2 {
+        font-size: 1.2em;
+    }
+
+    .fylde-contact-form h2 {
+        font-size: 1.3em;
+    }
+
+    .fylde-input-field,
+    .fylde-submit-btn {
+        padding: 8px;
+    }
+}
