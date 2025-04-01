@@ -6,280 +6,345 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>Document</title>
+    
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <!-- Upper Navbar -->
-        <section class="upper-navbar">
-            <span class="phone">📞 02231008314</span>
-            <div class="social-icons">
-                <a href="https://facebook.com/yourpage" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  
-                  <a href="https://instagram.com/yourprofile" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  
-                  <a href="https://youtube.com/yourchannel" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                  </a>
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="text-white d-flex align-items-center">
+                            <i class="fas fa-phone-alt me-2"></i> 02231008314
+                        </span>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <a href="https://facebook.com/yourpage" class="me-3" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/yourprofile" class="me-3" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/yourchannel" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <!-- Main Navbar -->
-        <nav class="main-navbar">
-            <div class="logo"> 
-                <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Varuni Marine Logo">
-            </div>
-          <!-- Toggle Button for Mobile -->
-          <div class="menu-toggle" id="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
         </div>
-
-    <ul class="nav-links" id="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-    </ul>
+        
+        <!-- Main Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     
-    <!-- Main Content -->
-    <main>
-        <!-- Background Video Section -->
-        <section class="video-container">
-            <video autoplay loop muted>
-                <source src="./asset/index-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <h1 class="headline">Smooth Sailing, Superior Service</h1>
-        </section>
-    </main>
-
-
-
-    <section class="who-we-are">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <video autoplay loop muted>
+            <source src="./asset/index-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <div class="container">
+                <h1 data-aos="fade-up" data-aos-delay="100">Smooth Sailing, Superior Service</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Innovative maritime solutions for offshore and fleet operations worldwide</p>
+                <a href="#about" class="btn btn-primary hero-btn" data-aos="fade-up" data-aos-delay="300">Discover More</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about-section" id="about">
         <div class="container">
-            <!-- Left Side: Text Content -->
-            <div class="text-content">
-                <h2>Who we <span>are..?</span></h2>
-                <p id="more-text" class="hidden">
-                    Pleased to introduce ourself as a new start-up company into maritime sector 
-                    (offshore & main fleet shipping) with innovative, cost-effective and reliable 
-                    machinery operations with reduced downtime solutions in the technical 
-                    operation management of fleet vessels.<br><br>
-                    Presently, we own and operate two crew boats (MV Gomti & MV Mahi) with a 
-                    capacity of forty-six persons plus ten crew members, chartered with L&T 
-                    Hydrocarbon Engineering Ltd and operating in Mumbai High offshore field.
-                </p>
-                <button><a href="index.html">Read More</a></button>
-            </div>
-
-            <!-- Right Side: Image -->
-            <div class="image-content">
-                <img src="./asset/img1.jpg" alt="Ship Image">
-            </div>
-        </div>
-    </section>
-
-    <section class="service-proposal-section">
-        <div class="service-container">
-            <!-- Left Side: Image -->
-            <div class="service-image-container">
-                <img src="./asset/img2.webp" alt="Service Image">
-            </div>
-
-            <!-- Right Side: Text Content -->
-            <div class="service-text-container">
-                <h2 class="service-title">Our Service Proposal</h2>
-                <p class="service-description">
-                    We offer premium maritime solutions tailored to meet the needs of offshore and 
-                    fleet operations. Our services include technical maintenance, vessel management, 
-                    and logistics support to ensure smooth and efficient operations.
-                </p>
-                <p class="service-description">
-                    Our expert team ensures reduced downtime, cost-effective management, and 
-                    industry-leading solutions to keep your operations running seamlessly.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="custom-services-wrapper">
-        <h2 class="custom-services-heading">Our Services</h2>
-        
-        <div class="custom-services-grid">
-            <!-- Service 1 -->
-            <div class="custom-service-box">
-                <img src="./asset/img1.jpg" alt="Kitchen Remodeling">
-                <div class="custom-service-content">
-                    <h3 class="custom-service-title">Technical Management</h3>
-                    <button class="custom-service-btn">→</button>
-                </div>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="custom-service-box">
-                <img src="./asset/img2.webp" alt="Plumbing Repairs">
-                <div class="custom-service-content">
-                    <h3 class="custom-service-title">Crew Management</h3>
-                    <button class="custom-service-btn">→</button>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="custom-service-box">
-                <img src="./asset/img1.jpg" alt="Electrical Installations">
-                <div class="custom-service-content">
-                    <h3 class="custom-service-title">plan Approvel</h3>
-                    <button class="custom-service-btn">→</button>
-                </div>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="custom-service-box">
-                <img src="./asset/img2.webp" alt="Furniture Assembly">
-                <div class="custom-service-content">
-                    <h3 class="custom-service-title">Spare part Supply</h3>
-                    <button class="custom-service-btn">→</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="blog-section">
-        <h2 class="blog-title">Our Blogs</h2>
-        <div class="blog-grid">
-
-            <div class="blog-card">
-                <img src="./asset/img1.jpg" alt="Blog 1">
-                <div class="blog-content">
-                    <h3>What do maritime professionals need to know about the latest changes to MARPOL regulations?</h3>
-                    <p>Learn how to create a fully responsive website with modern design.</p>
-                    <a href="#" class="read-more">Read More →</a>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <img src="./asset/img2.webp" alt="Blog 2">
-                <div class="blog-content">
-                    <h3>How are autonomous vessels changing the future of maritime shipping?</h3>
-                    <p>Explore the latest trends in web design that are shaping the future.</p>
-                    <a href="#" class="read-more">Read More →</a>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <img src="./asset/img1.jpg" alt="Blog 3">
-                <div class="blog-content">
-                    <h3>How is climate change altering traditional shipping routes in Arctic regions?</h3>
-                    <p>A step-by-step guide to understanding what to do.</p>
-                    <a href="#" class="read-more">Read More →</a>
-                </div>
-            </div>
-
-            <div class="blog-card">
-                <img src="./asset/img2.webp" alt="Blog 4">
-                <div class="blog-content">
-                    <h3>How are marine conservation efforts and commercial shipping finding common ground?</h3>
-                    <p>It will help us to make to survive</p>
-                    <a href="#" class="read-more">Read More →</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="contact-section-unique">
-        <div class="contact-container-unique">
-
-            <!-- Left Side - Contact Form -->
-            <div class="contact-form-container-unique">
-                <h2>Get in Touch</h2>
-                <form id="contact-form-unique">
-                    <label for="name-unique">Name</label>
-                    <input type="text" id="name-unique" placeholder="Enter your name" required>
-
-                    <label for="email-unique">Email</label>
-                    <input type="email" id="email-unique" placeholder="Enter your email" required>
-
-                    <label for="message-unique">Message</label>
-                    <textarea id="message-unique" rows="4" placeholder="Enter your message" required></textarea>
-
-                    <button type="submit">Send Message</button>
-                </form>
-                <p id="form-message-unique"></p>
-            </div>
-
-            <!-- Right Side - Contact Info -->
-            <div class="contact-info-container-unique">
-                <h2>Feel Free to Connect with Us</h2>
-                <!-- <p>Feel free to reach out to us anytime. We are available to help you with any queries.</p>
-                <p><strong>Email:</strong> support@example.com</p>
-                <p><strong>Phone:</strong> +123 456 7890</p>
-                <p><strong>Address:</strong> 123 Street, City, Country</p> -->
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <footer class="footer">
-            <div class="footer-container">
-                <!-- Company Info -->
-                <div class="footer-about">
-                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship" class="footer-logo">
-                    <p>
-                        Welcome to <strong>Fylde ship</strong>Pleased to introduce ourself as a new start-up company into maritime sector 
-                        (offshore & main fleet shipping) with innovative, cost-effective and reliable machinery operations with reduced downtime solutions in the technical 
-                        operation management of fleet vessels
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="section-title display-4">Who we <span>are..?</span></h2>
+                    <p class="lead mb-4">
+                        Pleased to introduce ourself as a new start-up company into maritime sector 
+                        (offshore & main fleet shipping) with innovative, cost-effective and reliable 
+                        machinery operations with reduced downtime solutions in the technical 
+                        operation management of fleet vessels.
                     </p>
+                    <p class="mb-4">
+                        Presently, we own and operate two crew boats (MV Gomti & MV Mahi) with a 
+                        capacity of forty-six persons plus ten crew members, chartered with L&T 
+                        Hydrocarbon Engineering Ltd and operating in Mumbai High offshore field.
+                    </p>
+                    <a href="about.html" class="custom-btn">Read More</a>
                 </div>
-        
+                <div class="col-lg-6 about-img-container" data-aos="fade-left">
+                    <img src="./asset/img1.jpg" class="img-fluid about-img" alt="Ship Image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Proposal Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="./asset/img2.webp" class="img-fluid about-img" alt="Service Image">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title display-4">Our Service Proposal</h2>
+                    <p class="lead mb-4">
+                        We offer premium maritime solutions tailored to meet the needs of offshore and 
+                        fleet operations. Our services include technical maintenance, vessel management, 
+                        and logistics support to ensure smooth and efficient operations.
+                    </p>
+                    <p class="mb-4">
+                        Our expert team ensures reduced downtime, cost-effective management, and 
+                        industry-leading solutions to keep your operations running seamlessly.
+                    </p>
+                    <a href="#" class="custom-btn">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title display-4 mb-5" data-aos="fade-up">Our Services</h2>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <img src="./asset/img1.jpg" class="service-img w-100" alt="Technical Management">
+                        <div class="service-content d-flex justify-content-between align-items-center">
+                            <h3 class="h5 mb-0">Technical Management</h3>
+                            <div class="service-btn">→</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <img src="./asset/img2.webp" class="service-img w-100" alt="Crew Management">
+                        <div class="service-content d-flex justify-content-between align-items-center">
+                            <h3 class="h5 mb-0">Crew Management</h3>
+                            <div class="service-btn">→</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <img src="./asset/img1.jpg" class="service-img w-100" alt="Plan Approval">
+                        <div class="service-content d-flex justify-content-between align-items-center">
+                            <h3 class="h5 mb-0">Plan Approval</h3>
+                            <div class="service-btn">→</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <img src="./asset/img2.webp" class="service-img w-100" alt="Spare Part Supply">
+                        <div class="service-content d-flex justify-content-between align-items-center">
+                            <h3 class="h5 mb-0">Spare Part Supply</h3>
+                            <div class="service-btn">→</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="text-center section-title display-4 mb-5" data-aos="fade-up">Our Blogs</h2>
+            <div class="row g-4">
+                <!-- Blog 1 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <img src="./asset/img1.jpg" class="blog-img w-100" alt="MARPOL Regulations">
+                        <div class="blog-content">
+                            <h3 class="blog-title">What do maritime professionals need to know about the latest changes to MARPOL regulations?</h3>
+                            <p class="blog-text">Learn how latest regulations impact maritime operations and compliance.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <img src="./asset/img2.webp" class="blog-img w-100" alt="Autonomous Vessels">
+                        <div class="blog-content">
+                            <h3 class="blog-title">How are autonomous vessels changing the future of maritime shipping?</h3>
+                            <p class="blog-text">Explore the technological advancements shaping the future of shipping.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog 3 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <img src="./asset/img1.jpg" class="blog-img w-100" alt="Arctic Shipping Routes">
+                        <div class="blog-content">
+                            <h3 class="blog-title">How is climate change altering traditional shipping routes in Arctic regions?</h3>
+                            <p class="blog-text">Discover the environmental impacts on global shipping lanes.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog 4 -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="blog-card">
+                        <img src="./asset/img2.webp" class="blog-img w-100" alt="Marine Conservation">
+                        <div class="blog-content">
+                            <h3 class="blog-title">How are marine conservation efforts and commercial shipping finding common ground?</h3>
+                            <p class="blog-text">Strategies for balancing economic needs with environmental protection.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="contact-wrapper row g-0">
+                        <div class="col-lg-6">
+                            <div class="contact-form">
+                                <h2 class="mb-4">Get in Touch</h2>
+                                <form id="contact-form">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                    </div>
+                                    <button type="submit" class="custom-btn w-100">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="contact-info h-100">
+                                <h2>Feel Free to Connect with Us</h2>
+                                <p class="lead">We're always available to discuss how our services can benefit your maritime operations.</p>
+                                <div class="mt-4">
+                                    <p><i class="fas fa-map-marker-alt"></i> Mumbai High offshore field, India</p>
+                                    <p><i class="fas fa-envelope"></i> fyldeship@gmail.com</p>
+                                    <p><i class="fas fa-phone"></i> +91 02231008314</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-about">
+                        <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship" class="footer-logo">
+                        <p>
+                            Welcome to <strong>Fylde Ship</strong>. We are a new start-up company offering innovative, cost-effective and reliable maritime solutions for offshore and main fleet shipping operations.
+                        </p>
+                    </div>
+                </div>
+                
                 <!-- Useful Links -->
-                <div class="footer-links">
-                    <h3>Useful Links</h3>
-                    <ul>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h4>Useful Links</h4>
+                    <ul class="footer-links">
                         <li><a href="./index.html">Home</a></li>
-                        <li><a href="#about us">About Us</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#Contacts">Contacts</a></li>
                     </ul>
                 </div>
-        
+                
                 <!-- Services -->
-                <div class="footer-services">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">technical management</a></li>
-                        <li><a href="#">crew management</a></li>
-                        <li><a href="#">spare part supply</a></li>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Technical Management</a></li>
+                        <li><a href="#">Crew Management</a></li>
+                        <li><a href="#">Plan Approval</a></li>
+                        <li><a href="#">Spare Part Supply</a></li>
                     </ul>
                 </div>
-        
-                <!--------------------------------------------------- Contact Details ------------------------------->
-                <div class="footer-contact">
-                    <h3>Contact Details</h3>
-                    <p><i class="fas fa-map-marker-alt"></i>Address</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:fabunoindustries@gmail.com">fyldeship@gmail.com</a></p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
+                
+                <!-- Contact Details -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>Contact Details</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Mumbai High offshore field, India</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:fyldeship@gmail.com">fyldeship@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
+                    </div>
                 </div>
             </div>
+        </div>
         
-            <div class="footer-bottom">
-                <p>&copy; 2025 Fylde Ship. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="m-0">&copy; 2025 Fylde Ship Management. All Rights Reserved.</p>
             </div>
-        </footer>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
