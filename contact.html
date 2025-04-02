@@ -3,100 +3,531 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Fylde Ship Management | Maritime Excellence</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="contact.css">
-    <title>Document</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#0B2447',
+                secondary: '#19376D',
+                accent: '#0EA5E9',
+                light: '#ECF2FF',
+                dark: '#0F172A'
+            },
+            fontFamily: {
+                sans: ['Montserrat', 'sans-serif'],
+                display: ['Playfair Display', 'serif']
+            },
+        }
+    }
+}
+    </script>
 
+<style>
+    body {
+        scroll-behavior: smooth;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .gradient-overlay {
+        background: linear-gradient(180deg, rgba(11, 36, 71, 0.3) 0%, rgba(11, 36, 71, 0.9) 100%);
+    }
+    
+    .nav-link {
+        position: relative;
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #0EA5E9;
+        bottom: -4px;
+        left: 0;
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    
+    .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .wave-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .wave-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 90px;
+    }
+    
+    .custom-shape-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 150px;
+    }
+
+    .contact-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+        .contact-form-wrapper {
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+        .map-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .contact-card {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+</style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <!-- Upper Navbar -->
-        <section class="upper-navbar">
-            <span class="phone">📞 02231008314</span>
-            <div class="social-icons">
-                <a href="https://facebook.com/yourpage" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  
-                  <a href="https://instagram.com/yourprofile" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  
-                  <a href="https://youtube.com/yourchannel" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                  </a>
-            </div>
-        </section>
+    <body class="bg-light text-dark antialiased overflow-x-hidden">
+        <!-- Header Section -->
+     <header class="relative z-50">
+         <!-- Top Bar -->
+         <div class="bg-blue-900 py-2">
+             <div class="container mx-auto px-4 lg:px-8">
+                 <div class="flex flex-wrap items-center justify-between">
+                     <div class="flex items-center text-white">
+                         <span class="flex items-center gap-3 text-light">
+                             <i class="fas fa-phone text-accent"></i>
+                             <span class="text-sm font-medium">+91 02231008314</span>
+                         </span>
+                     </div>
+                     <div class="flex space-x-6">
+                         <a href="mailto:fyldeship@gmail.com" class="text-light hover:text-accent transition-colors duration-300 flex items-center gap-2" aria-label="Email">
+                             <i class="fas fa-envelope"></i>
+                             <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
+                         </a>
+                         <div class="flex space-x-4">
+                             <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
+                                 <i class="fab fa-facebook-f"></i>
+                             </a>
+                             <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
+                                 <i class="fab fa-instagram"></i>
+                             </a>
+                             <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
+                                 <i class="fab fa-linkedin-in"></i>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         
+         <!-- Main Navbar -->
+         <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
+             <div class="container mx-auto px-4 lg:px-8">
+                 <div class="flex justify-between items-center py-4">
+                     <a href="./index.html" class="flex items-center">
+                         <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                     </a>
+                     
+                     <!-- Mobile menu button -->
+                     <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                         </svg>
+                     </button>
+                     
+                     <!-- Desktop Navigation -->
+                     <div class="hidden lg:flex items-center space-x-1">
+                         <a href="./index.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                         <a href="./about.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About Us</a>
+                         <a href="#services" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Services</a>
+                         <a href="#gallery" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                         <a href="#blog" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                         <a href="./contact.html" class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact Us</a>
+                     </div>
+                 </div>
+                 
+                 <!-- Mobile Navigation Menu -->
+                 <div id="mobile-menu" class="lg:hidden hidden">
+                     <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                         <a href="./index.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
+                         <a href="./about.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
+                         <a href="#services" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Services</a>
+                         <a href="#gallery" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
+                         <a href="#blog" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
+                         <a href="./contact.html" class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact Us</a>
+                     </div>
+                 </div>
+             </div>
+         </nav>
+     </header>
 
-        <!-- Main Navbar -->
-        <nav class="main-navbar">
-            <div class="logo"> 
-                <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Varuni Marine Logo">
-            </div>
-          <!-- Toggle Button for Mobile -->
-          <div class="menu-toggle" id="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
 
-    <ul class="nav-links" id="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-    </ul>
-        </nav>
-    </header>
-
-
-    <div class="fylde-contact-bg">
-        <div class="fylde-contact-container">
-            <div class="fylde-contact-info">
-                <div class="fylde-contact-details">
-                    <h2>Get in Touch!</h2>
-                    <p>
-                        <i>📍</i> Fylde ship marine India
-                    </p>
-                    <p>
-                        <i>📞</i> (234) 567-891
-                    </p>
-                    <p>
-                        <i>📞</i> (234) 987-654
-                    </p>
-                    <p>
-                        <i>🕒</i> Mon - Fri ..... 10 am - 8 pm
-                    </p>
-                    <p>
-                        <i>🕒</i> Sat, Sun ..... Closed
-                    </p>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-700 to-purple-800 text-white py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Let's Connect</h1>
+                <p class="text-xl md:text-2xl mb-10 text-indigo-100">We'd love to hear from you. Reach out and let's start a conversation.</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#contact-form" class="bg-white text-indigo-700 hover:bg-indigo-100 transition px-8 py-4 rounded-lg font-bold shadow-md transform hover:-translate-y-1 hover:shadow-xl">
+                        Send Message
+                    </a>
+                    <a href="#location" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-700 transition px-8 py-4 rounded-lg font-bold transform hover:-translate-y-1">
+                        Find Us
+                    </a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="fylde-contact-form">
-                <h2>We Are Looking Forward to Start a Project with You!</h2>
-                <form id="fyldeContactForm">
-                    <div class="fylde-form-group">
-                        <input type="text" class="fylde-input-field" placeholder="Enter Your Name" required>
+    <!-- Contact Info Cards -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-xl p-8 text-center border-t-4 border-indigo-600 hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6 floating">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div class="fylde-form-group">
-                        <input type="email" class="fylde-input-field" placeholder="Enter a Valid Email Address" required>
+                    <h3 class="text-xl font-bold mb-4">Our Location</h3>
+                    <p class="text-gray-600 mb-4">123 Business Avenue<br>Suite 200<br>San Francisco, CA 94107</p>
+                    <a href="#location" class="text-indigo-600 font-medium hover:text-indigo-800 transition">View on Map →</a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-xl p-8 text-center border-t-4 border-purple-600 hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6 floating">
+                        <i class="fas fa-phone-alt"></i>
                     </div>
-                    <div class="fylde-form-group">
-                        <textarea class="fylde-input-field" placeholder="Enter Your Message" rows="5" required></textarea>
+                    <h3 class="text-xl font-bold mb-4">Call Us</h3>
+                    <p class="text-gray-600 mb-4">Main: (555) 123-4567<br>Support: (555) 987-6543<br>Mon-Fri, 9am-5pm PST</p>
+                    <a href="tel:+15551234567" class="text-purple-600 font-medium hover:text-purple-800 transition">Call Now →</a>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-xl p-8 text-center border-t-4 border-pink-600 hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6 floating">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="fylde-form-group">
-                        <button type="submit" class="fylde-submit-btn">SUBMIT</button>
-                    </div>
-                </form>
+                    <h3 class="text-xl font-bold mb-4">Email Us</h3>
+                    <p class="text-gray-600 mb-4">info@yourcompany.com<br>support@yourcompany.com<br>We respond within 24 hours</p>
+                    <a href="mailto:info@yourcompany.com" class="text-pink-600 font-medium hover:text-pink-800 transition">Email Now →</a>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="about.js"></script>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section id="contact-form" class="contact-form-wrapper py-20 relative">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Contact Form -->
+                    <div class="contact-card rounded-2xl p-8 md:p-12 shadow-2xl">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-2 text-gray-900">Send Us a Message</h2>
+                        <p class="text-gray-700 mb-8">We'll get back to you as soon as possible.</p>
+                        
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="name">Name</label>
+                                    <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 transition bg-white bg-opacity-90" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="email">Email</label>
+                                    <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 transition bg-white bg-opacity-90" placeholder="john@example.com">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" for="subject">Subject</label>
+                                <input type="text" id="subject" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 transition bg-white bg-opacity-90" placeholder="How can we help you?">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" for="message">Message</label>
+                                <textarea id="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 transition bg-white bg-opacity-90" placeholder="Tell us more about your inquiry..."></textarea>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="newsletter" class="w-4 h-4 text-indigo-600">
+                                <label for="newsletter" class="ml-2 text-gray-700">Subscribe to our newsletter</label>
+                            </div>
+                            
+                            <button type="submit" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-4 px-8 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition shadow-lg transform hover:-translate-y-1 hover:shadow-xl w-full md:w-auto">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Map Section -->
+                    <div id="location" class="h-96 rounded-2xl overflow-hidden map-shadow relative">
+                        <!-- Placeholder for Google Map -->
+                        <img src="/api/placeholder/800/600" alt="Map Location" class="w-full h-full object-cover">
+                        
+                        <!-- Map overlay with animation -->
+                        <div class="absolute top-6 left-6 bg-white bg-opacity-90 rounded-lg p-4 shadow-lg max-w-xs pulse-slow">
+                            <h3 class="font-bold text-gray-900 mb-1">Your Company HQ</h3>
+                            <p class="text-gray-700 text-sm">123 Business Avenue, Suite 200<br>San Francisco, CA 94107</p>
+                            <div class="mt-3">
+                                <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800">Get Directions →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 text-lg">Have questions? We've got answers to the questions we hear most.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-3 flex items-center text-gray-900">
+                        <span class="text-indigo-600 mr-3 text-2xl">Q:</span>
+                        What are your business hours?
+                    </h3>
+                    <p class="text-gray-700 ml-9">We're open Monday through Friday from 9:00 AM to 5:00 PM Pacific Standard Time. Our support team is available 24/7 for urgent inquiries.</p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-3 flex items-center text-gray-900">
+                        <span class="text-indigo-600 mr-3 text-2xl">Q:</span>
+                        How quickly do you respond to inquiries?
+                    </h3>
+                    <p class="text-gray-700 ml-9">We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call our main office number.</p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-3 flex items-center text-gray-900">
+                        <span class="text-indigo-600 mr-3 text-2xl">Q:</span>
+                        Do you offer virtual meetings?
+                    </h3>
+                    <p class="text-gray-700 ml-9">Yes! We offer video conferencing through Zoom, Microsoft Teams, or Google Meet. Please indicate your preference when scheduling a meeting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media & CTA -->
+    <section class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4">Connect With Us</h2>
+                    <p class="text-purple-200 text-lg max-w-xl">Follow us on social media to stay updated with our latest news, events, and promotions.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-xl hover:bg-opacity-30 hover:transform hover:scale-110 transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-xl hover:bg-opacity-30 hover:transform hover:scale-110 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-xl hover:bg-opacity-30 hover:transform hover:scale-110 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-xl hover:bg-opacity-30 hover:transform hover:scale-110 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 relative overflow-hidden">
+                <!-- Decorative elements -->
+                <div class="absolute -top-16 -right-16 w-48 h-48 bg-indigo-100 rounded-full"></div>
+                <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-purple-100 rounded-full"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-8 md:mb-0 max-w-lg">
+                        <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+                        <p class="text-gray-600">Subscribe to our newsletter and be the first to know about our news, updates, and special offers.</p>
+                    </div>
+                    
+                    <div class="w-full md:w-auto">
+                        <form class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Your email address" class="px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition min-w-72">
+                            <button type="submit" class="bg-indigo-600 text-white font-bold px-6 py-4 rounded-lg hover:bg-indigo-700 transition shadow-md transform hover:-translate-y-1 hover:shadow-lg">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+         <!-- Footer -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Top -->
+        <div class="container mx-auto px-4 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-16 mb-6">
+                    <p class="text-gray-400 mb-6">Fylde Ship Management provides innovative and cost-effective solutions for offshore and fleet operations. Our commitment to excellence ensures reliable maritime services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html" class="text-gray-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li><a href="./about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition-colors duration-300">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-accent transition-colors duration-300">Blog</a></li>
+                        <li><a href="./contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Technical Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Crew Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Vessel Chartering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Logistics Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                            <span class="text-gray-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India - 400021</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-accent"></i>
+                            <span class="text-gray-400">+91 02231008314</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <a href="mailto:fyldeship@gmail.com" class="text-gray-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-800">
+            <div class="container mx-auto px-4 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                    <div class="mt-4 md:mt-0">
+                        <ul class="flex space-x-6">
+                            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for animations -->
+    <script>
+        // Simple scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

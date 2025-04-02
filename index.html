@@ -3,348 +3,815 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Fylde Ship Management | Maritime Excellence</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <title>Document</title>
     
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#0B2447',
+                secondary: '#19376D',
+                accent: '#0EA5E9',
+                light: '#ECF2FF',
+                dark: '#0F172A'
+            },
+            fontFamily: {
+                sans: ['Montserrat', 'sans-serif'],
+                display: ['Playfair Display', 'serif']
+            },
+        }
+    }
+}
+    </script>
+    
+    <style>
+        body {
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(180deg, rgba(11, 36, 71, 0.3) 0%, rgba(11, 36, 71, 0.9) 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #0EA5E9;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 90px;
+        }
+        
+        .custom-shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+    </style>
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <span class="text-white d-flex align-items-center">
-                            <i class="fas fa-phone-alt me-2"></i> 02231008314
-                        </span>
-                    </div>
-                    <div class="col-md-6 text-end">
-                        <a href="https://facebook.com/yourpage" class="me-3" aria-label="Facebook">
+
+<body class="bg-light text-dark antialiased overflow-x-hidden">
+   <!-- Header Section -->
+<header class="relative z-50">
+    <!-- Top Bar -->
+    <div class="bg-blue-900 py-2">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between">
+                <div class="flex items-center text-white">
+                    <span class="flex items-center gap-3 text-light">
+                        <i class="fas fa-phone text-accent"></i>
+                        <span class="text-sm font-medium">+91 02231008314</span>
+                    </span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="mailto:fyldeship@gmail.com" class="text-light hover:text-accent transition-colors duration-300 flex items-center gap-2" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
+                    </a>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/yourprofile" class="me-3" aria-label="Instagram">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://youtube.com/yourchannel" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="./index.html" class="flex items-center">
+                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="./index.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                    <a href="./about.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About Us</a>
+                    <a href="#services" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Services</a>
+                    <a href="#gallery" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                    <a href="#blog" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                    <a href="./contact.html" class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact Us</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden">
+                <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                    <a href="./index.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
+                    <a href="./about.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
+                    <a href="#services" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Services</a>
+                    <a href="#gallery" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
+                    <a href="#blog" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
+                    <a href="./contact.html" class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+    
+    <!-- Hero Section -->
+    <section class="relative h-screen overflow-hidden">
+        <video class="hero-video" autoplay loop muted>
+            <source src="./asset/index-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30 flex items-center">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1000">
+                    <h5 class="text-accent font-semibold text-xl mb-4 uppercase tracking-wider">Maritime Excellence</h5>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white font-display leading-tight">Smooth Sailing, <br><span class="text-accent">Superior Service</span></h1>
+                    <p class="text-xl text-light mb-10 max-w-2xl">Innovative maritime solutions for offshore and fleet operations worldwide, delivered with excellence and precision.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#about" class="bg-accent hover:bg-primary text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2">
+                            Discover More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#services" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Our Services</a>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Main Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-            <div class="container">
-                <a class="navbar-brand" href="./index.html">
-                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact</a>
-                        </li>
-                    </ul>
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#ECF2FF">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h5 class="text-accent font-medium uppercase tracking-wider mb-2">Why Choose Us</h5>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary font-display">Exceptional Maritime Services</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mt-4 mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">We deliver comprehensive maritime solutions with a focus on innovation, reliability, and efficiency.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
+                        <i class="fas fa-ship text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Experienced Team</h3>
+                    <p class="text-gray-600">Maritime experts with decades of combined experience in offshore and fleet management.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
+                        <i class="fas fa-cogs text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Modern Technology</h3>
+                    <p class="text-gray-600">Utilizing cutting-edge technology for efficient fleet management and operations.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
+                        <i class="fas fa-award text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Quality Service</h3>
+                    <p class="text-gray-600">Commitment to excellence and adherence to international maritime standards.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
+                        <i class="fas fa-headset text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">24/7 Support</h3>
+                    <p class="text-gray-600">Round-the-clock customer service to address your maritime needs promptly.</p>
                 </div>
             </div>
-        </nav>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <video autoplay loop muted>
-            <source src="./asset/index-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content">
-            <div class="container">
-                <h1 data-aos="fade-up" data-aos-delay="100">Smooth Sailing, Superior Service</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Innovative maritime solutions for offshore and fleet operations worldwide</p>
-                <a href="#about" class="btn btn-primary hero-btn" data-aos="fade-up" data-aos-delay="300">Discover More</a>
+            
+            <!-- Stats Section -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-primary rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-accent mb-2">2+</div>
+                    <div class="text-light font-medium">Vessels Operated</div>
+                </div>
+                <div class="bg-primary rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-accent mb-2">46+</div>
+                    <div class="text-light font-medium">Passenger Capacity</div>
+                </div>
+                <div class="bg-primary rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-accent mb-2">10+</div>
+                    <div class="text-light font-medium">Crew Members</div>
+                </div>
+                <div class="bg-primary rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl font-bold text-accent mb-2">24/7</div>
+                    <div class="text-light font-medium">Support Available</div>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title display-4">Who we <span>are..?</span></h2>
-                    <p class="lead mb-4">
-                        Pleased to introduce ourself as a new start-up company into maritime sector 
-                        (offshore & main fleet shipping) with innovative, cost-effective and reliable 
-                        machinery operations with reduced downtime solutions in the technical 
-                        operation management of fleet vessels.
+    <section id="about" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000" class="order-2 lg:order-1">
+                    <h5 class="text-accent font-medium uppercase tracking-wider mb-2">About Fylde Ship</h5>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">Who We Are</h2>
+                    <div class="w-24 h-1 bg-accent mb-6"></div>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                        Fylde Ship Management is a dynamic start-up company in the maritime sector, bringing innovative and cost-effective solutions to offshore and main fleet shipping operations.
                     </p>
-                    <p class="mb-4">
-                        Presently, we own and operate two crew boats (MV Gomti & MV Mahi) with a 
-                        capacity of forty-six persons plus ten crew members, chartered with L&T 
-                        Hydrocarbon Engineering Ltd and operating in Mumbai High offshore field.
+                    <p class="text-gray-700 mb-8">
+                        We currently own and operate two crew boats, <span class="font-semibold text-primary">MV Gomti</span> & <span class="font-semibold text-primary">MV Mahi</span>, each with a capacity of forty-six passengers plus ten crew members. These vessels are chartered with L&T Hydrocarbon Engineering Ltd and operate in the Mumbai High offshore field.
                     </p>
-                    <a href="about.html" class="custom-btn">Read More</a>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span class="text-gray-700">Expert Fleet Management</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span class="text-gray-700">Technical Excellence</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span class="text-gray-700">Cost-Effective Solutions</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span class="text-gray-700">Reliable Operations</span>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="inline-block bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 group">
+                        Learn More About Us
+                        <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-2"></i>
+                    </a>
                 </div>
-                <div class="col-lg-6 about-img-container" data-aos="fade-left">
-                    <img src="./asset/img1.jpg" class="img-fluid about-img" alt="Ship Image">
+                <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative">
+                        <div class="w-full h-96 lg:h-[30rem] rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="./asset/img1.jpg" class="w-full h-full object-cover rounded-2xl" alt="Ship Image">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-accent text-white p-6 rounded-xl shadow-lg font-display">
+                            <div class="text-4xl font-bold">10+</div>
+                            <div class="uppercase tracking-wider">Years Experience</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Service Proposal Section -->
-    <section class="service-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <img src="./asset/img2.webp" class="img-fluid about-img" alt="Service Image">
+    <section class="py-20 bg-light relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="relative">
+                        <div class="w-full h-96 lg:h-[30rem] rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="./asset/img2.webp" class="w-full h-full object-cover rounded-2xl" alt="Service Image">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-xl shadow-lg">
+                            <div class="text-xl font-bold">Premium</div>
+                            <div class="uppercase tracking-wider">Solutions</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="section-title display-4">Our Service Proposal</h2>
-                    <p class="lead mb-4">
-                        We offer premium maritime solutions tailored to meet the needs of offshore and 
-                        fleet operations. Our services include technical maintenance, vessel management, 
-                        and logistics support to ensure smooth and efficient operations.
+                <div data-aos="fade-left" data-aos-duration="1000">
+                    <h5 class="text-accent font-medium uppercase tracking-wider mb-2">Why Choose Us</h5>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">Our Service Proposal</h2>
+                    <div class="w-24 h-1 bg-accent mb-6"></div>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                        We offer premium maritime solutions tailored to meet the specific needs of offshore and fleet operations. Our comprehensive service package ensures smooth sailing for all your maritime endeavors.
                     </p>
-                    <p class="mb-4">
-                        Our expert team ensures reduced downtime, cost-effective management, and 
-                        industry-leading solutions to keep your operations running seamlessly.
-                    </p>
-                    <a href="#" class="custom-btn">Explore Services</a>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-white p-4 rounded-lg shadow flex items-start gap-4">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i class="fas fa-tools text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">Technical Maintenance</h4>
+                                <p class="text-gray-600">Expert maintenance services to keep your vessels in optimal condition.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow flex items-start gap-4">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i class="fas fa-users text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">Vessel Management</h4>
+                                <p class="text-gray-600">Comprehensive management services for efficient vessel operations.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow flex items-start gap-4">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i class="fas fa-truck-loading text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">Logistics Support</h4>
+                                <p class="text-gray-600">Seamless logistics solutions for your maritime operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#services" class="inline-block bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 group">
+                        Explore All Services
+                        <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Services Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center section-title display-4 mb-5" data-aos="fade-up">Our Services</h2>
-            <div class="row g-4">
+    <section id="services" class="py-20 bg-primary relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h5 class="text-accent font-medium uppercase tracking-wider mb-2">What We Offer</h5>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-display">Our Services</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-light">We provide comprehensive maritime services designed to meet the unique needs of our clients in the offshore and shipping industries.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service 1 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <img src="./asset/img1.jpg" class="service-img w-100" alt="Technical Management">
-                        <div class="service-content d-flex justify-content-between align-items-center">
-                            <h3 class="h5 mb-0">Technical Management</h3>
-                            <div class="service-btn">→</div>
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="./asset/img1.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Technical Management">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-tools text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Technical Management</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 text-light">
+                            <p class="mb-4">Comprehensive technical oversight and maintenance for all your maritime assets, ensuring optimal performance and longevity.</p>
+                            <a href="#" class="inline-flex items-center text-accent font-semibold hover:text-white transition-colors duration-300 group-hover:translate-x-2 transition-transform">
+                                Learn More 
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <img src="./asset/img2.webp" class="service-img w-100" alt="Crew Management">
-                        <div class="service-content d-flex justify-content-between align-items-center">
-                            <h3 class="h5 mb-0">Crew Management</h3>
-                            <div class="service-btn">→</div>
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="./asset/img2.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Crew Management">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-users text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Crew Management</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 text-light">
+                            <p class="mb-4">Professional crew recruitment, training, and management services to ensure your vessels are operated by qualified and experienced personnel.</p>
+                            <a href="#" class="inline-flex items-center text-accent font-semibold hover:text-white transition-colors duration-300 group-hover:translate-x-2 transition-transform">
+                                Learn More 
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <img src="./asset/img1.jpg" class="service-img w-100" alt="Plan Approval">
-                        <div class="service-content d-flex justify-content-between align-items-center">
-                            <h3 class="h5 mb-0">Plan Approval</h3>
-                            <div class="service-btn">→</div>
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="./asset/img3.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Vessel Chartering">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-ship text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Vessel Chartering</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 text-light">
+                            <p class="mb-4">Flexible vessel chartering solutions to meet your specific operational requirements for offshore projects and maritime transportation.</p>
+                            <a href="#" class="inline-flex items-center text-accent font-semibold hover:text-white transition-colors duration-300 group-hover:translate-x-2 transition-transform">
+                                Learn More 
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <img src="./asset/img2.webp" class="service-img w-100" alt="Spare Part Supply">
-                        <div class="service-content d-flex justify-content-between align-items-center">
-                            <h3 class="h5 mb-0">Spare Part Supply</h3>
-                            <div class="service-btn">→</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Blog Section -->
-    <section class="blog-section">
-        <div class="container">
-            <h2 class="text-center section-title display-4 mb-5" data-aos="fade-up">Our Blogs</h2>
-            <div class="row g-4">
-                <!-- Blog 1 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="blog-card">
-                        <img src="./asset/img1.jpg" class="blog-img w-100" alt="MARPOL Regulations">
-                        <div class="blog-content">
-                            <h3 class="blog-title">What do maritime professionals need to know about the latest changes to MARPOL regulations?</h3>
-                            <p class="blog-text">Learn how latest regulations impact maritime operations and compliance.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog 2 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="blog-card">
-                        <img src="./asset/img2.webp" class="blog-img w-100" alt="Autonomous Vessels">
-                        <div class="blog-content">
-                            <h3 class="blog-title">How are autonomous vessels changing the future of maritime shipping?</h3>
-                            <p class="blog-text">Explore the technological advancements shaping the future of shipping.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog 3 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="blog-card">
-                        <img src="./asset/img1.jpg" class="blog-img w-100" alt="Arctic Shipping Routes">
-                        <div class="blog-content">
-                            <h3 class="blog-title">How is climate change altering traditional shipping routes in Arctic regions?</h3>
-                            <p class="blog-text">Discover the environmental impacts on global shipping lanes.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog 4 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="blog-card">
-                        <img src="./asset/img2.webp" class="blog-img w-100" alt="Marine Conservation">
-                        <div class="blog-content">
-                            <h3 class="blog-title">How are marine conservation efforts and commercial shipping finding common ground?</h3>
-                            <p class="blog-text">Strategies for balancing economic needs with environmental protection.</p>
-                            <a href="#" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="contact-wrapper row g-0">
-                        <div class="col-lg-6">
-                            <div class="contact-form">
-                                <h2 class="mb-4">Get in Touch</h2>
-                                <form id="contact-form">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" placeholder="Your Name" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Your Email" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                                    </div>
-                                    <button type="submit" class="custom-btn w-100">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="contact-info h-100">
-                                <h2>Feel Free to Connect with Us</h2>
-                                <p class="lead">We're always available to discuss how our services can benefit your maritime operations.</p>
-                                <div class="mt-4">
-                                    <p><i class="fas fa-map-marker-alt"></i> Mumbai High offshore field, India</p>
-                                    <p><i class="fas fa-envelope"></i> fyldeship@gmail.com</p>
-                                    <p><i class="fas fa-phone"></i> +91 02231008314</p>
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="./asset/img4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Logistics Support">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <div class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-truck-loading text-xl"></i>
                                 </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Logistics Support</h3>
                             </div>
                         </div>
+                        <div class="p-6 text-light">
+                            <p class="mb-4">Comprehensive logistics solutions including supply chain management, cargo handling, and transportation for maritime operations.</p>
+                            <a href="#" class="inline-flex items-center text-accent font-semibold hover:text-white transition-colors duration-300 group-hover:translate-x-2 transition-transform">
+                                Learn More 
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="./services.html" class="inline-block bg-accent hover:bg-white hover:text-primary text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    View All Services
+                </a>
+            </div>
+        </div>
+        
+        <!-- Wave Divider Bottom -->
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#ECF2FF">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- Fleet Section -->
+    <section class="py-20 bg-light relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h5 class="text-accent font-medium uppercase tracking-wider mb-2">Our Fleet</h5>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">The Vessels We Operate</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">Our modern fleet comprises well-maintained vessels designed for optimal performance and safety in maritime operations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Vessel 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="./asset/mv-gomti.jpg" class="w-full h-full object-cover" alt="MV Gomti">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-bold py-1 px-3 rounded-full">Crew Boat</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">MV Gomti</h3>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
+                                <i class="fas fa-users mr-1"></i> 46 Passengers
+                            </div>
+                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
+                                <i class="fas fa-hard-hat mr-1"></i> 10 Crew
+                            </div>
+                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Mumbai High
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">Currently chartered with L&T Hydrocarbon Engineering Ltd, operating in the Mumbai High offshore field for crew transportation.</p>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors duration-300">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Vessel 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="./asset/mv-mahi.jpg" class="w-full h-full object-cover" alt="MV Mahi">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-bold py-1 px-3 rounded-full">Crew Boat</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">MV Mahi</h3>
+                        <div class="flex flex-wrap gap-4 mb-4">
+                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
+                                <i class="fas fa-users mr-1"></i> 46 Passengers
+                            </div>
+                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
+                                <i class="fas fa-hard-hat mr-1"></i> 10 Crew
+                            </div>
+                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Mumbai High
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">Currently chartered with L&T Hydrocarbon Engineering Ltd, operating in the Mumbai High offshore field for crew transportation.</p>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors duration-300">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h5 class="text-accent font-medium uppercase tracking-wider mb-2">Client Feedback</h5>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">What Our Clients Say</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">Hear from our satisfied clients about their experience working with Fylde Ship Management.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-light p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-6">
+                        <i class="fas fa-quote-left text-4xl text-accent/30"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Fylde Ship Management has been a reliable partner for our offshore operations. Their crew boats are well-maintained and their services are prompt and professional.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="./asset/testimonial1.jpg" class="w-full h-full object-cover" alt="Client">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">Rajesh Kumar</h4>
+                            <p class="text-sm text-gray-500">Operations Manager, L&T Hydrocarbon</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-light p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-6">
+                        <i class="fas fa-quote-left text-4xl text-accent/30"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Working with Fylde Ship Management has significantly improved our logistics efficiency. Their technical expertise and customer service are exceptional.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="./asset/testimonial2.jpg" class="w-full h-full object-cover" alt="Client">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">Priya Sharma</h4>
+                            <p class="text-sm text-gray-500">Director, Offshore Solutions Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-light p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-6">
+                        <i class="fas fa-quote-left text-4xl text-accent/30"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">The team at Fylde Ship Management demonstrates exceptional professionalism and expertise. Their commitment to safety and quality is impressive.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="./asset/testimonial3.jpg" class="w-full h-full object-cover" alt="Client">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">Amit Patel</h4>
+                            <p class="text-sm text-gray-500">Project Head, ONGC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-display">Ready to Experience Excellence in Maritime Services?</h2>
+                <p class="text-xl text-light mb-10">Contact us today to discuss your maritime needs and discover how we can help optimize your operations.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="./contact.html" class="bg-accent hover:bg-white hover:text-primary text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2">
+                        Contact Us Now
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#services" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        Explore Services
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
+    <footer class="bg-dark text-light">
+        <!-- Footer Top -->
+        <div class="container mx-auto px-4 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Company Info -->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <div class="footer-about">
-                        <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship" class="footer-logo">
-                        <p>
-                            Welcome to <strong>Fylde Ship</strong>. We are a new start-up company offering innovative, cost-effective and reliable maritime solutions for offshore and main fleet shipping operations.
-                        </p>
+                <div>
+                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-16 mb-6">
+                    <p class="text-gray-400 mb-6">Fylde Ship Management provides innovative and cost-effective solutions for offshore and fleet operations. Our commitment to excellence ensures reliable maritime services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Useful Links -->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h4>Useful Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#Contacts">Contacts</a></li>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html" class="text-gray-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li><a href="./about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition-colors duration-300">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-accent transition-colors duration-300">Blog</a></li>
+                        <li><a href="./contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <!-- Services -->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Technical Management</a></li>
-                        <li><a href="#">Crew Management</a></li>
-                        <li><a href="#">Plan Approval</a></li>
-                        <li><a href="#">Spare Part Supply</a></li>
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Technical Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Crew Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Vessel Chartering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Logistics Support</a></li>
                     </ul>
                 </div>
                 
-                <!-- Contact Details -->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h4>Contact Details</h4>
-                    <div class="footer-contact">
-                        <p><i class="fas fa-map-marker-alt"></i> Mumbai High offshore field, India</p>
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:fyldeship@gmail.com">fyldeship@gmail.com</a></p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
-                    </div>
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                            <span class="text-gray-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India - 400021</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-accent"></i>
+                            <span class="text-gray-400">+91 02231008314</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <a href="mailto:fyldeship@gmail.com" class="text-gray-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="m-0">&copy; 2025 Fylde Ship Management. All Rights Reserved.</p>
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-800">
+            <div class="container mx-auto px-4 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                    <div class="mt-4 md:mt-0">
+                        <ul class="flex space-x-6">
+                            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- AOS Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
+    
+    <!-- Main Script -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
