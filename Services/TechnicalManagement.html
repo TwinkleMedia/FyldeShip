@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Fylde Ship Management</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Leaflet Maps -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#0B2447',
+                secondary: '#19376D',
+                accent: '#0EA5E9',
+                light: '#ECF2FF',
+                dark: '#0F172A'
+            },
+            fontFamily: {
+                sans: ['Montserrat', 'sans-serif'],
+                display: ['Playfair Display', 'serif']
+            },
+        }
+    }
+}
+    </script>
+    
+    <style>
+        body {
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(180deg, rgba(11, 36, 71, 0.3) 0%, rgba(11, 36, 71, 0.9) 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #0EA5E9;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 90px;
+        }
+        
+        .custom-shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+
+        .contact-input {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .contact-input:focus {
+            border-left: 3px solid #0EA5E9;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card {
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-form-wrapper {
+            background-image: url('https://images.unsplash.com/photo-1589998071779-b0a79142d642?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark antialiased overflow-x-hidden">
+   <!-- Header Section -->
+<header class="relative z-50">
+    <!-- Top Bar -->
+    <div class="bg-blue-900 py-2">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between">
+                <div class="flex items-center text-white">
+                    <span class="flex items-center gap-3 text-light">
+                        <i class="fas fa-phone text-accent"></i>
+                        <span class="text-sm font-medium">+91 02231008314</span>
+                    </span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="mailto:fyldeship@gmail.com" class="text-light transition-colors duration-300 flex items-center gap-2" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
+                    </a>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="./index.html" class="flex items-center">
+                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="./index.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                    <a href="./about.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About Us</a>
+                    <div class="relative group">
+                        <button class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300 flex items-center">
+                            Services
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                <a href="#technical-management" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Technical Management</a>
+                                <a href="#crew-management" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Crew Management</a>
+                                <a href="#plan-approval" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Plan Approval</a>
+                                <a href="#workshop" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Workshop</a>
+                                <a href="#spare-part-supply" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Spare Part Supply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#gallery" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                    <a href="#blog" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                    <a href="./contact.html" class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact Us</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden">
+                <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                    <a href="./index.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
+                    <a href="./about.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
+                    <div class="relative">
+                        <button id="mobile-services-btn" class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">
+                            Services
+                            <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                            <a href="#technical-management" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Technical Management</a>
+                            <a href="#crew-management" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Crew Management</a>
+                            <a href="#plan-approval" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Plan Approval</a>
+                            <a href="#workshop" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Workshop</a>
+                            <a href="#spare-part-supply" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Spare Part Supply</a>
+                        </div>
+                    </div>
+                    <a href="#gallery" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
+                    <a href="#blog" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
+                    <a href="./contact.html" class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <!-- Contact Hero Section -->
+    <section class="relative overflow-hidden bg-primary py-24 md:py-32">
+        <div class="absolute inset-0 bg-primary opacity-90 z-0"></div>
+        <div class="absolute inset-0 z-0">
+            <svg class="absolute bottom-0 left-0 right-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,128L80,138.7C160,149,320,171,480,160C640,149,800,107,960,90.7C1120,75,1280,85,1360,90.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4" data-aos="fade-up">Get In Touch</h1>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
+                <p class="text-light text-lg md:text-xl max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Have questions about our maritime services? We're here to help you navigate your fleet management needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Office Address -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center info-card border-t-4 border-accent" data-aos="fade-up">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 transform transition-transform hover:rotate-12">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Our Office</h3>
+                    <p class="text-gray-600">301 Sea Shell, 123 Marine Drive</p>
+                    <p class="text-gray-600">Mumbai, Maharashtra</p>
+                    <p class="text-gray-600">India - 400021</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center info-card border-t-4 border-yellow-600" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-yellow-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 transform transition-transform hover:rotate-12">
+                        <i class="fas fa-phone text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Contact Info</h3>
+                    <p class="text-gray-600 mb-2">Phone: +91 02231008314</p>
+                    <p class="text-gray-600 mb-2">Mobile: +91 9876543210</p>
+                    <a href="mailto:fyldeship@gmail.com" class="text-accent hover:underline">fyldeship@gmail.com</a>
+                </div>
+                
+                <!-- Business Hours -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center info-card border-t-4 border-primary" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 transform transition-transform hover:rotate-12">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Business Hours</h3>
+                    <p class="text-gray-600 mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p class="text-gray-600 mb-2">Saturday: 10:00 AM - 2:00 PM</p>
+                    <p class="text-gray-600">Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 md:py-24 bg-light relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-24 -mr-24 w-64 h-64 rounded-full bg-accent opacity-10"></div>
+        <div class="absolute bottom-0 left-0 -mb-24 -ml-24 w-64 h-64 rounded-full bg-yellow-600 opacity-10"></div>
+        
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-xl p-8 md:p-10 contact-form-wrapper" data-aos="fade-right">
+                    <div class="bg-white bg-opacity-95 p-6 md:p-8 rounded-lg shadow-inner">
+                        <h2 class="text-3xl font-display font-bold text-primary mb-6">Send Us A Message</h2>
+                        <p class="text-gray-600 mb-8">Fill out the form below, and our team will get back to you as soon as possible.</p>
+                        
+                        <form id="contactForm">
+                            <div class="mb-6">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <input type="text" id="name" class="contact-input w-full pl-10 pr-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Your full name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                    <div class="relative">
+                                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <input type="email" id="email" class="contact-input w-full pl-10 pr-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="your@email.com" required>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <div class="relative">
+                                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                        <input type="tel" id="phone" class="contact-input w-full pl-10 pr-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Your phone number">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                        <i class="fas fa-tag"></i>
+                                    </span>
+                                    <input type="text" id="subject" class="contact-input w-full pl-10 pr-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="How can we help you?" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+                                <div class="relative">
+                                    <span class="absolute top-3 left-3 text-gray-500">
+                                        <i class="fas fa-comment"></i>
+                                    </span>
+                                    <textarea id="message" rows="5" class="contact-input w-full pl-10 pr-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Tell us about your requirements..." required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-center">
+                                    <input id="privacy" type="checkbox" class="h-4 w-4 text-accent focus:ring-accent border-gray-300 rounded" required>
+                                    <label for="privacy" class="ml-2 block text-sm text-gray-700">
+                                        I agree to the <a href="#" class="text-accent hover:text-secondary">Privacy Policy</a>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center group">
+                                    <span>Send Message</span>
+                                    <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map Section -->
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-display font-bold text-primary mb-6">Find Us On The Map</h2>
+                    <p class="text-gray-600 mb-8">Located in the heart of Mumbai's Marine Drive, our office is easily accessible and offers a spectacular view of the Arabian Sea.</p>
+                    
+                    <div id="map" class="rounded-xl overflow-hidden shadow-xl border-4 border-white">
+                        <!-- Map will be loaded via Leaflet JS -->
+                    </div>
+                    
+                    <div class="mt-8 bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-600">
+                        <h4 class="text-xl font-bold text-primary mb-2">Getting Here</h4>
+                        <p class="text-gray-600 mb-4">Our office is a 10-minute walk from Marine Lines Station and easily accessible by taxi, bus, or private vehicle.</p>
+                        <div class="flex items-center gap-6">
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-car text-accent"></i>
+                                <span>Parking Available</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-subway text-accent"></i>
+                                <span>Near Metro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-4" data-aos="fade-up">Frequently Asked Questions</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Find answers to commonly asked questions about our maritime services.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 bg-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 text-left font-medium text-primary hover:text-accent transition-colors duration-300">
+                        <span>What services does Fylde Ship Management offer?</span>
+                        <i class="fas fa-plus text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-5 pb-5 hidden">
+                        <p class="text-gray-600">Fylde Ship Management offers a comprehensive range of maritime services including technical management, crew management, vessel chartering, logistics support, and spare parts supply. We provide end-to-end solutions for all your shipping needs with a focus on safety, efficiency, and cost-effectiveness.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 bg-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 text-left font-medium text-primary hover:text-accent transition-colors duration-300">
+                        <span>How can I request a quote for your services?</span>
+                        <i class="fas fa-plus text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-5 pb-5 hidden">
+                        <p class="text-gray-600">You can request a quote by filling out the contact form on this page or by directly emailing us at fyldeship@gmail.com. Please provide as much detail as possible about your requirements so we can provide an accurate quote. Our team typically responds within 24-48 hours.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 bg-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 text-left font-medium text-primary hover:text-accent transition-colors duration-300">
+                        <span>What areas does your maritime service cover?</span>
+                        <i class="fas fa-plus text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-5 pb-5 hidden">
+                        <p class="text-gray-600">Our maritime services cover both domestic and international waters. We have a strong presence in the Indian subcontinent, Middle East, Southeast Asia, and are expanding our operations globally. Our team is experienced in navigating the regulatory requirements and operational challenges across different regions.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 bg-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 text-left font-medium text-primary hover:text-accent transition-colors duration-300">
+                        <span>How do you ensure safety and compliance?</span>
+                        <i class="fas fa-plus text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-5 pb-5 hidden">
+                        <p class="text-gray-600">Safety and compliance are our top priorities. We adhere to all international maritime regulations and standards including SOLAS, MARPOL, and ISM Code. Our vessels undergo regular inspections and audits, and our crew receives continuous training on safety protocols. We maintain comprehensive documentation and certification to ensure full compliance with regulatory requirements.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="mb-6 bg-light rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 text-left font-medium text-primary hover:text-accent transition-colors duration-300">
+                        <span>What makes Fylde Ship Management different from other companies?</span>
+                        <i class="fas fa-plus text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-5 pb-5 hidden">
+                        <p class="text-gray-600">Fylde Ship Management stands out for our personalized approach to maritime services. We offer tailored solutions rather than one-size-fits-all packages. Our experienced team provides 24/7 support, and we leverage cutting-edge technology for efficient fleet management. We prioritize building long-term relationships with our clients based on trust, transparency, and exceptional service quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 md:py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <pattern id="pattern-circles" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
+                    <circle id="pattern-circle" cx="10" cy="10" r="1.6257413380501518" fill="#fff"></circle>
+                </pattern>
+                <rect id="rect" x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6" data-aos="fade-up">Ready to Navigate the Future Together?</h2>
+                <p class="text-light text-lg mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Partner with Fylde Ship Management for reliable maritime solutions tailored to your needs. Let us help you optimize your fleet operations and maximize efficiency.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#" class="bg-accent hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Schedule a Consultation
+                    </a>
+                    <a href="#" class="bg-transparent border-2 border-light hover:bg-light hover:text-primary text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Learn More About Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-6">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-16 mb-6">
+                    <p class="text-gray-300 mb-6">
+                        Providing exceptional maritime management services with a focus on safety, reliability, and efficiency.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-accent hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative">
+                        Quick Links
+                        <span class="absolute bottom-0 left-0 w-12 h-1 bg-accent"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="./about.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-white transition-colors duration-300">Blog</a></li>
+                        <li><a href="./contact.html" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative">
+                        Our Services
+                        <span class="absolute bottom-0 left-0 w-12 h-1 bg-accent"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="#technical-management" class="text-gray-300 hover:text-white transition-colors duration-300">Technical Management</a></li>
+                        <li><a href="#crew-management" class="text-gray-300 hover:text-white transition-colors duration-300">Crew Management</a></li>
+                        <li><a href="#plan-approval" class="text-gray-300 hover:text-white transition-colors duration-300">Plan Approval</a></li>
+                        <li><a href="#workshop" class="text-gray-300 hover:text-white transition-colors duration-300">Workshop</a></li>
+                        <li><a href="#spare-part-supply" class="text-gray-300 hover:text-white transition-colors duration-300">Spare Part Supply</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative">
+                        Contact Us
+                        <span class="absolute bottom-0 left-0 w-12 h-1 bg-accent"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India - 400021</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-accent"></i>
+                            <span>+91 02231008314</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-accent"></i>
+                            <a href="mailto:fyldeship@gmail.com" class="hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-accent"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="border-t border-gray-700 pt-8 pb-6">
+                <div class="max-w-xl mx-auto">
+                    <h4 class="text-lg font-bold mb-4 text-center">Subscribe to Our Newsletter</h4>
+                    <form class="flex flex-wrap md:flex-nowrap gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-accent">
+                        <button type="submit" class="w-full md:w-auto bg-accent hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">© 2023 Fylde Ship Management. All rights reserved.</p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease',
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Mobile Services Submenu Toggle
+        document.getElementById('mobile-services-btn').addEventListener('click', function() {
+            document.getElementById('mobile-services-menu').classList.toggle('hidden');
+            document.getElementById('mobile-services-arrow').classList.toggle('rotate-180');
+        });
+        
+        // Sticky Navbar
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                document.getElementById('navbar').classList.add('py-2');
+                document.getElementById('navbar').classList.add('shadow-md');
+            } else {
+                document.getElementById('navbar').classList.remove('py-2');
+                document.getElementById('navbar').classList.remove('shadow-md');
+            }
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+                icon.classList.toggle('rotate-45');
+            });
+        });
+        
+        // Initialize Map
+        const map = L.map('map').setView([18.9442, 72.8231], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        // Add a marker to the map
+        const marker = L.marker([18.9442, 72.8231]).addTo(map);
+        marker.bindPopup("<b>Fylde Ship Management</b><br>301 Sea Shell, Marine Drive").openPopup();
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            
+            // Simulate form submission success
+            alert('Thank you for contacting us! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

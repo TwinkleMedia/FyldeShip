@@ -52,7 +52,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
+            background-color: var(--secondary);
             transition: width 0.3s ease;
         }
 
@@ -233,21 +233,21 @@
                     </div>
                     <div class="flex space-x-6">
                         <a href="mailto:fyldeship@gmail.com"
-                            class="text-light hover:text-accent transition-colors duration-300 flex items-center gap-2"
+                            class="text-white  transition-colors duration-300 flex items-center gap-2"
                             aria-label="Email">
                             <i class="fas fa-envelope"></i>
                             <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
                         </a>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                            <a href="#" class="text-white  transition-colors duration-300"
                                 aria-label="Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                            <a href="#" class="text-white  transition-colors duration-300"
                                 aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                            <a href="#" class="text-white  transition-colors duration-300"
                                 aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
@@ -277,16 +277,16 @@
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center space-x-1">
                         <a href="./index.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                            class="nav-link px-4 py-2 text-primary font-semibold relative  transition-colors duration-300">Home</a>
                         <a href="./about.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About
+                            class="nav-link px-4 py-2 text-primary font-semibold relative  transition-colors duration-300">About
                             Us</a>
                         <a href="#services"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Services</a>
+                            class="nav-link px-4 py-2 text-primary font-semibold relative  transition-colors duration-300">Services</a>
                         <a href="#gallery"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                            class="nav-link px-4 py-2 text-primary font-semibold relative  transition-colors duration-300">Gallery</a>
                         <a href="#blog"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-blue-50 transition-colors duration-300">Blog</a>
                         <a href="./contact.html"
                             class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
                             Us</a>
@@ -316,7 +316,7 @@
     </header>
 
     <!-- Hero Banner -->
-    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section class="relative h-[87vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <video class="w-full h-full object-cover" autoplay muted loop>
                 <source src="/api/placeholder/400/320" type="video/mp4">
@@ -339,14 +339,14 @@
                 Discover Our Story
             </a>
         </div>
-        <div class="hero-wave">
+        <!-- <div class="hero-wave">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">
                 <path
                     d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
                     class="fill-gray-50"></path>
             </svg>
-        </div>
+        </div> -->
     </section>
 
     <!-- Stats Section -->
@@ -436,10 +436,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2 relative">
+
+                <div class="lg:w-1/2 relative ">
                     <div
-                        class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white transform transition duration-500 hover:scale-105 floating">
-                        <img src="./asset/gif.gif" alt="Marine Team" class="w-full h-auto">
+                        class="relative z-10 rounded-2xl overflow-hidden  transform transition duration-500 hover:scale-105 floating">
+                        <img src="./asset/ship.webp" alt="Marine Team" class="w-full h-auto">
                     </div>
                     <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-yellow-400 rounded-full opacity-20 z-0">
                     </div>
@@ -589,110 +590,6 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Company Timeline -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 font-display mb-6">Our Journey</h2>
-                <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600">
-                    Since our beginning, we've been pioneering excellence in maritime services. Here's how our story
-                    unfolds.
-                </p>
-            </div>
-
-            <div class="relative max-w-4xl mx-auto">
-                <div class="timeline-connector hidden md:block"></div>
-
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item flex flex-col md:flex-row mb-16 relative" data-aos="fade-up">
-                    <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="w-full md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
-                        <div class="bg-blue-50 p-6 rounded-xl shadow-lg">
-                            <h3 class="text-2xl font-semibold text-blue-900 mb-2">2020</h3>
-                            <h4 class="text-xl text-yellow-600 font-medium mb-4">Company Founded</h4>
-                            <p class="text-gray-700">
-                                Fylde Ship was established with a vision to revolutionize maritime services through
-                                innovation and excellence.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 md:pl-16 md:mt-24"></div>
-                </div>
-
-                <!-- Timeline Item 2 (continued) -->
-                <div class="w-full md:w-1/2 md:pr-16 mb-8 md:mb-0"></div>
-                <div class="w-full md:w-1/2 md:pl-16">
-                    <div class="bg-blue-50 p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-blue-900 mb-2">2021</h3>
-                        <h4 class="text-xl text-yellow-600 font-medium mb-4">First Major Contract</h4>
-                        <p class="text-gray-700">
-                            Secured our first major maritime management contract, serving 5 vessels across international
-                            waters.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline Item 3 -->
-            <div class="timeline-item flex flex-col md:flex-row mb-16 relative" data-aos="fade-up" data-aos-delay="200">
-                <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div class="timeline-dot"></div>
-                </div>
-                <div class="w-full md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
-                    <div class="bg-blue-50 p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-blue-900 mb-2">2022</h3>
-                        <h4 class="text-xl text-yellow-600 font-medium mb-4">Global Expansion</h4>
-                        <p class="text-gray-700">
-                            Expanded operations to 10 countries, opening regional offices in Asia and Europe to better
-                            serve our growing international client base.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 md:pl-16 md:mt-24"></div>
-            </div>
-
-            <!-- Timeline Item 4 -->
-            <div class="timeline-item flex flex-col md:flex-row mb-16 relative" data-aos="fade-up" data-aos-delay="300">
-                <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div class="timeline-dot"></div>
-                </div>
-                <div class="w-full md:w-1/2 md:pr-16 mb-8 md:mb-0"></div>
-                <div class="w-full md:w-1/2 md:pl-16">
-                    <div class="bg-blue-50 p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-blue-900 mb-2">2023</h3>
-                        <h4 class="text-xl text-yellow-600 font-medium mb-4">Sustainability Initiative</h4>
-                        <p class="text-gray-700">
-                            Launched our "Blue Futures" program focused on sustainable maritime practices, reducing
-                            carbon footprint and protecting marine ecosystems.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline Item 5 -->
-            <div class="timeline-item flex flex-col md:flex-row relative" data-aos="fade-up" data-aos-delay="400">
-                <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div class="timeline-dot"></div>
-                </div>
-                <div class="w-full md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
-                    <div class="bg-blue-50 p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-semibold text-blue-900 mb-2">2024</h3>
-                        <h4 class="text-xl text-yellow-600 font-medium mb-4">Industry Recognition</h4>
-                        <p class="text-gray-700">
-                            Received the prestigious Maritime Excellence Award for our innovative approach to ship
-                            management and commitment to operational excellence.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 md:pl-16 md:mt-24"></div>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -873,104 +770,81 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Footer Top -->
+        <div class="container mx-auto px-4 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Company Info -->
                 <div>
-                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 mb-6">
-                    <p class="text-gray-400 mb-6">
-                        Providing innovative and reliable maritime solutions across global waters, setting the standard
-                        for excellence in the industry.
-                    </p>
+                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-16 mb-6">
+                    <p class="text-gray-400 mb-6">Fylde Ship Management provides innovative and cost-effective solutions for offshore and fleet operations. Our commitment to excellence ensures reliable maritime services.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
-                            <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
-
+                
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+                    <h4 class="text-white text-xl font-bold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="./index.html"
-                                class="text-gray-400 hover:text-white footer-link inline-block">Home</a></li>
-                        <li><a href="./about.html" class="text-gray-400 hover:text-white footer-link inline-block">About
-                                Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Services</a>
-                        </li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Gallery</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Blog</a></li>
-                        <li><a href="./contact.html"
-                                class="text-gray-400 hover:text-white footer-link inline-block">Contact</a></li>
+                        <li><a href="./index.html" class="text-gray-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li><a href="./about.html" class="text-gray-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition-colors duration-300">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-accent transition-colors duration-300">Blog</a></li>
+                        <li><a href="./contact.html" class="text-gray-400 hover:text-accent transition-colors duration-300">Contact Us</a></li>
                     </ul>
                 </div>
-
+                
                 <!-- Services -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-6">Our Services</h3>
+                    <h4 class="text-white text-xl font-bold mb-6">Our Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Ship
-                                Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Maritime
-                                Consulting</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Crew
-                                Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Technical
-                                Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Safety
-                                Training</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white footer-link inline-block">Environmental
-                                Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Technical Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Crew Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Vessel Chartering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Logistics Support</a></li>
                     </ul>
                 </div>
-
+                
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-6">Contact Us</h3>
+                    <h4 class="text-white text-xl font-bold mb-6">Contact Us</h4>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-yellow-500 mt-1"></i>
-                            <span class="text-gray-400">123 Maritime Ave, Docklands, London, UK</span>
+                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                            <span class="text-gray-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India - 400021</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-yellow-500"></i>
-                            <span class="text-gray-400">02231008314</span>
+                            <i class="fas fa-phone text-accent"></i>
+                            <span class="text-gray-400">+91 02231008314</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-yellow-500"></i>
-                            <span class="text-gray-400">fyldeship@gmail.com</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-clock text-yellow-500"></i>
-                            <span class="text-gray-400">Mon-Fri: 9:00 AM - 5:00 PM</span>
+                            <i class="fas fa-envelope text-accent"></i>
+                            <a href="mailto:fyldeship@gmail.com" class="text-gray-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
-
-            <div class="border-t border-gray-800 pt-8">
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-800">
+            <div class="container mx-auto px-4 lg:px-8 py-6">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
-                        &copy; 2025 Fylde Ship. All rights reserved.
-                    </p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Terms of
-                            Service</a>
-                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    <p class="text-gray-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                    <div class="mt-4 md:mt-0">
+                        <ul class="flex space-x-6">
+                            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Terms of Service</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

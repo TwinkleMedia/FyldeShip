@@ -121,7 +121,7 @@
                     </span>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="mailto:fyldeship@gmail.com" class="text-light hover:text-accent transition-colors duration-300 flex items-center gap-2" aria-label="Email">
+                    <a href="mailto:fyldeship@gmail.com" class="text-light transition-colors duration-300 flex items-center gap-2" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                         <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
                     </a>
@@ -160,9 +160,25 @@
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="./index.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
                     <a href="./about.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About Us</a>
-                    <a href="#services" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Services</a>
+                    <div class="relative group">
+                        <button class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300 flex items-center">
+                            Services
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                <a href="./Services/TechnicalManagement.html" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Technical Management</a>
+                                <a href="./Services/CrewManagement.html" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Crew Management</a>
+                                <a href="./Services/PlanApproval.html" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Plan Approval</a>
+                                <a href="./Services/Workshop.html" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Workshop</a>
+                                <a href="./Services/SparePartSupply.html" class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent" role="menuitem">Spare Part Supply</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#gallery" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
-                    <a href="#blog" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                    <a href="./Blog.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
                     <a href="./contact.html" class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact Us</a>
                 </div>
             </div>
@@ -172,7 +188,21 @@
                 <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
                     <a href="./index.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
                     <a href="./about.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
-                    <a href="#services" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Services</a>
+                    <div class="relative">
+                        <button id="mobile-services-btn" class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">
+                            Services
+                            <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                            <a href="#technical-management" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Technical Management</a>
+                            <a href="#crew-management" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Crew Management</a>
+                            <a href="#plan-approval" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Plan Approval</a>
+                            <a href="#workshop" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Workshop</a>
+                            <a href="#spare-part-supply" class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Spare Part Supply</a>
+                        </div>
+                    </div>
                     <a href="#gallery" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
                     <a href="#blog" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
                     <a href="./contact.html" class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact Us</a>
@@ -206,13 +236,13 @@
         </div>
         
         <!-- Wave Divider -->
-        <div class="wave-divider">
+        <!-- <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#ECF2FF">
                 <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
                 <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
                 <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
             </svg>
-        </div>
+        </div> -->
     </section>
     
     <!-- Features Section -->
@@ -329,9 +359,9 @@
                         <div class="w-full h-96 lg:h-[30rem] rounded-2xl overflow-hidden shadow-2xl">
                             <img src="./asset/img1.jpg" class="w-full h-full object-cover rounded-2xl" alt="Ship Image">
                         </div>
-                        <div class="absolute -bottom-6 -left-6 bg-accent text-white p-6 rounded-xl shadow-lg font-display">
-                            <div class="text-4xl font-bold">10+</div>
-                            <div class="uppercase tracking-wider">Years Experience</div>
+                        <div class="absolute -bottom-6 -left-6 bg-accent text-white p-6 rounded-xl shadow-lg ">
+                            <div class="text-xl font-bold">Professional</div>
+                            <div class="uppercase tracking-wider">Experts</div>
                         </div>
                     </div>
                 </div>
@@ -512,14 +542,14 @@
             </div>
         </div>
         
-        <!-- Wave Divider Bottom -->
+        <!-- Wave Divider Bottom
         <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#ECF2FF">
                 <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
                 <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
                 <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
             </svg>
-        </div>
+        </div> -->
     </section>
     
     <!-- Fleet Section -->
@@ -723,15 +753,15 @@
                     <h4 class="text-white text-xl font-bold mb-6">Contact Us</h4>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
                             <span class="text-gray-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India - 400021</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-accent"></i>
+                            <i class="fas fa-phone text-light"></i>
                             <span class="text-gray-400">+91 02231008314</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-accent"></i>
+                            <i class="fas fa-envelope text-light"></i>
                             <a href="mailto:fyldeship@gmail.com" class="text-gray-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
                         </li>
                     </ul>
@@ -812,6 +842,15 @@
                 behavior: 'smooth'
             });
         });
+
+        // for the drown down
+    document.getElementById('mobile-services-btn').addEventListener('click', function() {
+        const submenu = document.getElementById('mobile-services-menu');
+        const arrow = document.getElementById('mobile-services-arrow');
+        submenu.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    });
+
     </script>
 </body>
 </html>
