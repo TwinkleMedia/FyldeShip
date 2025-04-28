@@ -16,22 +16,22 @@
     <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                primary: '#0B2447',
-                secondary: '#19376D',
-                accent: '#0EA5E9',
-                light: '#ECF2FF',
-                dark: '#0F172A'
-            },
-            fontFamily: {
-                sans: ['Montserrat', 'sans-serif'],
-                display: ['Playfair Display', 'serif']
-            },
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B2447',
+                        secondary: '#19376D',
+                        accent: '#0EA5E9',
+                        light: '#ECF2FF',
+                        dark: '#0F172A'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    },
+                }
+            }
         }
-    }
-}
     </script>
 
 <style>
@@ -206,280 +206,293 @@
         width: 100%;
         left: 0;
     }
+    
+    /* Fix for mobile navbar overlap */
+    @media (max-width: 768px) {
+        .hero-content {
+            padding-top: 100px; /* Add extra padding for mobile */
+        }
+        
+        .hero-section {
+            min-height: 550px; /* Ensure minimum height for proper content display */
+        }
+    }
 </style>
 </head>
 <body>
     <body class="bg-light text-dark antialiased overflow-x-hidden">
         <!-- Header Section -->
-     <header class="relative z-50">
-         <!-- Top Bar -->
-         <div class="bg-blue-900 py-2">
-             <div class="container mx-auto px-4 lg:px-8">
-                 <div class="flex flex-wrap items-center justify-between">
-                     <div class="flex items-center text-white">
-                         <span class="flex items-center gap-3 text-light">
-                             <i class="fas fa-phone text-accent"></i>
-                             <span class="text-sm font-medium">+91 02231008314</span>
-                         </span>
-                     </div>
-                     <div class="flex space-x-6">
-                         <a href="mailto:fyldeship@gmail.com" class="text-light hover:text-accent transition-colors duration-300 flex items-center gap-2" aria-label="Email">
-                             <i class="fas fa-envelope"></i>
-                             <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
-                         </a>
-                         <div class="flex space-x-4">
-                             <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
-                                 <i class="fab fa-facebook-f"></i>
-                             </a>
-                             <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
-                                 <i class="fab fa-instagram"></i>
-                             </a>
-                             <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
-                                 <i class="fab fa-linkedin-in"></i>
-                             </a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         
-         <!-- Main Navbar -->
-         <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
-             <div class="container mx-auto px-4 lg:px-8">
-                 <div class="flex justify-between items-center py-4">
-                     <a href="./index.html" class="flex items-center">
-                         <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
-                     </a>
-                     
-                     <!-- Mobile menu button -->
-                     <button id="menu-toggle" class="lg:hidden focus:outline-none">
-                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                         </svg>
-                     </button>
-                     
-                     <!-- Desktop Navigation -->
-                     <div class="hidden lg:flex items-center space-x-1">
-                         <a href="./index.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
-                         <a href="./about.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About Us</a>
-                         <a href="#services" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Services</a>
-                         <a href="#gallery" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
-                         <a href="./Blog.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
-                         <a href="./contact.html" class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact Us</a>
-                     </div>
-                 </div>
-                 
-                 <!-- Mobile Navigation Menu -->
-                 <div id="mobile-menu" class="lg:hidden hidden">
-                     <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
-                         <a href="./index.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
-                         <a href="./about.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
-                         <a href="#services" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Services</a>
-                         <a href="#gallery" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
-                         <a href="#blog" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
-                         <a href="./contact.html" class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact Us</a>
-                     </div>
-                 </div>
-             </div>
-         </nav>
-     </header>
-
-    <!-- Hero Section with Ship Background -->
-    <section class="relative h-96 md:h-screen max-h-[700px] overflow-hidden" data-aos="fade">
-        <!-- Background image with overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="./asset/ship.webp" alt="Maritime Background" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>
-        </div>
-        
-        <!-- Hero Content -->
-        <div class="container mx-auto px-4 h-full relative z-10">
-            <div class="flex flex-col justify-center h-full max-w-4xl">
-                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight" data-aos="fade-up">
-                    <span class="text-accent">Connect</span> With Maritime Excellence
-                </h1>
-                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
-                    Ready to navigate toward success? Our team is standing by to provide world-class maritime solutions.
-                </p>
-                <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#contact-form" class="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-accent/20">
-                        <i class="fas fa-paper-plane"></i>
-                        Send a Message
-                    </a>
-                    <a href="#contact-info" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
-                        <i class="fas fa-phone-alt"></i>
-                        Contact Info
-                    </a>
+        <header class="relative z-50">
+            <!-- Top Bar -->
+            <div class="bg-blue-900 py-2">
+                <div class="container mx-auto px-4 lg:px-8">
+                    <div class="flex flex-wrap items-center justify-between">
+                        <div class="flex items-center text-white">
+                            <span class="flex items-center gap-3 text-light">
+                                <i class="fas fa-phone text-accent"></i>
+                                <span class="text-sm font-medium">+91 02231008314</span>
+                            </span>
+                        </div>
+                        <div class="flex space-x-6">
+                            <a href="mailto:fyldeship@gmail.com" class="text-light hover:text-accent transition-colors duration-300 flex items-center gap-2" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                                <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
+                            </a>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="text-light hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Wave Shape Divider -->
-        <div class="absolute bottom-0 left-0 w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
-                <path fill="#ffffff" fill-opacity="1" d="M0,300L48,294C96,288,192,276,288,266C384,256,480,248,576,254C672,260,768,280,864,286C960,292,1056,284,1152,276C1248,268,1344,260,1392,256L1440,252L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Contact Information Section -->
-    <section id="contact-info" class="py-20 bg-white" data-aos="fade-up">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-display font-bold text-primary mb-4">Get In Touch</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto">Our maritime experts are ready to assist you with all your shipping and management needs.</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Location Card -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-accent group info-card" data-aos="fade-up">
-                    <div class="shape-blob w-20 h-20 bg-accent/10 text-accent rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-primary">Our Location</h3>
-                    <p class="text-gray-600 mb-4">301 Sea Shell<br>123 Marine Drive<br>Mumbai, Maharashtra<br>India - 400021</p>
-                    <a href="#location-map" class="text-accent font-medium hover:text-primary transition inline-flex items-center gap-2">
-                        View on Map
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
-                
-                <!-- Contact Card -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-secondary group info-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="shape-blob w-20 h-20 bg-secondary/10 text-secondary rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-primary">Call Us</h3>
-                    <p class="text-gray-600 mb-4">Main Office: +91 02231008314<br>Support: +91 02231008315<br>Available 24/7 for emergencies</p>
-                    <a href="tel:+910223100831" class="text-secondary font-medium hover:text-primary transition inline-flex items-center gap-2">
-                        Call Now
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
-                
-                <!-- Email Card -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-primary group info-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="shape-blob w-20 h-20 bg-primary/10 text-primary rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-primary">Email Us</h3>
-                    <p class="text-gray-600 mb-4">General: fyldeship@gmail.com<br>Support: support@fyldeship.com<br>We respond within 24 hours</p>
-                    <a href="mailto:fyldeship@gmail.com" class="text-primary font-medium hover:text-accent transition inline-flex items-center gap-2">
-                        Email Now
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form & Map Section with Advanced Design -->
-    <section id="contact-form" class="py-20 relative bg-gradient-to-b from-white to-light">
-        <div class="absolute top-0 right-0 w-1/3 h-64 bg-accent/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-stretch">
-                    <!-- Contact Form with Stylish Design -->
-                    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col" data-aos="fade-right">
-                        <div class="bg-gradient-to-r from-primary to-secondary p-8">
-                            <h2 class="text-3xl font-display font-bold text-white mb-2">Send Us a Message</h2>
-                            <p class="text-white/80">We value your inquiry and will respond promptly</p>
-                        </div>
+            <!-- Main Navbar -->
+            <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
+                <div class="container mx-auto px-4 lg:px-8">
+                    <div class="flex justify-between items-center py-4">
+                        <a href="./index.html" class="flex items-center">
+                            <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                        </a>
                         
-                        <div class="p-8">
-                            <form class="space-y-6">
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    <div class="input-focus-effect">
-                                        <label class="block text-gray-700 font-medium mb-2" for="name">Full Name</label>
-                                        <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="John Doe">
-                                    </div>
-                                    <div class="input-focus-effect">
-                                        <label class="block text-gray-700 font-medium mb-2" for="email">Email Address</label>
-                                        <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="john@example.com">
-                                    </div>
-                                </div>
-                                
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    <div class="input-focus-effect">
-                                        <label class="block text-gray-700 font-medium mb-2" for="phone">Phone Number</label>
-                                        <input type="tel" id="phone" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="+1 (555) 123-4567">
-                                    </div>
-                                    <div class="input-focus-effect">
-                                        <label class="block text-gray-700 font-medium mb-2" for="subject">Subject</label>
-                                        <input type="text" id="subject" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="How can we help?">
-                                    </div>
-                                </div>
-                                
-                                <div class="input-focus-effect">
-                                    <label class="block text-gray-700 font-medium mb-2" for="message">Your Message</label>
-                                    <textarea id="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="Please provide details about your inquiry..."></textarea>
-                                </div>
-                                
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="newsletter" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
-                                    <label for="newsletter" class="ml-2 text-gray-700">Subscribe to our newsletter for maritime industry updates</label>
-                                </div>
-                                
-                                <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-8 rounded-lg hover:from-primary/90 hover:to-secondary/90 transition shadow-lg shadow-primary/20 transform hover:-translate-y-1 hover:shadow-xl flex items-center justify-center gap-3">
-                                    <i class="fas fa-paper-plane"></i>
-                                    Send Message
-                                </button>
-                            </form>
+                        <!-- Mobile menu button -->
+                        <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                        
+                        <!-- Desktop Navigation -->
+                        <div class="hidden lg:flex items-center space-x-1">
+                            <a href="./index.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                            <a href="./about.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About Us</a>
+                            <a href="#services" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Services</a>
+                            <a href="#gallery" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                            <a href="./Blog.html" class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                            <a href="./contact.html" class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact Us</a>
                         </div>
                     </div>
                     
-                    <!-- Map Section with Enhanced Design -->
-                    <div data-aos="fade-left">
-                        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden h-full flex flex-col">
-                            <div class="bg-gradient-to-r from-secondary to-primary p-8">
-                                <h2 class="text-3xl font-display font-bold text-white mb-2">Visit Our Office</h2>
-                                <p class="text-white/80">Find us at our Mumbai headquarters</p>
+                    <!-- Mobile Navigation Menu -->
+                    <div id="mobile-menu" class="lg:hidden hidden">
+                        <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                            <a href="./index.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
+                            <a href="./about.html" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
+                            <a href="#services" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Services</a>
+                            <a href="#gallery" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
+                            <a href="#blog" class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
+                            <a href="./contact.html" class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section with Ship Background - FIXED MOBILE PADDING -->
+        <section class="relative hero-section min-h-[450px] md:h-screen max-h-[700px] overflow-hidden" data-aos="fade">
+            <!-- Background image with overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="./asset/ship.webp" alt="Maritime Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>
+            </div>
+            
+            <!-- Hero Content - Added padding-top for mobile -->
+            <div class="container mx-auto px-4 h-full relative z-10">
+                <div class="flex flex-col justify-center h-full max-w-4xl hero-content pt-24 md:pt-0">
+                    <h1 class="text-4xl md:text-7xl font-display font-bold text-white mb-6 leading-tight" data-aos="fade-up">
+                        <span class="text-accent">Connect</span> With Maritime Excellence
+                    </h1>
+                    <p class="text-lg md:text-2xl text-white/90 mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+                        Ready to navigate toward success? Our team is standing by to provide world-class maritime solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#contact-form" class="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-accent/20">
+                            <i class="fas fa-paper-plane"></i>
+                            Send a Message
+                        </a>
+                        <a href="#contact-info" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                            <i class="fas fa-phone-alt"></i>
+                            Contact Info
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wave Shape Divider -->
+            <div class="absolute bottom-0 left-0 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,300L48,294C96,288,192,276,288,266C384,256,480,248,576,254C672,260,768,280,864,286C960,292,1056,284,1152,276C1248,268,1344,260,1392,256L1440,252L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section id="contact-info" class="py-20 bg-white" data-aos="fade-up">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-display font-bold text-primary mb-4">Get In Touch</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Our maritime experts are ready to assist you with all your shipping and management needs.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Location Card -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-accent group info-card" data-aos="fade-up">
+                        <div class="shape-blob w-20 h-20 bg-accent/10 text-accent rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Our Location</h3>
+                        <p class="text-gray-600 mb-4">301 Sea Shell<br>123 Marine Drive<br>Mumbai, Maharashtra<br>India - 400021</p>
+                        <a href="#location-map" class="text-accent font-medium hover:text-primary transition inline-flex items-center gap-2">
+                            View on Map
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Card -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-secondary group info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="shape-blob w-20 h-20 bg-secondary/10 text-secondary rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Call Us</h3>
+                        <p class="text-gray-600 mb-4">Main Office: +91 02231008314<br>Support: +91 02231008315<br>Available 24/7 for emergencies</p>
+                        <a href="tel:+910223100831" class="text-secondary font-medium hover:text-primary transition inline-flex items-center gap-2">
+                            Call Now
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Email Card -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-primary group info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="shape-blob w-20 h-20 bg-primary/10 text-primary rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Email Us</h3>
+                        <p class="text-gray-600 mb-4">General: fyldeship@gmail.com<br>Support: support@fyldeship.com<br>We respond within 24 hours</p>
+                        <a href="mailto:fyldeship@gmail.com" class="text-primary font-medium hover:text-accent transition inline-flex items-center gap-2">
+                            Email Now
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rest of your code remains the same -->
+        <!-- Contact Form & Map Section with Advanced Design -->
+        <section id="contact-form" class="py-20 relative bg-gradient-to-b from-white to-light">
+            <div class="absolute top-0 right-0 w-1/3 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                        <!-- Contact Form with Stylish Design -->
+                        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col" data-aos="fade-right">
+                            <div class="bg-gradient-to-r from-primary to-secondary p-8">
+                                <h2 class="text-3xl font-display font-bold text-white mb-2">Send Us a Message</h2>
+                                <p class="text-white/80">We value your inquiry and will respond promptly</p>
                             </div>
                             
-                            <div class="flex-grow relative" id="location-map">
-                                <!-- Google Map iframe -->
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127674.18625098077!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c30d1db88649%3A0x1924f2317c91d723!2sTwinkle%20Media%20Hub%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1743674105491!5m2!1sen!2sin" 
-                                    class="w-full h-full min-h-[300px]" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
+                            <div class="p-8">
+                                <form class="space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="input-focus-effect">
+                                            <label class="block text-gray-700 font-medium mb-2" for="name">Full Name</label>
+                                            <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="John Doe">
+                                        </div>
+                                        <div class="input-focus-effect">
+                                            <label class="block text-gray-700 font-medium mb-2" for="email">Email Address</label>
+                                            <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="john@example.com">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="input-focus-effect">
+                                            <label class="block text-gray-700 font-medium mb-2" for="phone">Phone Number</label>
+                                            <input type="tel" id="phone" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="+1 (555) 123-4567">
+                                        </div>
+                                        <div class="input-focus-effect">
+                                            <label class="block text-gray-700 font-medium mb-2" for="subject">Subject</label>
+                                            <input type="text" id="subject" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="How can we help?">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="input-focus-effect">
+                                        <label class="block text-gray-700 font-medium mb-2" for="message">Your Message</label>
+                                        <textarea id="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="Please provide details about your inquiry..."></textarea>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="newsletter" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
+                                        <label for="newsletter" class="ml-2 text-gray-700">Subscribe to our newsletter for maritime industry updates</label>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-8 rounded-lg hover:from-primary/90 hover:to-secondary/90 transition shadow-lg shadow-primary/20 transform hover:-translate-y-1 hover:shadow-xl flex items-center justify-center gap-3">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Map Section with Enhanced Design -->
+                        <div data-aos="fade-left">
+                            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden h-full flex flex-col">
+                                <div class="bg-gradient-to-r from-secondary to-primary p-8">
+                                    <h2 class="text-3xl font-display font-bold text-white mb-2">Visit Our Office</h2>
+                                    <p class="text-white/80">Find us at our Mumbai headquarters</p>
+                                </div>
                                 
-                                <!-- Map Info Card -->
-                                <div class="absolute top-4 left-4 bg-white rounded-xl p-4 shadow-xl max-w-xs">
-                                    <h3 class="font-bold text-primary text-lg mb-1">Fylde Ship Management HQ</h3>
-                                    <p class="text-gray-600 text-sm mb-3">301 Sea Shell, 123 Marine Drive<br>Mumbai, Maharashtra, India</p>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full hover:bg-accent hover:text-white transition">Get Directions</a>
-                                        <a href="tel:+910223100831" class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full hover:bg-primary hover:text-white transition"><i class="fas fa-phone-alt mr-1"></i> Call</a>
+                                <div class="flex-grow relative" id="location-map">
+                                    <!-- Google Map iframe -->
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127674.18625098077!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c30d1db88649%3A0x1924f2317c91d723!2sTwinkle%20Media%20Hub%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1743674105491!5m2!1sen!2sin" 
+                                        class="w-full h-full min-h-[300px]" 
+                                        style="border:0;" 
+                                        allowfullscreen="" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                    
+                                    <!-- Map Info Card -->
+                                    <div class="absolute top-4 left-4 bg-white rounded-xl p-4 shadow-xl max-w-xs">
+                                        <h3 class="font-bold text-primary text-lg mb-1">Fylde Ship Management HQ</h3>
+                                        <p class="text-gray-600 text-sm mb-3">301 Sea Shell, 123 Marine Drive<br>Mumbai, Maharashtra, India</p>
+                                        <div class="flex justify-between items-center">
+                                            <a href="#" class="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full hover:bg-accent hover:text-white transition">Get Directions</a>
+                                            <a href="tel:+910223100831" class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full hover:bg-primary hover:text-white transition"><i class="fas fa-phone-alt mr-1"></i> Call</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Office Hours -->
-                            <div class="p-6 bg-light">
-                                <h3 class="font-bold text-primary mb-3 flex items-center gap-2">
-                                    <i class="far fa-clock text-accent"></i>
-                                    Office Hours
-                                </h3>
-                                <div class="grid grid-cols-2 gap-2 text-sm">
-                                    <div class="flex justify-between">
-                                        <span class="text-gray-600">Monday - Friday:</span>
-                                        <span class="font-medium">9:00 AM - 6:00 PM</span>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <span class="text-gray-600">Saturday:</span>
-                                        <span class="font-medium">10:00 AM - 2:00 PM</span>
-                                    </div>
-                                    <div class="col-span-2 mt-2">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-gray-600">Emergency Support:</span>
-                                            <span class="font-medium text-green-600">24/7 Available</span>
+                                
+                                <!-- Office Hours -->
+                                <div class="p-6 bg-light">
+                                    <h3 class="font-bold text-primary mb-3 flex items-center gap-2">
+                                        <i class="far fa-clock text-accent"></i>
+                                        Office Hours
+                                    </h3>
+                                    <div class="grid grid-cols-2 gap-2 text-sm">
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-600">Monday - Friday:</span>
+                                            <span class="font-medium">9:00 AM - 6:00 PM</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-600">Saturday:</span>
+                                            <span class="font-medium">10:00 AM - 2:00 PM</span>
+                                        </div>
+                                        <div class="col-span-2 mt-2">
+                                            <div class="flex justify-between items-center">
+                                                <span class="text-gray-600">Emergency Support:</span>
+                                                <span class="font-medium text-green-600">24/7 Available</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -488,111 +501,131 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Business Partners Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-display font-bold text-primary mb-4" data-aos="fade-up">Our Trusted Partners</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">We collaborate with industry leaders to provide the highest quality maritime services</p>
+        <!-- Business Partners Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-display font-bold text-primary mb-4" data-aos="fade-up">Our Trusted Partners</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">We collaborate with industry leaders to provide the highest quality maritime services</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center max-w-5xl mx-auto">
+                    <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up">
+                        <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
+                    </div>
+                    <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
+                    </div>
+                    <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
+                    </div>
+                    <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
+                    </div>
+                </div>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center max-w-5xl mx-auto">
-                <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up">
-                    <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
-                </div>
-                <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
-                </div>
-                <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
-                </div>
-                <div class="p-6 grayscale hover:grayscale-0 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <img src="/api/placeholder/180/80" alt="Partner Logo" class="max-h-16">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-light">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-display font-bold text-primary mb-4" data-aos="fade-up">Frequently Asked Questions</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Find answers to common questions about our maritime services and operations</p>
-            </div>
-            
-            <div class="max-w-3xl mx-auto">
-                <!-- FAQ Item 1 -->
-                <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
-                    <button class="faq-toggle w-full text-left p-6 font-bold text-primary text-lg flex justify-between items-center">
-                        <span>What shipping management services do you provide?</span>
-                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">We offer comprehensive shipping management services including crew management, technical management, commercial management, and full vessel operations. Our expertise covers all aspects of maritime operations to ensure safe, efficient, and compliant shipping practices.</p>
+        <!-- FAQ Section -->
+        <section class="py-20 bg-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-display font-bold text-primary mb-4" data-aos="fade-up">Frequently Asked Questions</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Find answers to common questions about our services and operations</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- FAQ Item 1 -->
+                    <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-bold text-primary">What services does Fylde Ship Management offer?</h3>
+                            <span class="faq-icon text-accent text-xl"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-600">Fylde Ship Management offers a comprehensive range of maritime services including ship management, crew management, technical management, and maritime consultancy. We provide end-to-end solutions for vessel operations, ensuring compliance with international regulations and optimal performance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-bold text-primary">How quickly can you respond to emergency situations?</h3>
+                            <span class="faq-icon text-accent text-xl"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-600">We maintain a 24/7 emergency response team that can be mobilized immediately. Our crisis management protocols ensure rapid response times, typically within minutes of notification. Our global network of partners allows us to provide on-the-ground support virtually anywhere in the world.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-bold text-primary">What makes Fylde Ship Management different from other providers?</h3>
+                            <span class="faq-icon text-accent text-xl"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-600">Fylde Ship Management combines decades of maritime expertise with innovative technology solutions. Our personalized approach means each client receives tailored services that meet their specific needs. We pride ourselves on transparency, reliability, and maintaining the highest standards of safety and compliance in the industry.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-bold text-primary">Do you provide services for all types of vessels?</h3>
+                            <span class="faq-icon text-accent text-xl"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-600">Yes, we have experience managing a diverse fleet including container ships, bulk carriers, tankers, offshore support vessels, passenger ships, and specialized vessels. Our team has the expertise to handle the unique requirements of each vessel type and can adapt our services to fit your specific maritime assets.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-bold text-primary">How do I request a quote for your services?</h3>
+                            <span class="faq-icon text-accent text-xl"><i class="fas fa-plus"></i></span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-600">You can request a quote by filling out the contact form on this page, calling our office directly, or sending an email to fyldeship@gmail.com. Please provide details about your requirements and fleet information, and our team will get back to you within 24 hours with a customized proposal.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- FAQ Item 2 -->
-                <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <button class="faq-toggle w-full text-left p-6 font-bold text-primary text-lg flex justify-between items-center">
-                        <span>How do I request a quote for your services?</span>
-                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">You can request a quote by filling out our contact form above, calling our office directly, or sending an email to fyldeship@gmail.com. Please provide details about your specific requirements so we can prepare an accurate and competitive quote for you.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 3 -->
-                <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <button class="faq-toggle w-full text-left p-6 font-bold text-primary text-lg flex justify-between items-center">
-                        <span>Do you provide emergency support services?</span>
-                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">Yes, we provide 24/7 emergency support services for all our clients. Our dedicated team is available round-the-clock to address any urgent situations, provide technical assistance, or coordinate emergency responses as needed.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <button class="faq-toggle w-full text-left p-6 font-bold text-primary text-lg flex justify-between items-center">
-                        <span>What areas do your services cover?</span>
-                        <i class="fas fa-chevron-down text-accent transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">Our services cover global shipping routes and operations. We have expertise in managing vessels operating in various regions including Asia, Europe, Middle East, and the Americas. Our international network allows us to provide consistent service quality worldwide.</p>
-                    </div>
+                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="500">
+                    <p class="mb-6 text-gray-600">Still have questions? Contact our team directly</p>
+                    <a href="#contact-form" class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-secondary transition-colors duration-300">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get in Touch
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-display font-bold mb-6" data-aos="fade-up">Ready to Navigate Toward Success?</h2>
-            <p class="text-xl text-white/80 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
-                Partner with Fylde Ship Management for world-class maritime solutions that deliver results. Our team is ready to assist you with all your shipping needs.
-            </p>
-            <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-                <a href="#contact-form" class="bg-white text-primary hover:bg-light hover:shadow-lg font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
-                    <i class="fas fa-paper-plane"></i>
-                    Contact Us Today
-                </a>
-                <a href="tel:+910223100831" class="bg-transparent border-2 border-white/50 hover:border-white hover:bg-white/10 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
-                    <i class="fas fa-phone-alt"></i>
-                    Call Now
-                </a>
+        <!-- Call to Action Section -->
+        <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl font-display font-bold mb-6" data-aos="fade-up">Ready to Navigate Success Together?</h2>
+                    <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                        Join the growing network of maritime partners who trust Fylde Ship Management for excellence in ship operations and management.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#contact-form" class="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-black/20">
+                            <i class="fas fa-life-ring"></i>
+                            Start Your Journey
+                        </a>
+                        <a href="tel:+910223100831" class="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-lg transition-all duration-300 inline-flex items-center gap-2">
+                            <i class="fas fa-phone-alt"></i>
+                            Call Us Now
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-light">
