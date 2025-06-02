@@ -20,235 +20,235 @@
 
 
     <!-- Replace the existing Tailwind script in the head with this: -->
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    primary: '#0B2447',
-                    secondary: '#19376D',
-                    accent: '#0EA5E9',
-                    light: '#ECF2FF',
-                    dark: '#0F172A'
-                },
-                fontFamily: {
-                    sans: ['Montserrat', 'sans-serif'],
-                    display: ['Playfair Display', 'serif']
-                },
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B2447',
+                        secondary: '#19376D',
+                        accent: '#0EA5E9',
+                        light: '#ECF2FF',
+                        dark: '#0F172A'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    },
+                }
             }
         }
-    }
-</script>
+    </script>
 
-<style>
-    body {
-        scroll-behavior: smooth;
-    }
-
-    .hero-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .gradient-overlay {
-        background: linear-gradient(180deg, rgba(11, 36, 71, 0.3) 0%, rgba(11, 36, 71, 0.9) 100%);
-    }
-
-    .nav-link {
-        position: relative;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background-color: #0EA5E9;
-        bottom: -4px;
-        left: 0;
-        transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after {
-        width: 100%;
-    }
-
-    .glass-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .wave-divider {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-    }
-
-    .wave-divider svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 90px;
-    }
-
-    .custom-shape-divider svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 150px;
-    }
-
-    /* Add any additional custom styles that aren't covered by Tailwind */
-    .stat-card {
-        transition: all 0.3s ease;
-        border-bottom: 3px solid transparent;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-5px);
-        border-bottom: 3px solid #0EA5E9;
-    }
-
-    .team-card {
-        overflow: hidden;
-        transition: all 0.4s ease;
-    }
-
-    .team-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .team-card:hover .team-image {
-        transform: scale(1.1);
-    }
-
-    .team-image {
-        transition: all 0.7s ease;
-    }
-
-    .team-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(11, 36, 71, 0.9), transparent);
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
-
-    .team-card:hover .team-overlay {
-        opacity: 1;
-    }
-
-    .team-social {
-        transform: translateY(20px);
-        opacity: 0;
-        transition: all 0.3s ease;
-        transition-delay: 0.1s;
-    }
-
-    .team-card:hover .team-social {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .value-card {
-        transition: all 0.3s ease;
-        border-left: 0px solid orange;
-    }
-
-    .value-card:hover {
-        transform: translateY(-5px);
-        border-left: 5px solid orange;
-    }
-
-    .value-icon {
-        transition: all 0.3s ease;
-    }
-
-    .value-card:hover .value-icon {
-        transform: rotate(15deg) scale(1.1);
-        color: orange;
-    }
-
-    .timeline-connector {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 100%;
-        background-color: #19376D;
-        z-index: -1;
-    }
-
-    .timeline-dot {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: #0EA5E9;
-        z-index: 1;
-    }
-
-    .timeline-item {
-        transition: all 0.3s ease;
-    }
-
-    .timeline-item:hover {
-        transform: scale(1.02);
-    }
-
-    .scroll-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 99;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .scroll-btn.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    @keyframes float {
-        0% {
-            transform: translateY(0px);
+    <style>
+        body {
+            scroll-behavior: smooth;
         }
 
-        50% {
-            transform: translateY(-20px);
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        100% {
-            transform: translateY(0px);
+        .gradient-overlay {
+            background: linear-gradient(180deg, rgba(11, 36, 71, 0.3) 0%, rgba(11, 36, 71, 0.9) 100%);
         }
-    }
 
-    .floating {
-        animation: float 4s ease-in-out infinite;
-    }
+        .nav-link {
+            position: relative;
+        }
 
-    .footer-link {
-        transition: all 0.3s ease;
-    }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #0EA5E9;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
 
-    .footer-link:hover {
-        transform: translateX(5px);
-    }
-</style>
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 90px;
+        }
+
+        .custom-shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+
+        /* Add any additional custom styles that aren't covered by Tailwind */
+        .stat-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid #0EA5E9;
+        }
+
+        .team-card {
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-card:hover .team-image {
+            transform: scale(1.1);
+        }
+
+        .team-image {
+            transition: all 0.7s ease;
+        }
+
+        .team-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11, 36, 71, 0.9), transparent);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .team-overlay {
+            opacity: 1;
+        }
+
+        .team-social {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            transition-delay: 0.1s;
+        }
+
+        .team-card:hover .team-social {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .value-card {
+            transition: all 0.3s ease;
+            border-left: 0px solid orange;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-left: 5px solid orange;
+        }
+
+        .value-icon {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: rotate(15deg) scale(1.1);
+            color: orange;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #19376D;
+            z-index: -1;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #0EA5E9;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.02);
+        }
+
+        .scroll-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-btn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .footer-link {
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            transform: translateX(5px);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -287,152 +287,143 @@
             </div>
         </div>
 
-              <!-- Main Navbar -->
-              <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
-                <div class="container mx-auto px-4 lg:px-8">
-                    <div class="flex justify-between items-center py-4">
-                        <a href="./index.html" class="flex items-center">
-                            <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
-                        </a>
-    
-                        <!-- Mobile menu button -->
-                        <button id="menu-toggle" class="lg:hidden focus:outline-none">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-    
-                        <!-- Desktop Navigation -->
-                        <div class="hidden lg:flex items-center space-x-1">
-                            <a href="./index.html"
-                                class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
-                            <a href="./about.html"
-                                class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About
-                                Us</a>
-                            <div class="relative group">
-                                <button
-                                    class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300 flex items-center">
-                                    Services
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <div
-                                    class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-                                    <div class="py-1" role="menu" aria-orientation="vertical">
-                                        <a href="./Services/TechnicalManagement.html"
-                                            class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
-                                            role="menuitem">Technical Management</a>
-                                        <a href="./Services/CrewManagement.html"
-                                            class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
-                                            role="menuitem">Crew Management</a>
-                                        <a href="./Services/PlanApproval.html"
-                                            class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
-                                            role="menuitem">Microscopic Eye</a>
-                                        <a href="./Services/Workshop.html"
-                                            class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
-                                            role="menuitem">E-Platform</a>
-                                        <a href="./Services/SparePartSupply.html"
-                                            class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
-                                            role="menuitem">Chatering</a>
-                                    </div>
+        <!-- Main Navbar -->
+        <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <a href="./index.html" class="flex items-center">
+                        <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                    </a>
+
+                    <!-- Mobile menu button -->
+                    <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center space-x-1">
+                        <a href="./index.html"
+                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                        <a href="./about.html"
+                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About
+                            Us</a>
+                        <div class="relative group">
+                            <button
+                                class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300 flex items-center">
+                                Services
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                                <div class="py-1" role="menu" aria-orientation="vertical">
+                                    <a href="./Services/TechnicalManagement.html"
+                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        role="menuitem">Technical Management</a>
+                                    <a href="./Services/CrewManagement.html"
+                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        role="menuitem">Crew Management</a>
+                                    <a href="./Services/PlanApproval.html"
+                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        role="menuitem">Microscopic Eye</a>
+                                    <a href="./Services/Workshop.html"
+                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        role="menuitem">E-Platform</a>
+                                    <a href="./Services/SparePartSupply.html"
+                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        role="menuitem">Chatering</a>
                                 </div>
                             </div>
-                            <a href="#gallery"
-                                class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
-                            <a href="./Blog.html"
-                                class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
-                            <a href="./contact.html"
-                                class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
-                                Us</a>
                         </div>
-                    </div>
-    
-                    <!-- Mobile Navigation Menu -->
-                    <div id="mobile-menu" class="lg:hidden hidden">
-                        <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
-                            <a href="./index.html"
-                                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
-                            <a href="./about.html"
-                                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
-                            <div class="relative">
-                                <button id="mobile-services-btn"
-                                    class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">
-                                    Services
-                                    <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
-                                    <a href="#technical-management"
-                                        class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Technical
-                                        Management</a>
-                                    <a href="#crew-management"
-                                        class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Crew
-                                        Management</a>
-                                    <a href="#plan-approval"
-                                        class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Plan
-                                        Approval</a>
-                                    <a href="#workshop"
-                                        class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Workshop</a>
-                                    <a href="#spare-part-supply"
-                                        class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Spare Part
-                                        Supply</a>
-                                </div>
-                            </div>
-                            <a href="#gallery"
-                                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
-                            <a href="#blog"
-                                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
-                            <a href="./contact.html"
-                                class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact
-                                Us</a>
-                        </div>
+                        <a href="#gallery"
+                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                        <a href="./Blog.html"
+                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                        <a href="./contact.html"
+                            class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
+                            Us</a>
                     </div>
                 </div>
-            </nav>
-        </header>
+
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu" class="lg:hidden hidden">
+                    <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                        <a href="./index.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
+                        <a href="./about.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
+                        <div class="relative">
+                            <button id="mobile-services-btn"
+                                class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">
+                                Services
+                                <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                                <a href="#technical-management"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Technical
+                                    Management</a>
+                                <a href="#crew-management"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Crew
+                                    Management</a>
+                                <a href="#plan-approval"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Plan
+                                    Approval</a>
+                                <a href="#workshop"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Workshop</a>
+                                <a href="#spare-part-supply"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Spare Part
+                                    Supply</a>
+                            </div>
+                        </div>
+                        <a href="#gallery"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
+                        <a href="#blog"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Blog</a>
+                        <a href="./contact.html"
+                            class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact
+                            Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Banner -->
-    <section class="relative h-[87vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <video class="w-full h-full object-cover" autoplay muted loop>
-                <source src="/api/placeholder/400/320" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 gradient-overlay"></div>
-        </div>
-        <div class="container mx-auto px-4 md:px-8 relative z-10 text-center">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-display mb-6" data-aos="fade-up">
-                Navigating <span class="text-yellow-400">Excellence</span> in Maritime
-            </h1>
-            <div class="h-1 w-32 bg-yellow-400 mx-auto mb-8" data-aos="fade-up" data-aos-delay="100"></div>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-100 mb-10" data-aos="fade-up"
-                data-aos-delay="200">
-                Discover the Fylde Ship story and our unwavering commitment to excellence in maritime services since our
-                inception
-            </p>
-            <a href="#about-content"
-                class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-                data-aos="fade-up" data-aos-delay="300">
-                Discover Our Story
-            </a>
-        </div>
-        <!-- <div class="hero-wave">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="fill-gray-50"></path>
-            </svg>
-        </div> -->
-    </section>
+<section class="relative h-[87vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover" src="./asset/ship.webp" alt="Background Image">
+        <div class="absolute inset-0 gradient-overlay"></div>
+    </div>
+    <div class="container mx-auto px-4 md:px-8 relative z-10 text-center">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-display mb-6" data-aos="fade-up">
+            Navigating <span class="text-yellow-400">Excellence</span> in Maritime
+        </h1>
+        <div class="h-1 w-32 bg-yellow-400 mx-auto mb-8" data-aos="fade-up" data-aos-delay="100"></div>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-100 mb-10" data-aos="fade-up"
+            data-aos-delay="200">
+            Discover the Fylde Ship story and our unwavering commitment to excellence in maritime services since our
+            inception
+        </p>
+        <a href="#about-content"
+            class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+            data-aos="fade-up" data-aos-delay="300">
+            Discover Our Story
+        </a>
+    </div>
+</section>
+
 
     <!-- Stats Section -->
     <section class="py-16 bg-gray-50">
@@ -444,7 +435,7 @@
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-ship text-5xl"></i>
                     </div>
-                    <h3 class="text-4xl font-bold text-gray-800 mb-2">25+</h3>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2">+7</h3>
                     <p class="text-gray-600 font-medium">Vessels Managed</p>
                 </div>
 
@@ -454,7 +445,7 @@
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-globe-americas text-5xl"></i>
                     </div>
-                    <h3 class="text-4xl font-bold text-gray-800 mb-2">15+</h3>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2">12+</h3>
                     <p class="text-gray-600 font-medium">Countries Served</p>
                 </div>
 
@@ -474,7 +465,7 @@
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-calendar-check text-5xl"></i>
                     </div>
-                    <h3 class="text-4xl font-bold text-gray-800 mb-2">99.8%</h3>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2">97.8%</h3>
                     <p class="text-gray-600 font-medium">On-Time Performance</p>
                 </div>
             </div>
@@ -583,215 +574,150 @@
         </div>
     </section>
 
-    <!-- Mission & Values -->
-    <section class="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
+
+    <!-- Principles Section -->
+    <section class="py-20 section-bg relative">
+        <!-- Floating Background Shapes -->
+        <!-- <div class="floating-shapes">
+            <div class="shape w-32 h-32 bg-blue-300 rounded-full"></div>
+            <div class="shape w-24 h-24 bg-yellow-300 rounded-full"></div>
+            <div class="shape w-40 h-40 bg-blue-200 rounded-full"></div>
+        </div> -->
+
         <div class="container mx-auto px-4 md:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 font-display mb-6">Our Core Values</h2>
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text font-display mb-6">Our Core Principles</h2>
                 <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600">
-                    At Fylde Ship, we are guided by strong values that define our approach and commitment to excellence
-                    in all we do.
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    At Fylde Ship Management, our principles guide every decision we make and every service we provide. 
+                    These fundamental values ensure excellence in maritime operations and lasting partnerships.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Value 1 -->
-                <div class="value-card bg-white rounded-xl shadow-xl p-8 transform transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-blue-600 mb-6">
-                        <i class="fas fa-ship text-5xl value-icon"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">Maritime Excellence</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We strive for excellence in every aspect of our maritime operations, ensuring safety,
-                        efficiency, and innovation in everything we do. Our commitment to the highest standards drives
-                        our success.
-                    </p>
-                </div>
-
-                <!-- Value 2 -->
-                <div class="value-card bg-white rounded-xl shadow-xl p-8 transform transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-blue-600 mb-6">
-                        <i class="fas fa-leaf text-5xl value-icon"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">Environmental Stewardship</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We are committed to protecting the marine environment through sustainable practices and
-                        responsible operations. We believe in leaving a positive footprint on our oceans for generations
-                        to come.
-                    </p>
-                </div>
-
-                <!-- Value 3 -->
-                <div class="value-card bg-white rounded-xl shadow-xl p-8 transform transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-blue-600 mb-6">
-                        <i class="fas fa-users text-5xl value-icon"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">Customer Partnership</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We build lasting partnerships with our clients based on trust, transparency, and exceptional
-                        service. Your success is our success, and we're committed to exceeding your expectations.
-                    </p>
-                </div>
-
-                <!-- Value 4 -->
-                <div class="value-card bg-white rounded-xl shadow-xl p-8 transform transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-blue-600 mb-6">
-                        <i class="fas fa-cogs text-5xl value-icon"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">Innovative Solutions</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We embrace innovation and continuously seek better ways to serve our clients. By leveraging
-                        cutting-edge technology and creative thinking, we stay ahead in the maritime industry.
-                    </p>
-                </div>
-
-                <!-- Value 5 -->
-                <div class="value-card bg-white rounded-xl shadow-xl p-8 transform transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-blue-600 mb-6">
-                        <i class="fas fa-shield-alt text-5xl value-icon"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">Safety First</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Safety is our highest priority. We maintain rigorous safety standards in all operations,
-                        ensuring the well-being of our team, clients, and the environment we operate in.
-                    </p>
-                </div>
-
-                <!-- Value 6 -->
-                <div class="value-card bg-white rounded-xl shadow-xl p-8 transform transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="600">
-                    <div class="text-blue-600 mb-6">
-                        <i class="fas fa-globe text-5xl value-icon"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-blue-900 mb-4">Global Perspective</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        With a global network and international outlook, we bridge maritime challenges across
-                        continents. Our worldwide expertise allows us to provide solutions that transcend geographical
-                        boundaries.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 font-display mb-6">Meet Our Leadership</h2>
-                <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600">
-                    Our experienced leadership team combines decades of maritime expertise with innovative thinking to
-                    drive our success.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Team Member 1 -->
-                <div class="team-card rounded-xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative">
-                        <div class="aspect-w-3 aspect-h-4 overflow-hidden">
-                            <img src="./asset/ceo.avif" alt="CEO Portrait"
-                                class="team-image w-full h-full object-cover">
-                        </div>
-                        <div class="team-overlay flex items-end p-6">
-                            <div class="team-social w-full flex justify-center space-x-4">
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fab fa-linkedin text-xl"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fab fa-twitter text-xl"></i>
-                                </a>
-                            </div>
+            <!-- Principles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Principle 1: Trusted & Transparent Communication -->
+                <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="principle-counter">1</div>
+                    <div class="principle-icon-wrapper mb-6">
+                        <div class="principle-icon bg-gradient-to-br from-blue-400 to-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fas fa-handshake"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-1">Emily Roberts</h3>
-                        <p class="text-yellow-600 font-medium mb-4">Chief Executive Officer</p>
-                        <p class="text-gray-600">
-                            With over 20 years in maritime operations, Emily's strategic vision drives our company's
-                            success and innovation.
-                        </p>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Trusted & Transparent Communication</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        We are a trusted transparent ship management company with communication as our prime devotion, ensuring safety of vessel and its crew through open and honest dialogue.
+                    </p>
+                    <div class="principle-highlight">
+                        <div class="flex items-center text-blue-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Open communication channels</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Team Member 2 -->
-                <div class="team-card rounded-xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative">
-                        <div class="aspect-w-3 aspect-h-4 overflow-hidden">
-                            <img src="./asset/coo.jpg" alt="COO Portrait" class="team-image w-full h-full object-cover">
-                        </div>
-                        <div class="team-overlay flex items-end p-6">
-                            <div class="team-social w-full flex justify-center space-x-4">
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fab fa-linkedin text-xl"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fab fa-twitter text-xl"></i>
-                                </a>
-                            </div>
+                <!-- Principle 2: Qualified Crew & Comprehensive Management -->
+                <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="principle-counter">2</div>
+                    <div class="principle-icon-wrapper mb-6">
+                        <div class="principle-icon bg-gradient-to-br from-green-400 to-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fas fa-users"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-1">Michael Chen</h3>
-                        <p class="text-yellow-600 font-medium mb-4">Chief Operations Officer</p>
-                        <p class="text-gray-600">
-                            Michael's expertise in fleet management ensures our operations run efficiently across global
-                            waters.
-                        </p>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Qualified Crew & Comprehensive Management</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Equipped with proper training and experienced crew bench support, we provide quality management for diversified fleets including Offshore, Tankers, and Dry/Bulk vessels.
+                    </p>
+                    <div class="principle-highlight">
+                        <div class="flex items-center text-green-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Expert crew management</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Team Member 3 -->
-                <div class="team-card rounded-xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative">
-                        <div class="aspect-w-3 aspect-h-4 overflow-hidden">
-                            <img src="./asset/CTO.jpg" alt="CTO Portrait" class="team-image w-full h-full object-cover">
-                        </div>
-                        <div class="team-overlay flex items-end p-6">
-                            <div class="team-social w-full flex justify-center space-x-4">
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fab fa-linkedin text-xl"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
-                                    <i class="fab fa-twitter text-xl"></i>
-                                </a>
-                            </div>
+                <!-- Principle 3: Time-Bound Excellence -->
+                <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="principle-counter">3</div>
+                    <div class="principle-icon-wrapper mb-6">
+                        <div class="principle-icon bg-gradient-to-br from-purple-400 to-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fas fa-clock"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-1">Sarah Johnson</h3>
-                        <p class="text-yellow-600 font-medium mb-4">Chief Technology Officer</p>
-                        <p class="text-gray-600">
-                            Sarah leads our technological innovation, implementing smart solutions for modern maritime
-                            challenges.
-                        </p>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Time-Bound Excellence</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        We plan with time limits for high expectations of top-notch projects on sophisticated assets in every segment and all types of vessels.
+                    </p>
+                    <div class="principle-highlight">
+                        <div class="flex items-center text-purple-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Timely project delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principle 4: Reliable Partnership -->
+                <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="400">
+                    <div class="principle-counter">4</div>
+                    <div class="principle-icon-wrapper mb-6">
+                        <div class="principle-icon bg-gradient-to-br from-yellow-400 to-yellow-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Reliable Partnership</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        We deliver our promises undoubtedly, making us a strong ally to our customers, partners, and stakeholders through consistent performance.
+                    </p>
+                    <div class="principle-highlight">
+                        <div class="flex items-center text-yellow-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Promise fulfillment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principle 5: Comprehensive Innovation -->
+                <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="500">
+                    <div class="principle-counter">5</div>
+                    <div class="principle-icon-wrapper mb-6">
+                        <div class="principle-icon bg-gradient-to-br from-teal-400 to-teal-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Comprehensive Innovation</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        As a multifaceted ship management company, we provide comprehensive and innovative services while staying committed to our core principles.
+                    </p>
+                    <div class="principle-highlight">
+                        <div class="flex items-center text-teal-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Innovative solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principle 6: Regulatory Compliance -->
+                <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="600">
+                    <div class="principle-counter">6</div>
+                    <div class="principle-icon-wrapper mb-6">
+                        <div class="principle-icon bg-gradient-to-br from-red-400 to-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Regulatory Compliance</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        We implement policies ensuring our fleet complies with all Classification Society, Flag State, Local and International Maritime Rules for safety and pollution prevention.
+                    </p>
+                    <div class="principle-highlight">
+                        <div class="flex items-center text-red-600 font-semibold">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Full compliance assurance</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
-                <a href="#"
-                    class="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-full transition-all duration-300">
-                    <span>View Full Team</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
         </div>
     </section>
 

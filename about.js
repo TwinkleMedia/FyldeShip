@@ -160,3 +160,4 @@ lazyImages.forEach(img => {
     img.removeAttribute('data-src');
 });
 }
+

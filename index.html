@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fylde Ship Management | Maritime Excellence</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://your-cdn-provider.com/ela-sans.css">
     <!-- Google Fonts -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
@@ -28,9 +32,9 @@
                         dark: '#0F172A'
                     },
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        display: ['Playfair Display', 'serif']
-                    },
+                    sans: ['Oswald', 'sans-serif'],
+                    display: ['Oswald', 'serif']
+                },
                 }
             }
         }
@@ -168,13 +172,13 @@
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center space-x-1">
                         <a href="./index.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                            class="nav-link px-4 py-4 text-primary font-bold font-medium relative hover:text-accent transition-colors duration-300">Home</a>
                         <a href="./about.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About
+                            class="nav-link px-4 py-2 text-primary font-bold font-medium relative hover:text-accent transition-colors duration-300">About
                             Us</a>
                         <div class="relative group">
                             <button
-                                class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300 flex items-center">
+                                class="nav-link px-4 py-2 text-primary font-bold font-medium relative hover:text-accent transition-colors duration-300 flex items-center">
                                 Services
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -191,24 +195,24 @@
                                     <a href="./Services/CrewManagement.html"
                                         class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
                                         role="menuitem">Crew Management</a>
-                                    <a href="./Services/PlanApproval.html"
+                                    <a href="./Services/MicroscopicEye.html"
                                         class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
                                         role="menuitem">Microscopic Eye</a>
-                                    <a href="./Services/Workshop.html"
+                                    <a href="./Services/E-platform.html"
                                         class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
                                         role="menuitem">E-Platform</a>
-                                    <a href="./Services/SparePartSupply.html"
+                                    <a href="./Services/Chatering.html"
                                         class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
                                         role="menuitem">Chatering</a>
                                 </div>
                             </div>
                         </div>
                         <a href="#gallery"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                            class="nav-link px-4 py-2 text-primary font-bold font-medium relative hover:text-accent transition-colors duration-300">Gallery</a>
                         <a href="./Blog.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                            class="nav-link px-4 py-2 text-primary font-bold font-medium relative hover:text-accent transition-colors duration-300">Blog</a>
                         <a href="./contact.html"
-                            class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
+                            class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-bold font-medium px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
                             Us</a>
                     </div>
                 </div>
@@ -262,43 +266,32 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-screen overflow-hidden">
-        <video class="hero-video" autoplay loop muted>
-            <source src="./asset/index-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30 flex items-center">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1000">
-                    <h5 class="text-accent font-semibold text-xl mb-4 uppercase tracking-wider">Maritime Excellence</h5>
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white font-display leading-tight">
-                        Smart Solutions, <br><span class="text-accent"> Seamless Sailing</span></h1>
-                    <p class="text-xl text-light mb-10 max-w-2xl">Credible management for vessels and cargo, our thrive
-                        is to provide professional ship management services to our premiere maritime clients by
-                        providing class officers and crew.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#about"
-                            class="bg-accent hover:bg-primary text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2">
-                            Discover More
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#services"
-                            class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Our
-                            Services</a>
-                    </div>
+        <section class="relative h-screen overflow-hidden">
+    <img src="./asset/banner.webp" alt="Maritime Excellence Banner" class="hero-video object-cover w-full h-full">
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30 flex items-center">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1000">
+                <h5 class="text-accent font-semibold text-xl mb-4 uppercase tracking-wider">Maritime Excellence</h5>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white font-display leading-tight">
+                    Simplify Maritime Operations , <br><span class="text-accent"> Maximize Efficiency </span>
+                </h1>
+                <p class="text-xl text-light mb-10 max-w-2xl">Propelling Global Maritime Through Integrated Solutions</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="./about.html"
+                        class="bg-accent hover:bg-primary text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2">
+                        Discover More
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <!-- <a href="./Services/TechnicalManagement.html"
+                        class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        Our Services
+                    </a> -->
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Wave Divider -->
-        <!-- <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#ECF2FF">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
-                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
-                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
-            </svg>
-        </div> -->
-    </section>
 
     <!-- Features Section -->
     <section class="py-20 bg-light">
@@ -307,8 +300,7 @@
                 <h5 class="text-accent font-medium uppercase tracking-wider mb-2">Why Choose Us</h5>
                 <h2 class="text-3xl md:text-4xl font-bold text-primary font-display">Exceptional Maritime Services</h2>
                 <div class="w-24 h-1 bg-accent mx-auto mt-4 mb-6"></div>
-                <p class="max-w-2xl mx-auto text-gray-600">We deliver comprehensive maritime solutions with a focus on
-                    innovation, reliability, and efficiency.</p>
+                <p class="max-w-2xl mx-auto text-gray-600">A comprehensive suite of Crew Management, Vessel Chartering, and Maritime Brokerage services under one reliable roof.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -319,8 +311,7 @@
                         <i class="fas fa-ship text-2xl text-accent"></i>
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-4">Experienced Team</h3>
-                    <p class="text-gray-600">Maritime experts with decades of combined experience in offshore and fleet
-                        management.</p>
+                    <p class="text-gray-600">Our Experienced Leadership,Guiding for Maritime Success.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -358,7 +349,7 @@
             </div>
 
             <!-- Stats Section -->
-            <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-primary rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-4xl font-bold text-accent mb-2">2+</div>
                     <div class="text-light font-medium">Vessels Operated</div>
@@ -375,7 +366,7 @@
                     <div class="text-4xl font-bold text-accent mb-2">24/7</div>
                     <div class="text-light font-medium">Support Available</div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -395,27 +386,25 @@
                         We currently own and operate two crew boats, <span class="font-semibold text-primary">MV Gomti</span> & <span class="font-semibold text-primary">MV Mahi</span>, each with a capacity of forty-six passengers plus ten crew members. These vessels are chartered with L&T Hydrocarbon Engineering Ltd and operate in the Mumbai High offshore field.
                     </p> -->
                     <p class="text-gray-700 mb-8">
-                        Equipped with proper training and experience crew bench support, providing quality and qualified
-                        ship Management Company, Fylde Ship Management manages diversified fleet not limited to only
-                        Offshore, Tankers, and Dry/Bulk vessels.
+                       Providing professional, comprehensive, and client-centric services that optimize vessel operations, crew welfare, and transaction efficiency worldwide.
                     </p>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                         <div class="flex items-center gap-2">
                             <i class="fas fa-check-circle text-accent"></i>
-                            <span class="text-gray-700">Expert Fleet Management</span>
+                            <span class="text-gray-700">Advanced Crew Management</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <i class="fas fa-check-circle text-accent"></i>
-                            <span class="text-gray-700">Technical Excellence</span>
+                            <span class="text-gray-700">Optimized Vessel Chartering</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <i class="fas fa-check-circle text-accent"></i>
-                            <span class="text-gray-700">Cost-Effective Solutions</span>
+                            <span class="text-gray-700">Transparent Maritime Brokerage</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <i class="fas fa-check-circle text-accent"></i>
-                            <span class="text-gray-700">Reliable Operations</span>
+                            <span class="text-gray-700">Technical Management</span>
                         </div>
                     </div>
 
@@ -461,9 +450,8 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">Our Service Proposal</h2>
                     <div class="w-24 h-1 bg-accent mb-6"></div>
                     <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                        We offer premium maritime solutions tailored to meet the specific needs of offshore and fleet
-                        operations. Our comprehensive service package ensures smooth sailing for all your maritime
-                        endeavors.
+                        We offer a comprehensive suite of Crew Management, Vessel Chartering, and Maritime Brokerage services under one reliable roof.
+
                     </p>
 
                     <div class="space-y-4 mb-8">
@@ -509,13 +497,13 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-primary relative">
+    <section id="services" class="py-20 bg-white relative">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h5 class="text-accent font-medium uppercase tracking-wider mb-2">What We Offer</h5>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-display">Our Services</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6 font-display">Our Services</h2>
                 <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="max-w-2xl mx-auto text-light">We provide comprehensive maritime services designed to meet the
+                <p class="max-w-2xl mx-auto text-dark">We provide comprehensive maritime services designed to meet the
                     unique needs of our clients in the offshore and shipping industries.</p>
             </div>
 
@@ -539,10 +527,10 @@
                                 <h3 class="text-xl font-bold text-white mb-2">Technical Management</h3>
                             </div>
                         </div>
-                        <div class="p-6 text-light">
+                        <div class="p-6 text-dark">
                             <p class="mb-4">Comprehensive technical oversight and maintenance for all your maritime
                                 assets, ensuring optimal performance and longevity.</p>
-                            <a href="#"
+                            <a href="./Services/TechnicalManagement.html"
                                 class="inline-flex items-center text-accent font-semibold hover:text-white transition-colors duration-300 group-hover:translate-x-2 transition-transform">
                                 Learn More
                                 <i class="fas fa-arrow-right ml-2"></i>
@@ -570,7 +558,7 @@
                                 <h3 class="text-xl font-bold text-white mb-2">Crew Management</h3>
                             </div>
                         </div>
-                        <div class="p-6 text-light">
+                        <div class="p-6 text-dark">
                             <p class="mb-4">Professional crew recruitment, training, and management services to ensure
                                 your vessels are operated by qualified and experienced personnel.</p>
                             <a href="#"
@@ -601,7 +589,7 @@
                                 <h3 class="text-xl font-bold text-white mb-2">Vessel Chartering</h3>
                             </div>
                         </div>
-                        <div class="p-6 text-light">
+                        <div class="p-6 text-dark">
                             <p class="mb-4">Flexible vessel chartering solutions to meet your specific operational
                                 requirements for offshore projects and maritime transportation.</p>
                             <a href="#"
@@ -632,7 +620,7 @@
                                 <h3 class="text-xl font-bold text-white mb-2">Microscopic Eye</h3>
                             </div>
                         </div>
-                        <div class="p-6 text-light">
+                        <div class="p-6 text-dark">
                             <p class="mb-4">We select skilled crew through a strict process and support them with
                                 continuous training, recruitment, and retentions.</p>
                             <a href="#"
@@ -663,7 +651,7 @@
                                 <h3 class="text-xl font-bold text-white mb-2">e-platform</h3>
                             </div>
                         </div>
-                        <div class="p-6 text-light">
+                        <div class="p-6 text-dark">
                             <p class="mb-4">Our Seafarer Portal offers quick access to documents, training, and updates.
                                 Timely payroll keeps seafarers motivated onboard.</p>
                             <a href="#"
@@ -696,82 +684,7 @@
         </div> -->
     </section>
 
-    <!-- Fleet Section -->
-    <section class="py-20 bg-light relative">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h5 class="text-accent font-medium uppercase tracking-wider mb-2">Our Fleet</h5>
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-display">The Vessels We Operate</h2>
-                <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
-                <p class="max-w-2xl mx-auto text-gray-600">Our modern fleet comprises well-maintained vessels designed
-                    for optimal performance and safety in maritime operations.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Vessel 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-72 overflow-hidden">
-                        <img src="./asset/mv-gomti.jpg" class="w-full h-full object-cover" alt="MV Gomti">
-                        <div
-                            class="absolute top-4 right-4 bg-accent text-white text-sm font-bold py-1 px-3 rounded-full">
-                            Crew Boat</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2">MV Gomti</h3>
-                        <div class="flex flex-wrap gap-4 mb-4">
-                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
-                                <i class="fas fa-users mr-1"></i> 46 Passengers
-                            </div>
-                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
-                                <i class="fas fa-hard-hat mr-1"></i> 10 Crew
-                            </div>
-                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
-                                <i class="fas fa-map-marker-alt mr-1"></i> Mumbai High
-                            </div>
-                        </div>
-                        <p class="text-gray-600 mb-6">Currently chartered with L&T Hydrocarbon Engineering Ltd,
-                            operating in the Mumbai High offshore field for crew transportation.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors duration-300">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Vessel 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-72 overflow-hidden">
-                        <img src="./asset/mv-mahi.jpg" class="w-full h-full object-cover" alt="MV Mahi">
-                        <div
-                            class="absolute top-4 right-4 bg-accent text-white text-sm font-bold py-1 px-3 rounded-full">
-                            Crew Boat</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-primary mb-2">MV Mahi</h3>
-                        <div class="flex flex-wrap gap-4 mb-4">
-                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
-                                <i class="fas fa-users mr-1"></i> 46 Passengers
-                            </div>
-                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
-                                <i class="fas fa-hard-hat mr-1"></i> 10 Crew
-                            </div>
-                            <div class="bg-light px-3 py-1 rounded-full text-sm font-medium text-primary">
-                                <i class="fas fa-map-marker-alt mr-1"></i> Mumbai High
-                            </div>
-                        </div>
-                        <p class="text-gray-600 mb-6">Currently chartered with L&T Hydrocarbon Engineering Ltd,
-                            operating in the Mumbai High offshore field for crew transportation.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors duration-300">
-                            View Details <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Testimonials Section -->
     <section class="py-20 bg-white relative">
@@ -1038,6 +951,72 @@
             const arrow = document.getElementById('mobile-services-arrow');
             submenu.classList.toggle('hidden');
             arrow.classList.toggle('rotate-180');
+        });
+
+        // ==========================================
+        // IMPROVED DROPDOWN FUNCTIONALITY
+        // ==========================================
+        
+        // Desktop Services Dropdown
+        const desktopServicesBtn = document.getElementById('desktop-services-btn');
+        const desktopServicesMenu = document.getElementById('desktop-services-menu');
+        
+        // Mobile Services Dropdown
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+        
+        // Toggle desktop services dropdown on click
+        desktopServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            desktopServicesMenu.classList.toggle('active');
+        });
+        
+        // Toggle mobile services dropdown on click
+        mobileServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            mobileServicesMenu.classList.toggle('active');
+            mobileServicesArrow.classList.toggle('rotate-180');
+        });
+        
+        // Close dropdown menus when clicking outside
+        document.addEventListener('click', function(e) {
+            // For desktop menu
+            if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
+                desktopServicesMenu.classList.remove('active');
+            }
+            
+            // For mobile menu
+            if (!mobileServicesBtn.contains(e.target) && !mobileServicesMenu.contains(e.target)) {
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+        
+        // Don't close dropdown when clicking inside it
+        desktopServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        mobileServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Close dropdowns when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                desktopServicesMenu.classList.remove('active');
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+
+        // For accessibility - add keyboard navigation
+        desktopServicesBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                desktopServicesMenu.classList.toggle('active');
+            }
         });
 
     </script>
