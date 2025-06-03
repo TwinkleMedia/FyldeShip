@@ -15,6 +15,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
@@ -32,8 +36,8 @@
                         dark: '#0F172A'
                     },
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        display: ['Playfair Display', 'serif']
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Poppins', 'serif']
                     },
                 }
             }
@@ -307,13 +311,13 @@
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center space-x-1">
                         <a href="./index.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Home</a>
+                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">Home</a>
                         <a href="./about.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">About
+                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">About
                             Us</a>
                         <div class="relative group">
                             <button
-                                class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300 flex items-center">
+                                class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300 flex items-center">
                                 Services
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -325,29 +329,29 @@
                                 class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
                                 <div class="py-1" role="menu" aria-orientation="vertical">
                                     <a href="./Services/TechnicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
                                         role="menuitem">Technical Management</a>
                                     <a href="./Services/CrewManagement.html"
-                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
                                         role="menuitem">Crew Management</a>
                                     <a href="./Services/PlanApproval.html"
-                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
                                         role="menuitem">Microscopic Eye</a>
                                     <a href="./Services/Workshop.html"
-                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
                                         role="menuitem">E-Platform</a>
                                     <a href="./Services/SparePartSupply.html"
-                                        class="block px-4 py-2 text-sm text-primary hover:bg-light hover:text-accent"
+                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
                                         role="menuitem">Chatering</a>
                                 </div>
                             </div>
                         </div>
                         <a href="#gallery"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Gallery</a>
+                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">Gallery</a>
                         <a href="./Blog.html"
-                            class="nav-link px-4 py-2 text-primary font-semibold relative hover:text-accent transition-colors duration-300">Blog</a>
+                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">Blog</a>
                         <a href="./contact.html"
-                            class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
+                            class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-bold font-xl px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
                             Us</a>
                     </div>
                 </div>
@@ -425,52 +429,7 @@
 </section>
 
 
-    <!-- Stats Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Stat 1 -->
-                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-ship text-5xl"></i>
-                    </div>
-                    <h3 class="text-4xl font-bold text-gray-800 mb-2">+7</h3>
-                    <p class="text-gray-600 font-medium">Vessels Managed</p>
-                </div>
-
-                <!-- Stat 2 -->
-                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-globe-americas text-5xl"></i>
-                    </div>
-                    <h3 class="text-4xl font-bold text-gray-800 mb-2">12+</h3>
-                    <p class="text-gray-600 font-medium">Countries Served</p>
-                </div>
-
-                <!-- Stat 3 -->
-                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
-                    data-aos-delay="300">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-users text-5xl"></i>
-                    </div>
-                    <h3 class="text-4xl font-bold text-gray-800 mb-2">200+</h3>
-                    <p class="text-gray-600 font-medium">Marine Professionals</p>
-                </div>
-
-                <!-- Stat 4 -->
-                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
-                    data-aos-delay="400">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-calendar-check text-5xl"></i>
-                    </div>
-                    <h3 class="text-4xl font-bold text-gray-800 mb-2">97.8%</h3>
-                    <p class="text-gray-600 font-medium">On-Time Performance</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- About Content -->
     <section id="about-content" class="py-20 md:py-28">
@@ -574,15 +533,56 @@
         </div>
     </section>
 
+ <!-- Stats Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-ship text-5xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2">+7</h3>
+                    <p class="text-gray-600 font-medium">Vessels Managed</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-globe-americas text-5xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2">12+</h3>
+                    <p class="text-gray-600 font-medium">Countries Served</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-users text-5xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2">200+</h3>
+                    <p class="text-gray-600 font-medium">Marine Professionals</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="stat-card bg-white rounded-lg shadow-lg p-8 text-center" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-calendar-check text-5xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-2">97.8%</h3>
+                    <p class="text-gray-600 font-medium">On-Time Performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Principles Section -->
-    <section class="py-20 section-bg relative">
-        <!-- Floating Background Shapes -->
-        <!-- <div class="floating-shapes">
-            <div class="shape w-32 h-32 bg-blue-300 rounded-full"></div>
-            <div class="shape w-24 h-24 bg-yellow-300 rounded-full"></div>
-            <div class="shape w-40 h-40 bg-blue-200 rounded-full"></div>
-        </div> -->
+    <section class="py-20 section-bg relative bg-white">
 
         <div class="container mx-auto px-4 md:px-8">
             <!-- Section Header -->
@@ -721,42 +721,102 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="py-20 bg-white">
+
+        <!-- Challenges Section -->
+    <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 font-display mb-6">Our Certifications</h2>
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 font-display mb-6">Navigating Rough Seas</h2>
                 <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600">
-                    We maintain the highest industry standards through internationally recognized certifications and
-                    compliance.
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Core Challenges in Global Maritime Services
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-                <div class="grayscale hover:grayscale-0 transition-all duration-300" data-aos="zoom-in"
-                    data-aos-delay="100">
-                    <img src="./asset/certificate1.jpg" alt="ISO Certification" class="h-24">
+            <!-- Challenges Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Challenge 1: Crewing & Manning -->
+                <div class="challenge-card bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-100 to-cyan-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-users text-3xl text-cyan-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Crewing & Manning<br>Challenges</h3>
+                        <div class="h-1 w-16 bg-cyan-400 mx-auto mb-8"></div>
+                        <div class="text-left space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Shortage of Qualified & Compliant Crew</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">High Turnover & Welfare Issues</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Inefficient Recruitment Processes</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="grayscale hover:grayscale-0 transition-all duration-300" data-aos="zoom-in"
-                    data-aos-delay="200">
-                    <img src="./asset/IMO.jpg" alt="IMO Certification" class="h-24">
+
+                <!-- Challenge 2: Chartering Market -->
+                <div class="challenge-card bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-green-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-3xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Chartering Market<br>Inefficiencies</h3>
+                        <div class="h-1 w-16 bg-green-400 mx-auto mb-8"></div>
+                        <div class="text-left space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Market Opacity & Volatility</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Suboptimal Vessel Utilization</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Complex Negotiations</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="grayscale hover:grayscale-0 transition-all duration-300" data-aos="zoom-in"
-                    data-aos-delay="300">
-                    <img src="./asset/isps.webp" alt="ISPS Certification" class="h-24">
-                </div>
-                <div class="grayscale hover:grayscale-0 transition-all duration-300" data-aos="zoom-in"
-                    data-aos-delay="400">
-                    <img src="./asset/certificate1.jpg" alt="ISM Certification" class="h-24">
-                </div>
-                <div class="grayscale hover:grayscale-0 transition-all duration-300" data-aos="zoom-in"
-                    data-aos-delay="500">
-                    <img src="./asset/marine safety.webp" alt="Maritime Safety Certification" class="h-24">
+
+                <!-- Challenge 3: Brokerage Barriers -->
+                <div class="challenge-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-handshake text-3xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Brokerage Transaction<br>Barriers</h3>
+                        <div class="h-1 w-16 bg-purple-400 mx-auto mb-8"></div>
+                        <div class="text-left space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Limited Market Access & Trust</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Lack of Transparency</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p class="text-gray-600 leading-relaxed">Complex & Lengthy Closures</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
