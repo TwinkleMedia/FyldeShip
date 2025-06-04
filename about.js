@@ -161,3 +161,93 @@ lazyImages.forEach(img => {
 });
 }
 
+
+
+//Team Slider JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('teamSlider');
+    const slides = slider.querySelectorAll('.team-slide');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    let currentIndex = 0;
+    let slidesToShow = 3; // Default for desktop
+    
+    // Responsive slides calculation
+    function updateSlidesToShow() {
+        if (window.innerWidth >= 1024) {
+            slidesToShow = 3;
+        } else if (window.innerWidth >= 768) {
+            slidesToShow = 2;
+        } else {
+            slidesToShow = 1;
+        }
+    }
+    
+    // Update slider position
+    function updateSlider() {
+        const slideWidth = 100 / slidesToShow;
+        const translateX = -currentIndex * slideWidth;
+        slider.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('bg-yellow-500', index === currentIndex);
+            dot.classList.toggle('opacity-100', index === currentIndex);
+            dot.classList.toggle('bg-gray-300', index !== currentIndex);
+            dot.classList.toggle('opacity-50', index !== currentIndex);
+        });
+    }
+    
+    // Next slide
+    function nextSlide() {
+        const maxIndex = slides.length - slidesToShow;
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateSlider();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        const maxIndex = slides.length - slidesToShow;
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        updateSlider();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+        });
+    });
+    
+    // Auto-play slider
+    let autoPlay = setInterval(nextSlide, 5000);
+    
+    // Pause auto-play on hover
+    const sliderContainer = document.querySelector('.team-slider-wrapper');
+    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    sliderContainer.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(nextSlide, 5000);
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        updateSlidesToShow();
+        updateSlider();
+    });
+    
+    // Initialize
+    updateSlidesToShow();
+    updateSlider();
+});
+
+
+
+

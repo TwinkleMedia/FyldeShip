@@ -270,19 +270,22 @@
                     </div>
                     <div class="flex space-x-6">
                         <a href="mailto:fyldeship@gmail.com"
-                            class="text-white  transition-colors duration-300 flex items-center gap-2"
+                            class="text-light transition-colors duration-300 flex items-center gap-2"
                             aria-label="Email">
                             <i class="fas fa-envelope"></i>
                             <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
                         </a>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-white  transition-colors duration-300" aria-label="Facebook">
+                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                aria-label="Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="text-white  transition-colors duration-300" aria-label="Instagram">
+                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" class="text-white  transition-colors duration-300" aria-label="LinkedIn">
+                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </div>
@@ -294,10 +297,13 @@
         <!-- Main Navbar -->
         <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex justify-between items-center py-4">
-                    <a href="./index.html" class="flex items-center">
-                        <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
-                    </a>
+                <div class="flex items-center justify-between lg:justify-start lg:grid lg:grid-cols-3 py-2">
+                    <!-- Logo - Left Side -->
+                    <div class="flex items-center">
+                        <a href="./index.html" class="flex items-center">
+                            <img src="../asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                        </a>
+                    </div>
 
                     <!-- Mobile menu button -->
                     <button id="menu-toggle" class="lg:hidden focus:outline-none">
@@ -305,19 +311,18 @@
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                        </svg>  
                     </button>
 
-                    <!-- Desktop Navigation -->
-                    <div class="hidden lg:flex items-center space-x-1">
+                    <!-- Desktop Navigation - Center -->
+                    <div class="hidden lg:flex items-center justify-center space-x-8">
                         <a href="./index.html"
-                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">Home</a>
+                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">Home</a>
                         <a href="./about.html"
-                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">About
-                            Us</a>
+                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">About Us</a>
                         <div class="relative group">
                             <button
-                                class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300 flex items-center">
+                                class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
                                 Services
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -327,32 +332,32 @@
                             </button>
                             <div
                                 class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-                                <div class="py-1" role="menu" aria-orientation="vertical">
+                               <div class="py-1" role="menu" aria-orientation="vertical">
                                     <a href="./Services/TechnicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
                                         role="menuitem">Technical Management</a>
                                     <a href="./Services/CrewManagement.html"
-                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
                                         role="menuitem">Crew Management</a>
-                                    <!-- <a href="./Services/PlanApproval.html"
-                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
-                                        role="menuitem">Microscopic Eye</a>
-                                    <a href="./Services/Workshop.html"
-                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
-                                        role="menuitem">E-Platform</a> -->
-                                    <a href="./Services/SparePartSupply.html"
-                                        class="block px-4 py-2 text-sm text-primary font-bold font-xl hover:bg-light hover:text-accent"
+                                    <a href="./Services/Chatering.html"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
                                         role="menuitem">Chatering</a>
+                                        <a href="./Services/Brokerage.html"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
+                                        role="menuitem">Brokerage</a>
                                 </div>
                             </div>
                         </div>
                         <a href="#gallery"
-                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">Gallery</a>
+                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">Gallery</a>
                         <a href="./Blog.html"
-                            class="nav-link px-4 py-2 text-primary font-bold font-xl relative hover:text-accent transition-colors duration-300">Career</a>
+                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">Career</a>
+                    </div>
+
+                    <!-- Contact Button - Right Side -->
+                    <div class="hidden lg:flex items-center justify-end">
                         <a href="./contact.html"
-                            class="ml-4 bg-yellow-600 hover:bg-blue-900 text-white font-bold font-xl px-6 py-2 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">Contact
-                            Us</a>
+                            class="bg-yellow-600 hover:bg-blue-900 text-white font-bold text-lg px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg uppercase">Contact Us</a>
                     </div>
                 </div>
 
@@ -375,28 +380,20 @@
                                 </svg>
                             </button>
                             <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
-                                <a href="#technical-management"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Technical
-                                    Management</a>
-                                <a href="#crew-management"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Crew
-                                    Management</a>
-                                <!-- <a href="#plan-approval"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Plan
-                                    Approval</a>
-                                <a href="#workshop"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Workshop</a> -->
-                                <a href="#spare-part-supply"
+                                <a href="./Services/TechnicalManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Technical Management</a>
+                                <a href="./Services/CrewManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Crew Management</a>
+                                <a href="./Services/Chatering.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Chatering</a>
                             </div>
                         </div>
                         <a href="#gallery"
                             class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
-                        <a href="#blog"
+                        <a href="./Blog.html"
                             class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Career</a>
                         <a href="./contact.html"
-                            class="block px-3 py-2 mt-4 bg-accent text-white font-medium rounded-lg text-center">Contact
-                            Us</a>
+                            class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -411,7 +408,7 @@
         <div class="absolute inset-0 gradient-overlay"></div>
     </div>
     <div class="container mx-auto px-4 md:px-8 relative z-10 text-center">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-display mb-6" data-aos="fade-up">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white font-display mb-6 uppercase" data-aos="fade-up">
             Navigating <span class="text-yellow-400">Excellence</span> in Maritime
         </h1>
         <div class="h-1 w-32 bg-yellow-400 mx-auto mb-8" data-aos="fade-up" data-aos-delay="100"></div>
@@ -429,7 +426,369 @@
 </section>
 
 
-   
+<!-- Company Overview Section -->
+<section class="py-20 md:py-28 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-16" data-aos="fade-up">
+            <!-- Text Content - Left Side -->
+            <div class="lg:w-1/2">
+                <div class="mb-8">
+                    <span class="text-yellow-500 font-semibold text-lg uppercase tracking-wide">About Fylde Ship</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mt-2 mb-6 uppercase">
+                        Leading Maritime Excellence Since Our Inception
+                    </h2>
+                    <div class="h-1 w-20 bg-yellow-500 mb-8"></div>
+                </div>
+                
+                <p class="text-lg text-gray-800 leading-relaxed mb-6">
+                    Fylde Ship Management stands as a beacon of excellence in the maritime industry, providing comprehensive ship management services with an unwavering commitment to safety, quality, and operational excellence. Our journey began with a vision to transform maritime operations through innovative solutions and transparent communication.
+                </p>
+                
+                <p class="text-lg text-gray-800 leading-relaxed mb-8">
+                    With our headquarters strategically located in Mumbai, India's maritime hub, we have established ourselves as a trusted partner for vessel owners and operators worldwide. Our expertise spans across diverse vessel types including Offshore, Tankers, and Dry/Bulk carriers, ensuring comprehensive coverage for all maritime operations.
+                </p>
+
+                <!-- Key Features -->
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center mt-1">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1 uppercase">Comprehensive Fleet Management</h4>
+                            <p class="text-gray-600">End-to-end vessel management solutions tailored to your specific needs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center mt-1">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1 uppercase">Expert Crew Solutions</h4>
+                            <p class="text-gray-600">Highly trained and certified maritime professionals for all vessel types</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center mt-1">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1 uppercase">Global Network & Support</h4>
+                            <p class="text-gray-600">24/7 shore-based support with worldwide operational coverage</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- Image Content - Right Side -->
+            <div class="lg:w-1/2 relative">
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
+                    <!-- Replace with your company image -->
+                    <img src="./asset/img1.jpg" alt="Fylde Ship Management Company" class="w-full h-auto object-cover">
+                    
+                    <!-- Overlay with company highlights -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent">
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <div class="flex items-center justify-between">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold">7+</div>
+                                    <div class="text-sm opacity-90">Vessels</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold">12+</div>
+                                    <div class="text-sm opacity-90">Countries</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold">200+</div>
+                                    <div class="text-sm opacity-90">Crew</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-full opacity-20 z-0"></div>
+                <div class="absolute -top-6 -left-6 w-20 h-20 bg-blue-600 rounded-full opacity-30 z-0"></div>
+                
+                <!-- Floating Badge -->
+                <div class="absolute top-4 right-4 bg-white rounded-full p-4 shadow-lg z-20">
+                    <div class="text-center">
+                        <div class="text-blue-900 font-bold text-lg">97.8%</div>
+                        <div class="text-gray-600 text-xs uppercase">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Slider Section -->
+<section class="py-20 md:py-28 bg-gray-50">
+    <div class="container mx-auto px-4 md:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-yellow-500 font-semibold text-lg uppercase tracking-wide">Our Leadership</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-900 font-display mt-2 mb-6 uppercase">
+                Meet Our Expert Team
+            </h2>
+            <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
+            <p class="text-xl text-gray-800 leading-relaxed max-w-3xl mx-auto">
+                Led by industry veterans and maritime experts, our team brings decades of combined experience in ship management, 
+                technical operations, and maritime excellence.
+            </p>
+        </div>
+
+        <!-- Team Slider Container -->
+        <div class="relative" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-slider-wrapper overflow-hidden">
+                <div class="team-slider flex transition-transform duration-500 ease-in-out" id="teamSlider">
+                    
+                    <!-- Team Member 1 - Founder/CEO -->
+                    <div class="team-slide flex-none w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="team-card bg-white rounded-2xl shadow-xl overflow-hidden relative group">
+                            <div class="relative h-80 overflow-hidden">
+                                <img src="./asset/team-member-1.jpg" alt="John Anderson - Founder & CEO" 
+                                     class="team-image w-full h-full object-cover transition-transform duration-700">
+                                <div class="team-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                <!-- Position Badge -->
+                                <div class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold uppercase">
+                                    Founder & CEO
+                                </div>
+                                
+                                <!-- Social Links -->
+                                <div class="team-social absolute bottom-6 left-6 right-6 flex justify-center space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-blue-900 mb-2">Captain John Anderson</h3>
+                                <p class="text-yellow-600 font-semibold mb-3 uppercase">Founder & Chief Executive Officer</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    With over 25 years of maritime experience, Captain Anderson leads Fylde Ship with vision and expertise. Former Master Mariner with extensive experience in vessel operations and maritime safety.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-graduation-cap mr-2 text-yellow-500"></i>
+                                    <span>Master Mariner, MBA Maritime Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 - Technical Director -->
+                    <div class="team-slide flex-none w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="team-card bg-white rounded-2xl shadow-xl overflow-hidden relative group">
+                            <div class="relative h-80 overflow-hidden">
+                                <img src="./asset/team-member-2.jpg" alt="Sarah Mitchell - Technical Director" 
+                                     class="team-image w-full h-full object-cover transition-transform duration-700">
+                                <div class="team-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold uppercase">
+                                    Technical Director
+                                </div>
+                                
+                                <div class="team-social absolute bottom-6 left-6 right-6 flex justify-center space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-blue-900 mb-2">Eng. Sarah Mitchell</h3>
+                                <p class="text-blue-600 font-semibold mb-3 uppercase">Technical Director</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Leading our technical operations with 20+ years of marine engineering expertise. Specializes in vessel maintenance, technical compliance, and innovative maritime solutions.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-cog mr-2 text-yellow-500"></i>
+                                    <span>Chief Marine Engineer, Technical Excellence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 - Operations Director -->
+                    <div class="team-slide flex-none w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="team-card bg-white rounded-2xl shadow-xl overflow-hidden relative group">
+                            <div class="relative h-80 overflow-hidden">
+                                <img src="./asset/team-member-3.jpg" alt="Michael Roberts - Operations Director" 
+                                     class="team-image w-full h-full object-cover transition-transform duration-700">
+                                <div class="team-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold uppercase">
+                                    Operations Director
+                                </div>
+                                
+                                <div class="team-social absolute bottom-6 left-6 right-6 flex justify-center space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-blue-900 mb-2">Captain Michael Roberts</h3>
+                                <p class="text-green-600 font-semibold mb-3 uppercase">Operations Director</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Overseeing global operations with exceptional leadership. Expert in fleet management, crew coordination, and operational efficiency across all vessel types.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-ship mr-2 text-yellow-500"></i>
+                                    <span>Master Mariner, Operations Excellence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 - Crew Management Head -->
+                    <div class="team-slide flex-none w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="team-card bg-white rounded-2xl shadow-xl overflow-hidden relative group">
+                            <div class="relative h-80 overflow-hidden">
+                                <img src="./asset/team-member-4.jpg" alt="David Kumar - Crew Management Head" 
+                                     class="team-image w-full h-full object-cover transition-transform duration-700">
+                                <div class="team-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold uppercase">
+                                    Crew Management
+                                </div>
+                                
+                                <div class="team-social absolute bottom-6 left-6 right-6 flex justify-center space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-blue-900 mb-2">Captain David Kumar</h3>
+                                <p class="text-purple-600 font-semibold mb-3 uppercase">Head of Crew Management</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Leading crew recruitment and management with deep understanding of maritime personnel. Ensures optimal crew performance and satisfaction across our fleet.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-users mr-2 text-yellow-500"></i>
+                                    <span>Master Mariner, HR Maritime Specialist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 5 - Safety & Compliance -->
+                    <div class="team-slide flex-none w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="team-card bg-white rounded-2xl shadow-xl overflow-hidden relative group">
+                            <div class="relative h-80 overflow-hidden">
+                                <img src="./asset/team-member-5.jpg" alt="Lisa Thompson - Safety Director" 
+                                     class="team-image w-full h-full object-cover transition-transform duration-700">
+                                <div class="team-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold uppercase">
+                                    Safety Director
+                                </div>
+                                
+                                <div class="team-social absolute bottom-6 left-6 right-6 flex justify-center space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-blue-900 mb-2">Dr. Lisa Thompson</h3>
+                                <p class="text-red-600 font-semibold mb-3 uppercase">Safety & Compliance Director</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Ensuring highest safety standards and regulatory compliance. Expert in maritime law, safety protocols, and international shipping regulations.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-shield-alt mr-2 text-yellow-500"></i>
+                                    <span>Maritime Law Expert, Safety Specialist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 6 - Business Development -->
+                    <div class="team-slide flex-none w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="team-card bg-white rounded-2xl shadow-xl overflow-hidden relative group">
+                            <div class="relative h-80 overflow-hidden">
+                                <img src="./asset/team-member-6.jpg" alt="James Wilson - Business Development" 
+                                     class="team-image w-full h-full object-cover transition-transform duration-700">
+                                <div class="team-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                
+                                <div class="absolute top-4 left-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-bold uppercase">
+                                    Business Development
+                                </div>
+                                
+                                <div class="team-social absolute bottom-6 left-6 right-6 flex justify-center space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-blue-900 mb-2">James Wilson</h3>
+                                <p class="text-teal-600 font-semibold mb-3 uppercase">Business Development Director</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Driving business growth and strategic partnerships. Expert in maritime business development, client relations, and market expansion strategies.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-chart-line mr-2 text-yellow-500"></i>
+                                    <span>MBA, Maritime Business Strategy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="slider-nav slider-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-yellow-500 text-blue-900 hover:text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-10">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav slider-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-yellow-500 text-blue-900 hover:text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-10">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Pagination Dots -->
+            <div class="flex justify-center mt-8 space-x-2" id="sliderDots">
+                <button class="slider-dot w-3 h-3 rounded-full bg-yellow-500 opacity-100 transition-all duration-300"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-yellow-400 transition-all duration-300"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-yellow-400 transition-all duration-300"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-yellow-400 transition-all duration-300"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-yellow-400 transition-all duration-300"></button>
+                <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-yellow-400 transition-all duration-300"></button>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- About Content -->
     <section id="about-content" class="py-20 md:py-28">
@@ -437,15 +796,15 @@
             <!-- Mission Section -->
             <div class="flex flex-col lg:flex-row items-center gap-16 mb-24" data-aos="fade-up">
                 <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-6">Our Mission</h2>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-6 uppercase">Our Mission</h2>
                     <div class="h-1 w-20 bg-yellow-500 mb-8"></div>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    <p class="text-lg text-gray-800 leading-relaxed mb-8">
                         At Fylde Ship Management, we are committed to delivering transparent, trusted ship management
                         services, with safety as our top priority.We focus on supplying highly trained crews for
                         Offshore, Tankers, and Dry/Bulk vessels.
                         Ensuring full compliance with all maritime rules and regulations.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    <p class="text-lg text-gray-800 leading-relaxed mb-8">
                         Providing shore-based support to empower ship crews, ensuring all operations are accomplished
                         efficiently and within set timelines. Building strong, reliable partnerships with our customers,
                         partners, and stakeholders by consistently delivering on our promises.
@@ -494,15 +853,15 @@
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400 rounded-full opacity-20 z-0"></div>
                 </div>
                 <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-6">Our Vision</h2>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-blue-900 mb-6 uppercase">Our Vision</h2>
                     <div class="h-1 w-20 bg-yellow-500 mb-8"></div>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    <p class="text-lg text-gray-800 leading-relaxed mb-8">
                         We envision Fylde Ship Management as a leading multifaceted ship management company recognized
                         for excellence across all maritime segments and vessel types.Our vision is to plan and execute
                         high-expectation projects on sophisticated assets within set timeframes, continually exceeding
                         industry standards
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    <p class="text-lg text-gray-800 leading-relaxed mb-8">
                         Offer comprehensive and innovative services while staying true to our core principles of
                         integrity, safety, and operational excellence.
                         Be a strong and reliable ally to the global maritime community, contributing to the growth,
@@ -587,9 +946,9 @@
         <div class="container mx-auto px-4 md:px-8">
             <!-- Section Header -->
             <div class="max-w-4xl mx-auto text-center mb-20" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold gradient-text font-display text-blue-900 mb-6">Our Core Principles</h2>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text font-display text-blue-900 mb-6 uppercase">Our Core Principles</h2>
                 <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600 leading-relaxed">
+                <p class="text-xl text-gray-800 leading-relaxed">
                     At Fylde Ship Management, our principles guide every decision we make and every service we provide. 
                     These fundamental values ensure excellence in maritime operations and lasting partnerships.
                 </p>
@@ -599,18 +958,18 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Principle 1: Trusted & Transparent Communication -->
                 <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="100">
-                    <div class="principle-counter">1</div>
+
                     <div class="principle-icon-wrapper mb-6">
                         <div class="principle-icon bg-gradient-to-br from-blue-400 to-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
                             <i class="fas fa-handshake"></i>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Trusted & Transparent Communication</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-primary mb-4 uppercase">Trusted & Transparent Communication</h3>
+                    <p class="text-gray-800 leading-relaxed mb-6">
                         We are a trusted transparent ship management company with communication as our prime devotion, ensuring safety of vessel and its crew through open and honest dialogue.
                     </p>
                     <div class="principle-highlight">
-                        <div class="flex items-center text-blue-600 font-semibold">
+                        <div class="flex items-center text-blue-600 font-semibold uppercase">
                             <i class="fas fa-check-circle mr-2"></i>
                             <span>Open communication channels</span>
                         </div>
@@ -619,18 +978,18 @@
 
                 <!-- Principle 2: Qualified Crew & Comprehensive Management -->
                 <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="200">
-                    <div class="principle-counter">2</div>
+  
                     <div class="principle-icon-wrapper mb-6">
                         <div class="principle-icon bg-gradient-to-br from-green-400 to-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
                             <i class="fas fa-users"></i>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Qualified Crew & Comprehensive Management</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-primary mb-4 uppercase">Qualified Crew & Comprehensive Management</h3>
+                    <p class="text-gray-800 leading-relaxed mb-6">
                         Equipped with proper training and experienced crew bench support, we provide quality management for diversified fleets including Offshore, Tankers, and Dry/Bulk vessels.
                     </p>
                     <div class="principle-highlight">
-                        <div class="flex items-center text-green-600 font-semibold">
+                        <div class="flex items-center text-green-600 font-semibold uppercase">
                             <i class="fas fa-check-circle mr-2"></i>
                             <span>Expert crew management</span>
                         </div>
@@ -639,18 +998,18 @@
 
                 <!-- Principle 3: Time-Bound Excellence -->
                 <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="300">
-                    <div class="principle-counter">3</div>
+
                     <div class="principle-icon-wrapper mb-6">
                         <div class="principle-icon bg-gradient-to-br from-purple-400 to-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
                             <i class="fas fa-clock"></i>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Time-Bound Excellence</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-primary mb-4 uppercase">Time-Bound Excellence</h3>
+                    <p class="text-gray-800 leading-relaxed mb-6">
                         We plan with time limits for high expectations of top-notch projects on sophisticated assets in every segment and all types of vessels.
                     </p>
                     <div class="principle-highlight">
-                        <div class="flex items-center text-purple-600 font-semibold">
+                        <div class="flex items-center text-purple-600 font-semibold uppercase">
                             <i class="fas fa-check-circle mr-2"></i>
                             <span>Timely project delivery</span>
                         </div>
@@ -659,18 +1018,18 @@
 
                 <!-- Principle 4: Reliable Partnership -->
                 <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="400">
-                    <div class="principle-counter">4</div>
+
                     <div class="principle-icon-wrapper mb-6">
                         <div class="principle-icon bg-gradient-to-br from-yellow-400 to-yellow-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
                             <i class="fas fa-heart"></i>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Reliable Partnership</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-primary mb-4 uppercase">Reliable Partnership</h3>
+                    <p class="text-gray-800 leading-relaxed mb-6">
                         We deliver our promises undoubtedly, making us a strong ally to our customers, partners, and stakeholders through consistent performance.
                     </p>
                     <div class="principle-highlight">
-                        <div class="flex items-center text-yellow-600 font-semibold">
+                        <div class="flex items-center text-yellow-600 font-semibold uppercase">
                             <i class="fas fa-check-circle mr-2"></i>
                             <span>Promise fulfillment</span>
                         </div>
@@ -679,18 +1038,18 @@
 
                 <!-- Principle 5: Comprehensive Innovation -->
                 <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="500">
-                    <div class="principle-counter">5</div>
+
                     <div class="principle-icon-wrapper mb-6">
                         <div class="principle-icon bg-gradient-to-br from-teal-400 to-teal-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
                             <i class="fas fa-lightbulb"></i>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Comprehensive Innovation</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-primary mb-4 uppercase">Comprehensive Innovation</h3>
+                    <p class="text-gray-800 leading-relaxed mb-6">
                         As a multifaceted ship management company, we provide comprehensive and innovative services while staying committed to our core principles.
                     </p>
                     <div class="principle-highlight">
-                        <div class="flex items-center text-teal-600 font-semibold">
+                        <div class="flex items-center text-teal-600 font-semibold uppercase">
                             <i class="fas fa-check-circle mr-2"></i>
                             <span>Innovative solutions</span>
                         </div>
@@ -699,18 +1058,18 @@
 
                 <!-- Principle 6: Regulatory Compliance -->
                 <div class="principle-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative" data-aos="fade-up" data-aos-delay="600">
-                    <div class="principle-counter">6</div>
+
                     <div class="principle-icon-wrapper mb-6">
                         <div class="principle-icon bg-gradient-to-br from-red-400 to-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Regulatory Compliance</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
+                    <h3 class="text-2xl font-bold text-primary mb-4 uppercase">Regulatory Compliance</h3>
+                    <p class="text-gray-800 leading-relaxed mb-6">
                         We implement policies ensuring our fleet complies with all Classification Society, Flag State, Local and International Maritime Rules for safety and pollution prevention.
                     </p>
                     <div class="principle-highlight">
-                        <div class="flex items-center text-red-600 font-semibold">
+                        <div class="flex items-center text-red-600 font-semibold uppercase">
                             <i class="fas fa-check-circle mr-2"></i>
                             <span>Full compliance assurance</span>
                         </div>
@@ -721,109 +1080,12 @@
         </div>
     </section>
 
-
-        <!-- Challenges Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <!-- Section Header -->
-            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 font-display mb-6">Navigating Rough Seas</h2>
-                <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600 leading-relaxed">
-                    Core Challenges in Global Maritime Services
-                </p>
-            </div>
-
-            <!-- Challenges Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Challenge 1: Crewing & Manning -->
-                <div class="challenge-card bg-light rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-100 to-cyan-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-users text-3xl text-cyan-500"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Crewing & Manning<br>Challenges</h3>
-                        <div class="h-1 w-16 bg-cyan-400 mx-auto mb-8"></div>
-                        <div class="text-left space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Shortage of Qualified & Compliant Crew</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">High Turnover & Welfare Issues</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Inefficient Recruitment Processes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Challenge 2: Chartering Market -->
-                <div class="challenge-card bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-green-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-chart-line text-3xl text-green-500"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Chartering Market<br>Inefficiencies</h3>
-                        <div class="h-1 w-16 bg-green-400 mx-auto mb-8"></div>
-                        <div class="text-left space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Market Opacity & Volatility</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Suboptimal Vessel Utilization</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Complex Negotiations</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Challenge 3: Brokerage Barriers -->
-                <div class="challenge-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-handshake text-3xl text-purple-500"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Brokerage Transaction<br>Barriers</h3>
-                        <div class="h-1 w-16 bg-purple-400 mx-auto mb-8"></div>
-                        <div class="text-left space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Limited Market Access & Trust</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Lack of Transparency</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-600 leading-relaxed">Complex & Lengthy Closures</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-100 text-white">
         <div class="container mx-auto px-4 md:px-8">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold font-display mb-8">Ready to Navigate Excellence with Us?</h2>
-                <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold font-display mb-8 uppercase">Ready to Navigate Excellence with Us?</h2>
+                <p class="text-xl text-blue-50 mb-10 max-w-3xl mx-auto">
                     Join the many satisfied clients who trust Fylde Ship for their maritime operations. Let's chart a
                     course for success together.
                 </p>
@@ -842,26 +1104,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
+
+    <footer class="bg-[#1E3A8A] text-white">
         <!-- Footer Top -->
         <div class="container mx-auto px-4 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Company Info -->
                 <div>
-                    <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-16 mb-6">
-                    <p class="text-gray-400 mb-6">Fylde Ship Management provides innovative and cost-effective solutions
-                        for offshore and fleet operations. Our commitment to excellence ensures reliable maritime
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
+                    <p class="text-white-400 mb-6 badge">Fylde Ship Management provides innovative and cost-effective integrated solutions
+                        for fleet and offshoreoperations. Our commitment to excellence ensures reliable maritime
                         services.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
                             aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
                             aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
                             aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
@@ -870,55 +1133,56 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Quick Links</h4>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Quick Links</h4>
                     <ul class="space-y-3">
                         <li><a href="./index.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
                         <li><a href="./about.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
                         <li><a href="#services"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Services</a></li>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Services</a></li>
                         <li><a href="#gallery"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
                         <li><a href="#blog"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Career</a></li>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Blog</a></li>
                         <li><a href="./contact.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Contact Us</a>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Contact Us</a>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Services -->
                 <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Our Services</h4>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Technical
+                        <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
                                 Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Crew
+                        <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
                                 Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Vessel
+                        
+                        <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Vessel
                                 Chartering</a></li>
-                        <!-- <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Logistics
-                                Support</a></li> -->
+                        <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Brokerage</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Contact Us</h4>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Contact Us</h4>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
-                            <span class="text-gray-400">OFFICE NO.321,THE GREAT EASTERN GALLERIA,PLOT NO.20, SECTOR -4,NERUL WEST,MUMBAI,MAHARASHTRA</span>
+                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
+                            <span class="text-white-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India -
+                                400021</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-accent"></i>
-                            <span class="text-gray-400">+91 02231008314</span>
+                            <i class="fas fa-phone text-white"></i>
+                            <span class="text-white-400">+91 02231008314</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-accent"></i>
+                            <i class="fas fa-envelope text-white"></i>
                             <a href="mailto:fyldeship@gmail.com"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -926,17 +1190,17 @@
         </div>
 
         <!-- Footer Bottom -->
-        <div class="border-t border-gray-800">
+        <div class="border-t border-gray-800 ">
             <div class="container mx-auto px-4 lg:px-8 py-6">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                    <p class="text-white-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
                     <div class="mt-4 md:mt-0">
                         <ul class="flex space-x-6">
                             <li><a href="#"
-                                    class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
+                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
                                     Policy</a></li>
                             <li><a href="#"
-                                    class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Terms
+                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Terms
                                     of Service</a></li>
                         </ul>
                     </div>
@@ -989,6 +1253,91 @@
             });
         });
     </script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('teamSlider');
+    const slides = slider.querySelectorAll('.team-slide');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    let currentIndex = 0;
+    let slidesToShow = 3; // Default for desktop
+    
+    // Responsive slides calculation
+    function updateSlidesToShow() {
+        if (window.innerWidth >= 1024) {
+            slidesToShow = 3;
+        } else if (window.innerWidth >= 768) {
+            slidesToShow = 2;
+        } else {
+            slidesToShow = 1;
+        }
+    }
+    
+    // Update slider position
+    function updateSlider() {
+        const slideWidth = 100 / slidesToShow;
+        const translateX = -currentIndex * slideWidth;
+        slider.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('bg-yellow-500', index === currentIndex);
+            dot.classList.toggle('opacity-100', index === currentIndex);
+            dot.classList.toggle('bg-gray-300', index !== currentIndex);
+            dot.classList.toggle('opacity-50', index !== currentIndex);
+        });
+    }
+    
+    // Next slide
+    function nextSlide() {
+        const maxIndex = slides.length - slidesToShow;
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateSlider();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        const maxIndex = slides.length - slidesToShow;
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        updateSlider();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+        });
+    });
+    
+    // Auto-play slider
+    let autoPlay = setInterval(nextSlide, 5000);
+    
+    // Pause auto-play on hover
+    const sliderContainer = document.querySelector('.team-slider-wrapper');
+    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    sliderContainer.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(nextSlide, 5000);
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        updateSlidesToShow();
+        updateSlider();
+    });
+    
+    // Initialize
+    updateSlidesToShow();
+    updateSlider();
+});
+</script>
 </body>
 
 </html>
