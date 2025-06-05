@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fylde Ship Management | Maritime Excellence</title>
+    <title>Fylde Ship Management | Crew Management</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -12,6 +12,9 @@
     <!-- Google Fonts -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
@@ -28,13 +31,28 @@
                         dark: '#0F172A'
                     },
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        display: ['Playfair Display', 'serif']
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Poppins', 'serif']
                     },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(14, 165, 233, 0.6)' }
+                        }
+                    }
                 }
             }
         }
-        
     </script>
 
     <style>
@@ -43,11 +61,91 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0B2447 0%, #19376D 50%, #0EA5E9 100%);
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0B2447, #0EA5E9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .border-gradient {
+            border: 2px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #0B2447, #0EA5E9) border-box;
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, #0EA5E9, #19376D);
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
+        }
+
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(11, 36, 71, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(25, 55, 109, 0.1) 0%, transparent 50%);
+        }
+
+        .animated-border {
+            position: relative;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            animation: gradientShift 4s ease infinite;
+            border-radius: 15px;
+            padding: 3px;
+        }
+
+        .animated-border::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            bottom: 3px;
+            background: white;
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        .animated-border > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #0EA5E9, transparent);
+            margin: 3rem 0;
+        }
     </style>
 </head>
 
-<body class="bg-light text-dark antialiased overflow-x-hidden">
+<body class="bg-white text-dark antialiased overflow-x-hidden">
     <!-- Header Section -->
     <header class="relative z-50">
         <!-- Top Bar -->
@@ -93,7 +191,7 @@
                     <!-- Logo - Left Side -->
                     <div class="flex items-center">
                         <a href="./index.html" class="flex items-center">
-                            <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                            <img src="https://via.placeholder.com/150x60/0B2447/FFFFFF?text=FYLDE+SHIP" alt="Fylde Ship Logo" class="h-14 md:h-16">
                         </a>
                     </div>
 
@@ -124,7 +222,7 @@
                             </button>
                             <div
                                 class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-                                                               <div class="py-1" role="menu" aria-orientation="vertical">
+                                <div class="py-1" role="menu" aria-orientation="vertical">
                                     <a href="./Services/TechnicalManagement.html"
                                         class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
                                         role="menuitem">Technical Management</a>
@@ -192,217 +290,242 @@
         </nav>
     </header>
 
-    
+    <!-- Hero Section -->
+    <section class="relative py-24 gradient-bg hero-pattern overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full animate-float"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce-slow"></div>
+        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-accent/30 rounded-full animate-pulse-slow"></div>
+        
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-wider" data-aos="fade-up">
+                    CREW MANAGEMENT
+                    <span class="block text-3xl md:text-4xl text-accent font-normal mt-2">SERVICES</span>
+                </h1>
+                <div class="w-32 h-2 bg-accent mx-auto mb-8 rounded-full animate-glow" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+                    Deploying Global Maritime Talent for Peak Performance
+                </p>
+            </div>
+        </div>
+    </section>
 
-<!-- Technical Management Services Section -->
-<section class="py-20 bg-light">
-    <div class="container mx-auto px-4 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-primary font-display mb-4">Technical Management Services</h2>
-            <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                Expert technical support and vessel management for optimal performance and cost efficiency
-            </p>
+    <!-- Crew Management Services Section -->
+    <section class="py-24 bg-light relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>
         </div>
-        
-        <!-- Hero Image for Technical Services -->
-        <div class="mb-16 rounded-xl overflow-hidden shadow-xl" data-aos="fade-up">
-            <img src="../asset//technical1.jpg" alt="Ship technical management" class="w-full object-cover h-64 md:h-96">
-        </div>
-        
-        <!-- Technical Services Features -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- Feature 1 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex items-center mb-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                        <i class="fas fa-tools text-2xl text-accent"></i>
+
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <!-- Hero Image for Crew Services -->
+            <div class="mb-20 relative" data-aos="fade-up">
+                <div class="animated-border">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <img src="../asset/crew1.jpg" 
+                             alt="Ship crew management" 
+                             class="w-full object-cover h-64 md:h-96 transition-transform duration-700 hover:scale-105">
                     </div>
-                    <h3 class="text-xl font-bold text-primary">Complete Technical Support</h3>
                 </div>
-                <div class="mb-4 rounded-lg overflow-hidden">
-                    <img src="../asset/technical1.jpg" alt="Technical support team" class="w-full h-40 object-cover">
-                </div>
-                <p class="text-gray-600">
-                    We offer complete technical support to our prime client vessels. Our technical team is facilitated with highly skilled and dedicated competent Technical Superintendents who ensure seamless operations across your fleet.
-                </p>
             </div>
+
+            <!-- <div class="section-divider"></div> -->
             
-            <!-- Feature 2 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex items-center mb-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                        <i class="fas fa-chart-line text-2xl text-accent"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary">Performance Monitoring</h3>
-                </div>
-                <div class="mb-4 rounded-lg overflow-hidden">
-                    <img src="../asset//technical2.jfif" alt="Ship performance monitoring" class="w-full h-40 object-cover">
-                </div>
-                <p class="text-gray-600">
-                    We have a dedicated technical team to monitor vessel performance closely, ensuring your ships operate at optimum efficiency. Our experts analyze performance data to identify opportunities for improvement and cost savings.
+            <!-- Introduction Paragraph -->
+            <!-- <div class="max-w-4xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gradient mb-8 uppercase">The Heart of Every Efficient Vessel</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    At the heart of every efficient and safe vessel is a capable, well-trained crew. We recognize that the operational performance of a ship is directly tied to the competence and commitment of its crew members. That's why our Crew Management Services are designed to meet the highest standards of the maritime industry.
                 </p>
-            </div>
+            </div> -->
             
-            <!-- Feature 3 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-                <div class="flex items-center mb-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                        <i class="fas fa-search text-2xl text-accent"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary">Comprehensive Issue Tracking</h3>
-                </div>
-                <div class="mb-4 rounded-lg overflow-hidden">
-                    <img src="../asset//technical3.jpg" alt="Ship issue tracking system" class="w-full h-40 object-cover">
-                </div>
-                <p class="text-gray-600">
-                    We track from minute to major issues and follow up for ship board operations including technical matters. Our proactive approach to maintenance and problem-solving prevents small issues from becoming costly repairs.
-                </p>
-            </div>
+            <!-- <div class="section-divider"></div> -->
             
-            <!-- Feature 4 -->
-            <div class="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-                <div class="flex items-center mb-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                        <i class="fas fa-cogs text-2xl text-accent"></i>
+            <!-- Crew Services Features -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+                <!-- Feature 1 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-user-tie text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">HIGHLY SKILLED CREW</h3>
                     </div>
-                    <h3 class="text-xl font-bold text-primary">Optimized Operations</h3>
-                </div>
-                <div class="mb-4 rounded-lg overflow-hidden">
-                    <img src="../asset//technical4.jfif" alt="Ship operations optimization" class="w-full h-40 object-cover">
-                </div>
-                <p class="text-gray-600">
-                    Our technical team ensures vessel operating requirements are met as per principals' desires through PMS system and e-store management to sustain optimal vessel performance and cost savings that demonstrates the quality of our Technical management service.
-                </p>
-            </div>
-        </div>
-        
-        <!-- Competent Crew Section -->
-        <div class="mt-16 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-6 md:mb-0">
-                    <div class="h-64 bg-gray-200 rounded-lg overflow-hidden relative">
-                        <img src="../asset/technical1.jpg" alt="Professional maritime crew" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="md:w-2/3 md:pl-10">
-                    <h3 class="text-2xl font-bold text-primary mb-4">Extensive Competent Crew Pool</h3>
-                    <p class="text-gray-600 mb-6">
-                        We have an extensive competent pool of crews who have served with us for years. Our rigorous selection process and continuous training programs ensure that only the most qualified and experienced maritime professionals serve on your vessels.
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        We pride ourselves on supplying highly skilled, experienced, and dependable seafarers to our esteemed principals. Our rigorous selection process ensures that every crew member we place onboard possesses the right qualifications, training, and mindset to operate efficiently under varying conditions and pressures.
                     </p>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-accent mr-2"></i>
-                            <span class="text-gray-700">Certified Officers</span>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-shield-alt text-3xl text-white"></i>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-accent mr-2"></i>
-                            <span class="text-gray-700">Skilled Engineers</span>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">SAFETY & LEADERSHIP</h3>
+                    </div>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        Our seafarers are more than just employees—they are integral stakeholders in your vessel's success. We hire professionals who not only meet global certification standards but also demonstrate leadership, reliability, and a strong sense of responsibility. They serve as the first line of defense in emergencies and the backbone of daily operations at sea.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-chart-line text-3xl text-white"></i>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-accent mr-2"></i>
-                            <span class="text-gray-700">Experienced Ratings</span>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">PERFORMANCE MONITORING</h3>
+                    </div>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        To maintain high performance standards, we continuously monitor the onboard crew, offering them support and guidance through our shore-based team of maritime experts. This proactive approach ensures that the crew is not only compliant with international maritime regulations but also aligned with the specific operational goals of your fleet.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-globe text-3xl text-white"></i>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-accent mr-2"></i>
-                            <span class="text-gray-700">Regular Training</span>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">GLOBAL CREW DATABASE</h3>
+                    </div>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        With a global database of certified and experienced seafarers, we are equipped to deliver tailored crewing solutions that enhance your vessel's operational efficiency and safety. Whether for short voyages or long-term deployment, our commitment to quality and dependability ensures your fleet runs smoothly and profitably.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+                
+            <!-- Comprehensive Solutions Section -->
+            <div class="bg-white p-12 rounded-3xl shadow-2xl border-gradient relative overflow-hidden" data-aos="fade-up">
+                <!-- Background Decoration -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-accent/10 to-transparent rounded-full"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-primary/10 to-transparent rounded-full"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-center mb-12">
+                        <h3 class="text-4xl font-bold text-gradient mb-6 uppercase">OUR COMPREHENSIVE CREW MANAGEMENT SOLUTIONS</h3>
+                        <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-user-plus text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Crew Recruitment & Selection</h4>
+                                <p class="text-gray-800">Rigorous screening to find the best maritime professionals</p>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-accent mr-2"></i>
-                            <span class="text-gray-700">Compliance Focus</span>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-certificate text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Certification & Compliance</h4>
+                                <p class="text-gray-800">Ensuring all crew meet international standards</p>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-accent mr-2"></i>
-                            <span class="text-gray-700">Safety Conscious</span>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-money-bill-wave text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Payroll Management</h4>
+                                <p class="text-gray-800">Efficient and transparent salary processing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-heartbeat text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Medical & Insurance</h4>
+                                <p class="text-gray-800">Comprehensive health coverage for all crew</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-graduation-cap text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Continuous Training</h4>
+                                <p class="text-gray-800">Ongoing skill development programs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-users text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Welfare & Retention</h4>
+                                <p class="text-gray-800">Programs to ensure crew satisfaction and loyalty</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-chart-bar text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Performance Evaluation</h4>
+                                <p class="text-gray-800">Regular assessment and reporting</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-exchange-alt text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Emergency Crew Changes</h4>
+                                <p class="text-gray-800">Rapid response to unexpected situations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-briefcase text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Career Development</h4>
+                                <p class="text-gray-800">Pathways for professional growth</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Image Gallery - Maritime Technical Excellence -->
-        <!-- <div class="mt-16" data-aos="fade-up">
-            <h3 class="text-2xl font-bold text-primary mb-8 text-center">Our Technical Excellence</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="overflow-hidden rounded-lg shadow-md">
-                    <img src="/api/placeholder/400/300" alt="Technical inspection" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow-md">
-                    <img src="/api/placeholder/400/300" alt="Engine room maintenance" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow-md">
-                    <img src="/api/placeholder/400/300" alt="Technical operations" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110">
-                </div>
-            </div>
-        </div> -->
-        
-        <!-- Why Choose Us Section -->
-        <!-- <div class="mt-16 bg-primary rounded-lg shadow-xl overflow-hidden" data-aos="fade-up">
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 relative">
-                    <img src="/api/placeholder/800/600" alt="Professional ship management" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-accent bg-opacity-20"></div>
-                </div>
-                <div class="md:w-1/2 p-8 md:p-12">
-                    <h3 class="text-2xl font-bold text-white mb-6">Why Choose Our Technical Management</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
-                            <p class="text-gray-200">24/7 dedicated technical support ensuring minimal downtime</p>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
-                            <p class="text-gray-200">Industry-leading maintenance programs that extend vessel life</p>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
-                            <p class="text-gray-200">Cost-effective solutions without compromising quality or safety</p>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
-                            <p class="text-gray-200">Experienced technical superintendents with hands-on maritime expertise</p>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
-                            <p class="text-gray-200">Advanced monitoring systems for real-time performance tracking</p>
-                        </li>
-                    </ul>
+            
+            <div class="section-divider"></div>
+            
+            <!-- CTA Section -->
+            <div class="text-center relative" data-aos="fade-up">
+                <div class="bg-gradient-to-r from-primary to-secondary p-12 rounded-3xl text-white relative overflow-hidden">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-0 left-0 w-32 h-32 bg-white rounded-full"></div>
+                        <div class="absolute bottom-0 right-0 w-40 h-40 bg-accent rounded-full"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-full"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-8 uppercase">READY TO ELEVATE YOUR CREW MANAGEMENT?</h3>
+                        <a href="../contact.html" class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold text-lg px-12 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl inline-block uppercase animate-glow">
+                            CONTACT OUR CREWING TEAM
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div> -->
-        
-        <!-- CTA Section -->
-        <div class="mt-16 text-center" data-aos="fade-up">
-            <h3 class="text-2xl font-bold text-primary mb-6">Ready to experience superior technical management?</h3>
-            <a href="../contact.html" class="bg-yellow-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-block">
-                Contact Our Technical Team
-            </a>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light">
+    <footer class="bg-[#1E3A8A] text-white">
         <!-- Footer Top -->
         <div class="container mx-auto px-4 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Company Info -->
                 <div>
-                    <img src="../asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-16 mb-6">
-                    <p class="text-gray-400 mb-6">Fylde Ship Management provides innovative and cost-effective solutions
-                        for offshore and fleet operations. Our commitment to excellence ensures reliable maritime
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
+                    <p class="text-white-400 mb-6 badge">Fylde Ship Management provides innovative and cost-effective integrated solutions
+                        for fleet and offshoreoperations. Our commitment to excellence ensures reliable maritime
                         services.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
                             aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
                             aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
                             aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
@@ -411,125 +534,125 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Quick Links</h4>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Quick Links</h4>
                     <ul class="space-y-3">
                         <li><a href="./index.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
                         <li><a href="./about.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
                         <li><a href="#services"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Services</a></li>
-                        <li><a href="#gallery"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
-                        <li><a href="#blog"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Blog</a></li>
-                        <li><a href="./contact.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Services</a></li>
+                            <li><a href="#gallery"
+                                    class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                            <li><a href="#blog"
+                                    class="text-white-400 hover:text-accent transition-colors duration-300">Blog</a></li>
+                            <li><a href="./contact.html"
+                                    class="text-white-400 hover:text-accent transition-colors duration-300">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <!-- Services -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Our Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Technical
-                                Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Crew
-                                Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Vessel
-                                Chartering</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Logistics
-                                Support</a></li>
-                    </ul>
-                </div>
+                    <!-- Services -->
+                    <div>
+                        <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
+                                    Management</a></li>
+                            <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
+                                    Management</a></li>
+                            
+                            <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Vessel
+                                    Chartering</a></li>
+                            <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Brokerage</a></li>
+                        </ul>
+                    </div>
 
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Contact Us</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
-                            <span class="text-gray-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India -
-                                400021</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-light"></i>
-                            <span class="text-gray-400">+91 02231008314</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-light"></i>
-                            <a href="mailto:fyldeship@gmail.com"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="border-t border-gray-800">
-            <div class="container mx-auto px-4 lg:px-8 py-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
-                    <div class="mt-4 md:mt-0">
-                        <ul class="flex space-x-6">
-                            <li><a href="#"
-                                    class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
-                                    Policy</a></li>
-                            <li><a href="#"
-                                    class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Terms
-                                    of Service</a></li>
+                    <!-- Contact Info -->
+                    <div>
+                        <h4 class="text-white text-xl font-bold mb-6 uppercase">Contact Us</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-map-marker-alt text-light mt-1"></i>
+                                <span class="text-white-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India -
+                                    400021</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-phone text-white"></i>
+                                <span class="text-white-400">+91 02231008314</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-envelope text-white"></i>
+                                <a href="mailto:fyldeship@gmail.com"
+                                    class="text-white-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" id="back-to-top"
-        class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 ">
+                <div class="container mx-auto px-4 lg:px-8 py-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-white-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                        <div class="mt-4 md:mt-0">
+                            <ul class="flex space-x-6">
+                                <li><a href="#"
+                                        class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
+                                        Policy</a></li>
+                                <li><a href="#"
+                                        class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Terms
+                                        of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-    <!-- AOS Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <!-- Back to Top Button -->
+        <a href="#" id="back-to-top"
+            class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
+            <i class="fas fa-arrow-up"></i>
+        </a>
 
-    <!-- Main Script -->
-    <script>
-        // Initialize AOS animation
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+        <!-- AOS Animation Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+        <!-- Main Script -->
+        <script>
+            // Initialize AOS animation
+            AOS.init({
+                duration: 800,
+                once: true
+            });
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('py-2');
-                navbar.classList.remove('py-4');
-            } else {
-                navbar.classList.add('py-4');
-                navbar.classList.remove('py-2');
-            }
-        });
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
 
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('py-2');
+                    navbar.classList.remove('py-4');
+                } else {
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-2');
+                }
+            });
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
                 backToTopButton.classList.add('opacity-100', 'visible');
             } else {
