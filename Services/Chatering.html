@@ -1,371 +1,750 @@
-<!DOCTYPE html>
-<html lang="en">
+        <!DOCTYPE html>
+        <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fylde Ship Management | Maritime Excellence</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Fylde Ship Management | Vessel Chartering</title>
+            <!-- Tailwind CSS -->
+            <script src="https://cdn.tailwindcss.com"></script>
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            <!-- Google Fonts -->
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+            <!-- AOS Animation Library -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-    <!-- Custom Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0B2447',
-                        secondary: '#19376D',
-                        accent: '#0EA5E9',
-                        light: '#ECF2FF',
-                        dark: '#0F172A'
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        display: ['Playfair Display', 'serif']
-                    },
+            <!-- Custom Tailwind Configuration -->
+            <script>
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                primary: '#0B2447',
+                                secondary: '#19376D',
+                                accent: '#0EA5E9',  
+                                light: '#ECF2FF',
+                                dark: '#0F172A'
+                            },
+                            fontFamily: {
+                                sans: ['Poppins', 'sans-serif'],
+                                display: ['Poppins', 'serif']
+                            },
+                            animation: {
+                                'float': 'float 6s ease-in-out infinite',
+                                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                                'bounce-slow': 'bounce 3s infinite',
+                                'glow': 'glow 2s ease-in-out infinite alternate',
+                            },
+                            keyframes: {
+                                float: {
+                                    '0%, 100%': { transform: 'translateY(0px)' },
+                                    '50%': { transform: 'translateY(-20px)' }
+                                },
+                                glow: {
+                                    '0%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.3)' },
+                                    '100%': { boxShadow: '0 0 30px rgba(14, 165, 233, 0.6)' }
+                                }
+                            }
+                        }
+                    }
                 }
-            }
-        }
-    </script>
+            </script>
 
-    <style>
-        body {
-            scroll-behavior: smooth;
-            font-family: 'Montserrat', sans-serif;
-        }
+            <style>
+                body {
+                    scroll-behavior: smooth;
+                    font-family: 'Montserrat', sans-serif;
+                }
 
-        
-    </style>
-</head>
+                .gradient-bg {
+                    background: linear-gradient(135deg, #0B2447 0%, #19376D 50%, #0EA5E9 100%);
+                }
 
-<body class="bg-light text-dark antialiased overflow-x-hidden">
-    <!-- Header Section -->
-    <header class="relative z-50">
-        <!-- Top Bar -->
-        <div class="bg-blue-900 py-2">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex flex-wrap items-center justify-between">
-                    <div class="flex items-center text-white">
-                        <span class="flex items-center gap-3 text-light">
-                            <i class="fas fa-phone text-accent"></i>
-                            <span class="text-sm font-medium">+91 02231008314</span>
-                        </span>
-                    </div>
-                    <div class="flex space-x-6">
-                        <a href="mailto:fyldeship@gmail.com"
-                            class="text-light transition-colors duration-300 flex items-center gap-2"
-                            aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                            <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
-                        </a>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                                aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                                aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                                aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                .glass-effect {
+                    backdrop-filter: blur(10px);
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                }
 
-        <!-- Main Navbar -->
-        <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex items-center justify-between lg:justify-start lg:grid lg:grid-cols-3 py-2">
-                    <!-- Logo - Left Side -->
-                    <div class="flex items-center">
-                        <a href="./index.html" class="flex items-center">
-                            <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
-                        </a>
-                    </div>
+                .card-hover {
+                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                }
 
-                    <!-- Mobile menu button -->
-                    <button id="menu-toggle" class="lg:hidden focus:outline-none">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>  
-                    </button>
+                .card-hover:hover {
+                    transform: translateY(-15px) scale(1.02);
+                    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+                }
 
-                    <!-- Desktop Navigation - Center -->
-                    <div class="hidden lg:flex items-center justify-center space-x-8">
-                        <a href="./index.html"
-                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">Home</a>
-                        <a href="./about.html"
-                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">About Us</a>
-                        <div class="relative group">
-                            <button
-                                class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
-                                Services
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div
-                                class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-                                                               <div class="py-1" role="menu" aria-orientation="vertical">
-                                    <a href="./Services/TechnicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
-                                        role="menuitem">Technical Management</a>
-                                    <a href="./Services/CrewManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
-                                        role="menuitem">Crew Management</a>
-                                    <a href="./Services/Chatering.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
-                                        role="menuitem">Chatering</a>
-                                        <a href="./Services/Brokerage.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase"
-                                        role="menuitem">Brokerage</a>
+                .text-gradient {
+                    background: linear-gradient(135deg, #0B2447, #0EA5E9);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    }
+
+                .border-gradient {
+                    border: 2px solid transparent;
+                    background: linear-gradient(white, white) padding-box,
+                                linear-gradient(135deg, #0B2447, #0EA5E9) border-box;
+                }
+
+                .feature-icon {
+                    background: linear-gradient(135deg, #0EA5E9, #19376D);
+                    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
+                }
+
+                .hero-pattern {
+                    background-image: 
+                        radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(11, 36, 71, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(25, 55, 109, 0.1) 0%, transparent 50%);
+                }
+
+                .animated-border {
+                    position: relative;
+                    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+                    background-size: 400% 400%;
+                    animation: gradientShift 4s ease infinite;
+                    border-radius: 15px;
+                    padding: 3px;
+                }
+                    
+                .animated-border::before {
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    right: 3px;
+                    bottom: 3px;
+                    background: white;
+                    border-radius: 12px;
+                    z-index: 1;
+                }
+
+                .animated-border > * {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                @keyframes gradientShift {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+
+                .section-divider {
+                    height: 4px;
+                    background: linear-gradient(90deg, transparent, #0EA5E9, transparent);
+                    margin: 3rem 0;
+                }
+            </style>
+        </head>
+
+        <body class="bg-white text-dark antialiased overflow-x-hidden">
+            <!-- Header Section -->
+            <header class="relative z-50">
+                <!-- Top Bar -->
+                <div class="bg-blue-900 py-2">
+                    <div class="container mx-auto px-4 lg:px-8">
+                        <div class="flex flex-wrap items-center justify-between">
+                            <div class="flex items-center text-white">
+                                <span class="flex items-center gap-3 text-light">
+                                    <i class="fas fa-phone text-accent"></i>
+                                    <span class="text-sm font-medium">+91 02231008314</span>
+                                </span>
+                            </div>
+                            <div class="flex space-x-6">
+                                <a href="mailto:fyldeship@gmail.com"
+                                    class="text-light transition-colors duration-300 flex items-center gap-2"
+                                    aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                    <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
+                                </a>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                        aria-label="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                        aria-label="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                        aria-label="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <a href="#gallery"
-                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">Gallery</a>
-                        <a href="./Blog.html"
-                            class="nav-link px-4 py-4 text-primary font-bold text-lg relative hover:text-accent transition-colors duration-300 uppercase">Career</a>
-                    </div>
-
-                    <!-- Contact Button - Right Side -->
-                    <div class="hidden lg:flex items-center justify-end">
-                        <a href="./contact.html"
-                            class="bg-yellow-600 hover:bg-blue-900 text-white font-bold text-lg px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg uppercase">Contact Us</a>
                     </div>
                 </div>
 
-                <!-- Mobile Navigation Menu -->
-                <div id="mobile-menu" class="lg:hidden hidden">
-                    <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
-                        <a href="./index.html"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Home</a>
-                        <a href="./about.html"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">About Us</a>
-                        <div class="relative">
-                            <button id="mobile-services-btn"
-                                class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">
-                                Services
-                                <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                <!-- Main Navbar -->
+                <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
+                    <div class="container mx-auto px-4 lg:px-8">
+                        <div class="flex items-center justify-between py-2">
+                            
+                            <!-- Logo - Left Side -->
+                            <div class="flex items-center flex-shrink-0">
+                                <a href="./index.html" class="flex items-center">
+                                    <img src="../asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                                </a>
+                            </div>
+
+                            <!-- Desktop Navigation - Center (Hidden on mobile) -->
+                            <div class="hidden lg:flex items-center justify-center flex-1">
+                                <div class="flex items-center space-x-6 xl:space-x-8">
+                                    <a href="./index.html"
+                                        class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                        Home
+                                    </a>
+                                    <a href="./about.html"
+                                        class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
+                                        About Us
+                                    </a>
+                                    <div class="relative group">
+                                        <button
+                                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
+                                            Services
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </button>
+                                        <div
+                                            class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                                <a href="./Services/CrewManagement.html"
+                                                    class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                                    role="menuitem">Crew Management</a>
+                                                <a href="./Services/TechnicalManagement.html"
+                                                    class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                                    role="menuitem">Technical Management</a>
+                                                <a href="./Services/Chatering.html"
+                                                    class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                                    role="menuitem">Chartering</a>
+                                                <a href="./Services/Brokerage.html"
+                                                    class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                                    role="menuitem">Maritime Brokerage</a>
+                                                <a href="./Services/CrudeOil.html"
+                                                    class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                                    role="menuitem">Crude Oil Brokerage & Sourcing</a>     
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#gallery"
+                                        class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                        Gallery
+                                    </a>
+                                    <a href="./career.html"
+                                        class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                        Career
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Contact Button - Right Side (Hidden on mobile) -->
+                            <div class="hidden lg:flex items-center justify-end flex-shrink-0">
+                                <a href="./contact.html"
+                                    class="bg-yellow-600 hover:bg-blue-900 text-white font-bold text-base xl:text-lg px-4 xl:px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg uppercase whitespace-nowrap">
+                                    Contact Us
+                                </a>
+                            </div>
+
+                            <!-- Mobile menu button -->
+                            <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                                        d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>  
                             </button>
-                            <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
-                                <a href="./Services/TechnicalManagement.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Technical Management</a>
-                                <a href="./Services/CrewManagement.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Crew Management</a>
-                                <a href="./Services/Chatering.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg">Chatering</a>
+                        </div>
+
+                        <!-- Mobile Navigation Menu -->
+                        <div id="mobile-menu" class="lg:hidden hidden">
+                            <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                                <a href="./index.html"
+                                    class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Home</a>
+                                <a href="./about.html"
+                                    class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">About Us</a>
+                                <div class="relative">
+                                    <button id="mobile-services-btn"
+                                        class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
+                                        Services
+                                        <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                                        <a href="./Services/CrewManagement.html"
+                                            class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crew Management</a>
+                                        <a href="./Services/TechnicalManagement.html"
+                                            class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Technical Management</a>
+                                        <a href="./Services/Chatering.html"
+                                            class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
+                                        <a href="./Services/Brokerage.html"
+                                            class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
+                                        <a href="./Services/CrudeOil.html"
+                                            class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
+                                    </div>
+                                </div>
+                                <a href="#gallery"
+                                    class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Gallery</a>
+                                <a href="./career.html"
+                                    class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Career</a>
+                                <a href="./contact.html"
+                                    class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">Contact Us</a>
                             </div>
                         </div>
-                        <a href="#gallery"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Gallery</a>
-                        <a href="./Blog.html"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg">Career</a>
-                        <a href="./contact.html"
-                            class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center">Contact Us</a>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="relative py-24 gradient-bg hero-pattern overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
+                
+                <!-- Floating Elements -->
+                <div class="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full animate-float"></div>
+                <div class="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce-slow"></div>
+                <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-accent/30 rounded-full animate-pulse-slow"></div>
+                
+                <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                    <div class="text-center">
+                       <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-wider" data-aos="fade-up">
+                         VESSEL CHARTERING
+                        <span class="block text-3xl md:text-4xl text-accent font-normal mt-2">MAXIMIZING FLEET UTILIZATION THROUGH STRATEGIC COMMERCIAL PARTNERSHIPS</span>
+                    </h1>
+                <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+                    Connecting cargo owners with optimal tonnage through our global chartering network
+                </p>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Crew Management Services Section -->
+        <section class="py-24 bg-light relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>
+            </div>
+
+            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                <!-- Introduction Paragraph and Hero Image - Side by Side -->
+                <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
+                    <!-- Left Side - Introduction Paragraph -->
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gradient mb-8 uppercase">Strategic Charter Solutions</h2>
+                    <p class="text-gray-950 text-lg leading-relaxed mb-6">
+                        Unlock the full potential of your fleet's utilization and market access through our strategic vessel chartering services. Leveraging profound commercial insights and an expansive global network, we expertly identify and secure the most advantageous charter agreements, meticulously matching vessels with ideal cargo or project requirements to ensure highly profitable and seamless voyages.
+                    </p>
+                    <p class="text-gray-950 text-lg leading-relaxed">
+                        Whether you're looking for time charters, bareboat charters, or voyage charters, our team provides comprehensive market analysis and robust negotiation support. We manage contractual complexities, optimize logistics, and mitigate risks, ensuring your vessels are optimally employed and generating maximum returns in a competitive global market.
+                    </p>
+                </div>
+                    
+                    <!-- Right Side - Hero Image -->
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <div class="animated-border">
+                            <div class="rounded-xl overflow-hidden shadow-2xl">
+                                <img src="../asset/chartering.jpg" 
+                                    alt="chatering management" 
+                                    class="w-full object-cover h-64 md:h-96 transition-transform duration-700 hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chartering Services Features -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+                <!-- Feature 1 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-handshake text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">CHARTER NEGOTIATION</h3>
+                    </div>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        Our experienced chartering team negotiates favorable terms on your behalf, leveraging real-time market intelligence to secure optimal rates and conditions. We handle all contract particulars including hire rates, duration, delivery positions, and performance clauses to protect your interests.
+                    </p>
+                </div>
+                    
+                <!-- Feature 2 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-search-dollar text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">MARKET ANALYSIS</h3>
+                    </div>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        We provide detailed market reports and trend analysis across all vessel segments, helping you make informed chartering decisions. Our proprietary algorithms assess supply/demand dynamics, freight rate forecasts, and regional opportunities to identify optimal charter windows.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-ship text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">FLEET POSITIONING</h3>
+                    </div>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        Strategic vessel positioning services ensure your tonnage is in the right place at the right time to capitalize on emerging opportunities. We optimize ballast legs and minimize idle time through our global network of port agents and operational partners.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-10 rounded-2xl shadow-xl card-hover border-gradient" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 feature-icon rounded-2xl flex items-center justify-center mr-6 animate-float">
+                            <i class="fas fa-file-contract text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gradient uppercase">CONTRACT MANAGEMENT</h3>
+                    </div>
+                    <p class="text-gray-800 text-lg leading-relaxed">
+                        Comprehensive contract administration including fixture recap preparation, performance monitoring, and dispute resolution. Our legal team ensures all charter party terms (NYPE, GENCON, ASBATIME) are properly executed and enforced throughout the charter period.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+                
+            <!-- Comprehensive Solutions Section -->
+            <!-- <div class="bg-white p-12 rounded-3xl shadow-2xl border-gradient relative overflow-hidden" data-aos="fade-up"> -->
+                <!-- Background Decoration -->
+                <!-- <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-accent/10 to-transparent rounded-full"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-primary/10 to-transparent rounded-full"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-center mb-12">
+                        <h3 class="text-4xl font-bold text-gradient mb-6 uppercase">COMPREHENSIVE CHARTERING SOLUTIONS</h3>
+                        <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                        <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
+                            Tailored chartering services for all vessel types and commercial requirements
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-clock text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Time Charter</h4>
+                                <p class="text-gray-800">Flexible period charters with optimized hire rates</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-anchor text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Bareboat Charter</h4>
+                                <p class="text-gray-800">Long-term lease arrangements with full operational control</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-route text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Voyage Charter</h4>
+                                <p class="text-gray-800">Single trip charters with precise cargo matching</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-boxes text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Cargo Brokerage</h4>
+                                <p class="text-gray-800">Connecting shippers with appropriate tonnage</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-project-diagram text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Project Cargo</h4>
+                                <p class="text-gray-800">Specialized heavy lift and oversized cargo solutions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-truck-loading text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">COA Management</h4>
+                                <p class="text-gray-800">Contract of Affreightment administration</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-chart-line text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Market Intelligence</h4>
+                                <p class="text-gray-800">Weekly freight rate reports and trend analysis</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-balance-scale text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Demurrage Management</h4>
+                                <p class="text-gray-800">Port stay optimization and claims handling</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-6 bg-gradient-to-br from-light to-white rounded-xl shadow-md">
+                            <i class="fas fa-shield-alt text-accent text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-primary mb-2">Risk Assessment</h4>
+                                <p class="text-gray-800">Port/region risk analysis and mitigation strategies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- <div class="section-divider"></div> -->
+            
+            <!-- Benefits Section -->
+            <div class="max-w-6xl mx-auto mb-20" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <h3 class="text-4xl font-bold text-gradient mb-6 uppercase">YOUR COMMERCIAL ADVANTAGE</h3>
+                    <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-gradient">
+                        <div class="text-accent text-4xl mb-4">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Increased Earnings</h4>
+                        <p class="text-gray-800">
+                            Our market expertise ensures your vessels secure premium rates through optimal employment strategies and timing, maximizing your revenue potential.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-gradient">
+                        <div class="text-accent text-4xl mb-4">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Global Network</h4>
+                        <p class="text-gray-800">
+                            Access to our extensive worldwide connections with cargo owners, operators, and brokers creates more opportunities for your fleet.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-gradient">
+                        <div class="text-accent text-4xl mb-4">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Experienced Brokers</h4>
+                        <p class="text-gray-800">
+                            Our chartering team averages 15+ years in the industry, with deep specialization across all major vessel segments and cargo types.
+                        </p>
                     </div>
                 </div>
             </div>
-        </nav>
-    </header>
 
-    
-
-    <!-- Footer -->
-    <footer class="bg-dark text-light">
-        <!-- Footer Top -->
-        <div class="container mx-auto px-4 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <!-- Company Info -->
-                <div>
-                    <img src="../asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-16 mb-6">
-                    <p class="text-gray-400 mb-6">Fylde Ship Management provides innovative and cost-effective solutions
-                        for offshore and fleet operations. Our commitment to excellence ensures reliable maritime
-                        services.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                            aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                            aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+            <div class="section-divider"></div>
+            
+            <!-- CTA Section -->
+            <div class="text-center relative" data-aos="fade-up">
+                <div class="bg-gradient-to-r from-primary to-secondary p-12 rounded-3xl text-white relative overflow-hidden">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-0 left-0 w-32 h-32 bg-white rounded-full"></div>
+                        <div class="absolute bottom-0 right-0 w-40 h-40 bg-accent rounded-full"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-full"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-8 uppercase">READY TO OPTIMIZE YOUR FLEET EMPLOYMENT?</h3>
+                        <p class="text-white/90 text-xl mb-8 max-w-2xl mx-auto">
+                            Let our chartering experts develop a tailored commercial strategy for your vessels.
+                        </p>
+                        <a href="../contact.html" class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold text-lg px-12 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl inline-block uppercase animate-glow">
+                            CONTACT OUR CHARTERING TEAM
                         </a>
                     </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="./index.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Home</a></li>
-                        <li><a href="./about.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">About Us</a></li>
-                        <li><a href="#services"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Services</a></li>
-                        <li><a href="#gallery"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
-                        <li><a href="#blog"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Blog</a></li>
-                        <li><a href="./contact.html"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Our Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Technical
-                                Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Crew
-                                Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Vessel
-                                Chartering</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-accent transition-colors duration-300">Logistics
-                                Support</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6">Contact Us</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
-                            <span class="text-gray-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India -
-                                400021</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-light"></i>
-                            <span class="text-gray-400">+91 02231008314</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-light"></i>
-                            <a href="mailto:fyldeship@gmail.com"
-                                class="text-gray-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
+    </section>  
 
-        <!-- Footer Bottom -->
-        <div class="border-t border-gray-800">
-            <div class="container mx-auto px-4 lg:px-8 py-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
-                    <div class="mt-4 md:mt-0">
-                        <ul class="flex space-x-6">
-                            <li><a href="#"
-                                    class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
-                                    Policy</a></li>
-                            <li><a href="#"
-                                    class="text-gray-500 hover:text-accent transition-colors duration-300 text-sm">Terms
-                                    of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+            <!-- Footer -->
+            <footer class="bg-[#1E3A8A] text-white">
+                <!-- Footer Top -->
+                <div class="container mx-auto px-4 lg:px-8 py-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                        <!-- Company Info -->
+                        <div>
+                            <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
+                            <p class="text-white-400 mb-6 badge">Fylde Ship Management provides innovative and cost-effective integrated solutions
+                                for fleet and offshoreoperations. Our commitment to excellence ensures reliable maritime
+                                services.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                                    aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                                    aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                                    aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
 
-    <!-- Back to Top Button -->
-    <a href="#" id="back-to-top"
-        class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+                        <!-- Quick Links -->
+                        <div>
+                            <h4 class="text-white text-xl font-bold mb-6 uppercase">Quick Links</h4>
+                            <ul class="space-y-3">
+                                <li><a href="./index.html"
+                                        class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                                <li><a href="./about.html"
+                                        class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                                <li><a href="#services"
+                                        class="text-white-400 hover:text-accent transition-colors duration-300">Services</a></li>
+                                    <li><a href="#gallery"
+                                            class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                                    <li><a href="#blog"
+                                            class="text-white-400 hover:text-accent transition-colors duration-300">Blog</a></li>
+                                    <li><a href="./contact.html"
+                                            class="text-white-400 hover:text-accent transition-colors duration-300">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
 
-    <!-- AOS Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+                            <!-- Services -->
+                            <div>
+                                <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
+                                            Management</a></li>
+                                    <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
+                                            Management</a></li>
+                                        
+                                        <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Vessel
+                                                Chartering</a></li>
+                                        <li><a href="#" class="text-white-400 hover:text-accent transition-colors duration-300">Brokerage</a></li>
+                                    </ul>
+                                </div>
 
-    <!-- Main Script -->
-    <script>
-        // Initialize AOS animation
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+                                <!-- Contact Info -->
+                                <div>
+                                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Contact Us</h4>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start gap-3">
+                                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
+                                            <span class="text-white-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India -
+                                                400021</span>
+                                        </li>
+                                        <li class="flex items-center gap-3">
+                                            <i class="fas fa-phone text-white"></i>
+                                            <span class="text-white-400">+91 02231008314</span>
+                                        </li>
+                                        <li class="flex items-center gap-3">
+                                            <i class="fas fa-envelope text-white"></i>
+                                            <a href="mailto:fyldeship@gmail.com"
+                                                class="text-white-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+                        <!-- Footer Bottom -->
+                        <div class="border-t border-gray-800 ">
+                            <div class="container mx-auto px-4 lg:px-8 py-6">
+                                <div class="flex flex-col md:flex-row justify-between items-center">
+                                    <p class="text-white-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                                    <div class="mt-4 md:mt-0">
+                                        <ul class="flex space-x-6">
+                                            <li><a href="#"
+                                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
+                                                    Policy</a></li>
+                                            <li><a href="#"
+                                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Terms
+                                                    of Service</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+                    <!-- Back to Top Button -->
+                    <a href="#" id="back-to-top"
+                        class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
+                    <!-- AOS Animation Library -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('py-2');
-                navbar.classList.remove('py-4');
-            } else {
-                navbar.classList.add('py-4');
-                navbar.classList.remove('py-2');
-            }
-        });
+                    <!-- Main Script -->
+                    <script>
+                        // Initialize AOS animation
+                        AOS.init({
+                            duration: 800,
+                            once: true
+                        });
 
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
+                        // Mobile menu toggle
+                        const menuToggle = document.getElementById('menu-toggle');
+                        const mobileMenu = document.getElementById('mobile-menu');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.add('opacity-0', 'invisible');
-                backToTopButton.classList.remove('opacity-100', 'visible');
-            }
-        });
+                        menuToggle.addEventListener('click', () => {
+                            mobileMenu.classList.toggle('hidden');
+                        });
 
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+                        // Navbar scroll effect
+                        const navbar = document.getElementById('navbar');
 
-        // for the drown down
-        document.getElementById('mobile-services-btn').addEventListener('click', function () {
-            const submenu = document.getElementById('mobile-services-menu');
-            const arrow = document.getElementById('mobile-services-arrow');
-            submenu.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-180');
-        });
+                        window.addEventListener('scroll', () => {
+                            if (window.scrollY > 100) {
+                                navbar.classList.add('py-2');
+                                navbar.classList.remove('py-4');
+                            } else {
+                                navbar.classList.add('py-4');
+                                navbar.classList.remove('py-2');
+                            }
+                        });
 
-    </script>
-</body>
+                        // Back to top button
+                        const backToTopButton = document.getElementById('back-to-top');
 
-</html>
+                        window.addEventListener('scroll', () => {
+                            if (window.scrollY > 300) {
+                            backToTopButton.classList.remove('opacity-0', 'invisible');
+                            backToTopButton.classList.add('opacity-100', 'visible');
+                        } else {
+                            backToTopButton.classList.add('opacity-0', 'invisible');
+                            backToTopButton.classList.remove('opacity-100', 'visible');
+                        }
+                    });
+
+                    backToTopButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+
+                    // for the drown down
+                    document.getElementById('mobile-services-btn').addEventListener('click', function () {
+                        const submenu = document.getElementById('mobile-services-menu');
+                        const arrow = document.getElementById('mobile-services-arrow');
+                        submenu.classList.toggle('hidden');
+                        arrow.classList.toggle('rotate-180');
+                    });
+
+                </script>
+            </body>
+
+            </html>
