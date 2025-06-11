@@ -9,9 +9,7 @@
     <!-- Swiper CSS -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -134,7 +132,7 @@
                     <div class="flex items-center text-white">
                         <span class="flex items-center gap-3 text-light">
                             <i class="fas fa-phone text-accent"></i>
-                            <span class="text-sm font-medium">02244813836</span>
+                            <span class="text-sm font-medium">+91 02231008314</span>
                         </span>
                     </div>
                     <div class="flex space-x-6">
@@ -142,7 +140,7 @@
                             class="text-light transition-colors duration-300 flex items-center gap-2"
                             aria-label="Email">
                             <i class="fas fa-envelope"></i>
-                            <span class="text-sm font-medium hidden md:inline">info@fyldesm.com</span>
+                            <span class="text-sm font-medium hidden md:inline">fyldeship@gmail.com</span>
                         </a>
                         <div class="flex space-x-4">
                             <a href="#" class="text-light hover:text-accent transition-colors duration-300"
@@ -174,7 +172,7 @@
                             <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
                         </a>
                     </div>
-
+    
                     <!-- Desktop Navigation - Center (Hidden on mobile) -->
                     <div class="hidden lg:flex items-center justify-center flex-1">
                         <div class="flex items-center space-x-6 xl:space-x-8">
@@ -199,25 +197,25 @@
                                 <div
                                     class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
                                     <div class="py-1" role="menu" aria-orientation="vertical">
-                                        <a href="./services/crewManagement.html"
+                                        <a href="./services/CrewManagement.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                                             role="menuitem">Crew Management</a>
-                                        <a href="./services/technicalManagement.html"
+                                        <a href="./services/TechnicalManagement.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                                             role="menuitem">Technical Management</a>
-                                        <a href="./services/chatering.html"
+                                        <a href="./services/Chatering.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                                             role="menuitem">Chartering</a>
-                                        <a href="./services/brokerage.html"
+                                        <a href="./services/Brokerage.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                                             role="menuitem">Maritime Brokerage</a>
-                                        <a href="./services/crudeOil.html"
+                                        <a href="./services/CrudeOil.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                                             role="menuitem">Crude Oil Brokerage & Sourcing</a>     
                                     </div>
                                 </div>
                             </div>
-                            <a href="./gallery.html"
+                            <a href="#gallery"
                                 class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
                                 Gallery
                             </a>
@@ -265,19 +263,19 @@
                                 </svg>
                             </button>
                             <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
-                                <a href="./services/crewManagement.html"
+                                <a href="./services/CrewManagement.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crew Management</a>
-                                <a href="./services/technicalManagement.html"
+                                <a href="./services/TechnicalManagement.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Technical Management</a>
-                                <a href="./services/chatering.html"
+                                <a href="./services/Chatering.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
-                                <a href="./services/brokerage.html"
+                                <a href="./services/Brokerage.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
-                                <a href="./services/crudeOil.html"
+                                <a href="./services/CrudeOil.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
                             </div>
                         </div>
-                        <a href="./gallery.html"
+                        <a href="#gallery"
                             class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Gallery</a>
                         <a href="./career.html"
                             class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Career</a>
@@ -288,331 +286,7 @@
             </div>
         </nav>
     </header>
-
-   <!-- Hero Section -->
-<section class="relative h-[87vh] min-h-[600px] overflow-hidden flex items-center justify-center">
-    <img src="./asset/shipimage1 (2).png" alt="Maritime Excellence Banner"
-        class="hero-video object-cover w-full h-full brightness-50">
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-primary/10 to-transparent flex items-center justify-center">
-        <div class="text-center px-4 lg:px-8" data-aos="fade-up" data-aos-duration="1000">
-            <h5 class="text-white font-semibold text-xl mb-4 uppercase tracking-wider">Maritime Excellence</h5>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white font-display leading-tight uppercase">
-                Simplify Maritime Operations, <br>
-                <span class="text-white">Maximize Efficiency</span>
-            </h1>
-            <p class="text-xl text-light mb-10 max-w-2xl mx-auto">Propelling Global Maritime Through Integrated Solutions</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="./about.html"
-                    class="bg-accent hover:bg-primary text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2">
-                    Discover More
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <!-- Uncomment below if you want "Our Services" button -->
-                <!--
-                <a href="./Services/TechnicalManagement.html"
-                    class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                    Our Services
-                </a>
-                -->
-            </div>
-        </div>
-    </div>
-</section>
-
-    
-
-    <!-- About Section -->
-   <section id="about" class="py-20 bg-white relative">
-    <div class="container mx-auto px-4 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right" data-aos-duration="1000" class="order-2 lg:order-1">
-                <h5 class="text-accent font-medium uppercase tracking-wider mb-2">About Fylde Ship</h5>
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 font-display uppercase">Who We Are</h2>
-                <div class="w-24 h-1 bg-accent mb-6"></div>
-                <p class="text-lg leading-relaxed text-gray-800 mb-6">
-                    Fylde Ship Management LLP is a trusted partner for global maritime services. With a steadfast
-                    commitment to safety, transparency, and operational efficiency, we deliver tailored solutions
-                    across crew management, Technical Management vessel chartering & ship brokerage.
-                </p>
-                        <p class="text-lg text-gray-800 mb-8">
-                    Our Leadership team brings decades of combined hands on experince (20+ years) of global maritime leadership, our expertise spans international shipping,
-                    logistics, and full-spectrum fleet operations. We focus on sustainable growth, efficient execution,
-                    and client satisfaction through strategic insights and professional delivery.
-                </p>
-                <a href="about.html"
-                    class="inline-block bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 group">
-                    Learn More About Us
-                    <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-2"></i>
-                </a>
-            </div>
-            <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="1000">
-                <div class="relative">
-                    <div class="w-full h-96 lg:h-[30rem] rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="./asset/img1.jpg" class="w-full h-full object-cover rounded-2xl" alt="Ship Image">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 bg-accent text-white p-6 rounded-xl shadow-lg">
-                        <div class="text-xl font-bold">20+ Years</div>
-                        <div class="uppercase tracking-wider">Maritime Leadership</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-primary font-display uppercase">Why Partner with FYLDE?</h2>
-            <div class="w-24 h-1 bg-accent mx-auto mt-4 mb-6"></div>
-            <p class="max-w-2xl mx-auto text-gray-600">
-                Your Benefits, Our Commitment. We provide an integrated suite of Crew Management, Vessel Chartering, Maritime Brokerage, and Crude Oil Sourcing with unmatched trust, global reach, and operational value.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent"
-                data-aos="fade-up" data-aos-delay="100">
-                <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
-                    <i class="fas fa-layer-group text-2xl text-accent"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary mb-4 uppercase">Integrated & Seamless Solutions</h3>
-                <p class="text-gray-600">We simplify your maritime operations with a single point of contact, ensuring streamlined coordination and optimal efficiency.</p>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent"
-                data-aos="fade-up" data-aos-delay="200">
-                <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
-                    <i class="fas fa-shield-alt text-2xl text-accent"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary mb-4 uppercase">Reliability & Compliance</h3>
-                <p class="text-gray-600">Transparent practices, ethical operations, and strict regulatory adherence ensure complete peace of mind and trust.</p>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent"
-                data-aos="fade-up" data-aos-delay="300">
-                <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
-                    <i class="fas fa-globe text-2xl text-accent"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary mb-4 uppercase">Global Reach, Personalized Service</h3>
-                <p class="text-gray-600">Our global network powers localized solutions tailored to your operational needs—wherever you sail.</p>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent"
-                data-aos="fade-up" data-aos-delay="400">
-                <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
-                    <i class="fas fa-chart-line text-2xl text-accent"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary mb-4 uppercase">Maximizing Your Value</h3>
-                <p class="text-gray-600">We go beyond service—our strategy boosts your bottom line through cost optimization and smart resource planning.</p>
-            </div>
-
-            <!-- Feature 5 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-accent"
-                data-aos="fade-up" data-aos-delay="500">
-                <div class="bg-accent/10 w-16 h-16 flex items-center justify-center rounded-full mb-6">
-                    <i class="fas fa-handshake text-2xl text-accent"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary mb-4 uppercase">Transparent Partnership</h3>
-                <p class="text-gray-600">Open communication and full operational visibility ensure you're always in control, fostering trust and long-term collaboration.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Service Proposal Section -->       
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4 lg:px-8">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display uppercase">Our Services</h1>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto"> </p>
-        </div>
-
-        <!-- Four Main Service Cards -->
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-
-            <!-- Ship Agency Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 service-card">
-                <div class="h-80 overflow-hidden">
-                    <img src="./asset/technical1.jpg" 
-                         alt="Ship Agency" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-                </div>
-                <div class="p-8">
-                    <a href="./services/crewManagement.html">
-                            <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">
-                                    Crew Management
-                            </h3>
-                    </a>
-
-                    <p class="text-gray-600 text-base leading-relaxed">Elevate your vessel's operational efficiency and safety with our meticulously vetted, highly competent, and fully compliant global crew. We ensure seamless manning, dedicated welfare, and optimal crew retention, providing the human capital essential for your fleet's continuous success.</p>
-                </div>
-            </div>
-
-            <!-- Ship Management Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 service-card">
-                <div class="h-80 overflow-hidden">
-                    <img src="./asset/download.jpeg" 
-                         alt="Ship Management" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-                </div>
-                <div class="p-8">
-                    <a href="./services/technicalManagement.html">
-                    <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Technical Management</h3>
-                    </a>
-                    <p class="text-gray-600 text-base leading-relaxed">Safeguard your investment and maximize uptime with our comprehensive technical management services. Our expert team oversees maintenance, compliance, and operational efficiency, ensuring your vessels perform optimally, extend their lifespan, and adhere to all regulatory standards.</p>
-                </div>
-            </div>
-
-            <!-- Port Services Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 service-card">
-                <div class="h-80 overflow-hidden">
-                    <img src="./asset/download (1).jpeg" 
-                         alt="Port Services" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-                </div>
-                <div class="p-8">
-                      <a href="./services/chatering.html">
-                    <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Chartering</h3>
-                    </a>
-                    <p class="text-gray-600 text-base leading-relaxed">Unlock peak profitability and utilization for your vessels with our expert chartering services. Leveraging deep commercial knowledge and an expansive global network, we strategically match vessels with optimal cargo or project requirements, ensuring seamless and highly profitable voyages for our clients.</p>
-                </div>
-            </div>
-
-             <!-- Port Services Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 service-card">
-                <div class="h-80 overflow-hidden">
-                    <img src="./asset/maritime-education-scaled.jpg" 
-                         alt="Port Services" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-                </div>
-                <div class="p-8">
-                    <a href="./services/brokerage.html">
-                    <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Maritime Brokerage</h3>
-                    </a>
-                    <p class="text-gray-600 text-base leading-relaxed">Navigate the complexities of vessel sale, purchase, or newbuild contracts with confidence. Our experienced maritime brokerage team provides unparalleled market insights, transparent valuations, and strong negotiation power, guiding you through every step to achieve optimal outcomes and accelerate your strategic growth.</p>
-                </div>
-            </div>
-
-             <!-- Port Services Card -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 service-card">
-                <div class="h-80 overflow-hidden">
-                    <img src="./asset/download (2).jpeg" 
-                         alt="Port Services" 
-                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
-                </div>
-                <div class="p-8">
-                    <a href="./services/crudeOil.html">
-                    <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</h3>
-                    </a>
-                    <p class="text-gray-600 text-base leading-relaxed">Gain strategic access to various categories of crude oil globally at highly competitive market rates. We leverage deep market intelligence and robust networks to facilitate seamless procurement and sales, optimizing your supply chain and enhancing your bottom line.
-            </div>
-
-          
-        </div>
-    </div>
-</section>
-
- <!-- Challenges Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8">
-            <!-- Section Header -->
-            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 font-display mb-6 uppercase">Navigating Rough Seas</h2>
-                <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600 leading-relaxed">
-                    Core Challenges in Global Maritime Services
-                </p>
-            </div>
-
-            <!-- Challenges Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Challenge 1: Crewing & Manning -->
-                <div class="challenge-card bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-100 to-cyan-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-users text-3xl text-cyan-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-6 uppercase">Crewing & Manning<br>Challenges</h3>
-                        <div class="h-1 w-16 bg-cyan-400 mx-auto mb-8"></div>
-                        <div class="text-left space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Shortage of Qualified & Compliant Crew</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">High Turnover & Welfare Issues</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Inefficient Recruitment Processes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Challenge 2: Chartering Market -->
-                <div class="challenge-card bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-green-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-chart-line text-3xl text-green-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-6 uppercase">Chartering Market<br>Inefficiencies</h3>
-                        <div class="h-1 w-16 bg-green-400 mx-auto mb-8"></div>
-                        <div class="text-left space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Market Opacity & Volatility</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Suboptimal Vessel Utilization</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Complex Negotiations</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                    
-                <!-- Challenge 3: Brokerage Barriers -->
-                <div class="challenge-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 text-center relative overflow-hidden group hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative z-10">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-handshake text-3xl text-purple-500"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-6 uppercase">Brokerage Transaction<br>Barriers</h3>
-                        <div class="h-1 w-16 bg-purple-400 mx-auto mb-8"></div>
-                        <div class="text-left space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Limited Market Access & Trust</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Lack of Transparency</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <p class="text-gray-800 leading-relaxed">Complex & Lengthy Closures</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+ 
     <!-- Footer -->
     <footer class="bg-[#1E3A8A] text-white">
         <!-- Footer Top -->
@@ -648,7 +322,7 @@
                                 class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
                         <li><a href="./about.html"
                                 class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
-                        <li><a href="./gallery.html"
+                        <li><a href="#gallery"
                                 class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
                         <li><a href="./career.html"
                                 class="text-white-400 hover:text-accent transition-colors duration-300">Career</a></li>
@@ -664,15 +338,15 @@
                 <div>
                     <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="./services/crewManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
+                        <li><a href="./services/CrewManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
                                 Management</a></li>
-                        <li><a href="./services/technicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
+                        <li><a href="./services/TechnicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
                                 Management</a></li>
                         
-                        <li><a href="./services/chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
+                        <li><a href="./services/Chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
                                 Chartering</a></li>
-                        <li><a href="./services/brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
-                        <li><a href="./services/crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
+                        <li><a href="./services/Brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
+                        <li><a href="./services/CrudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
                     </ul>
                 </div>
 

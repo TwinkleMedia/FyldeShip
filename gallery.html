@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Fylde Ship Management</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B2447',
+                        secondary: '#19376D',
+                        accent: '#0EA5E9',
+                        light: '#ECF2FF',
+                        dark: '#0F172A'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Poppins', 'serif']
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #0EA5E9;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(14, 165, 233, 0.3);
+        }
+
+        .gallery-image {
+            transition: all 0.6s ease;
+            filter: brightness(0.95);
+        }
+
+        .gallery-card:hover .gallery-image {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.8), rgba(11, 36, 71, 0.9));
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0B2447 0%, #19376D 50%, #0EA5E9 100%);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-shapes::before,
+        .floating-shapes::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shapes::before {
+            width: 60px;
+            height: 60px;
+            background: rgba(14, 165, 233, 0.1);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-shapes::after {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            bottom: 20%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .zoom-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .zoom-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .zoom-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-dark antialiased overflow-x-hidden">
+    <!-- Header Section -->
+    <header class="relative z-50">
+        <!-- Top Bar -->
+        <div class="bg-blue-900 py-2">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex flex-wrap items-center justify-between">
+                    <div class="flex items-center text-white">
+                        <span class="flex items-center gap-3 text-light">
+                            <i class="fas fa-phone text-accent"></i>
+                            <span class="text-sm font-medium">02244813836</span>
+                        </span>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="mailto:fyldeship@gmail.com"
+                            class="text-light transition-colors duration-300 flex items-center gap-2"
+                            aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                            <span class="text-sm font-medium hidden md:inline">info@fyldesm.com</span>
+                        </a>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex items-center justify-between py-2">
+                    
+                    <!-- Logo - Left Side -->
+                    <div class="flex items-center flex-shrink-0">
+                        <a href="./index.html" class="flex items-center">
+                            <img src="./asset/FYLDE SHIP LOGO PNG.png" alt="Fylde Ship Logo" class="h-14 md:h-16">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation - Center (Hidden on mobile) -->
+                    <div class="hidden lg:flex items-center justify-center flex-1">
+                        <div class="flex items-center space-x-6 xl:space-x-8">
+                            <a href="./index.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Home
+                            </a>
+                            <a href="./about.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
+                                About Us
+                            </a>
+                            <div class="relative group">
+                                <button
+                                    class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
+                                    Services
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                                    <div class="py-1" role="menu" aria-orientation="vertical">
+                                        <a href="./services/crewManagement.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Crew Management</a>
+                                        <a href="./services/technicalManagement.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Technical Management</a>
+                                        <a href="./services/chatering.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Chartering</a>
+                                        <a href="./services/brokerage.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Maritime Brokerage</a>
+                                        <a href="./services/crudeOil.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Crude Oil Brokerage & Sourcing</a>     
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="./gallery.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Gallery
+                            </a>
+                            <a href="./career.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Career
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Button - Right Side (Hidden on mobile) -->
+                    <div class="hidden lg:flex items-center justify-end flex-shrink-0">
+                        <a href="./contact.html"
+                            class="bg-yellow-600 hover:bg-blue-900 text-white font-bold text-base xl:text-lg px-4 xl:px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg uppercase whitespace-nowrap">
+                            Contact Us
+                        </a>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>  
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu" class="lg:hidden hidden">
+                    <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                        <a href="./index.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Home</a>
+                        <a href="./about.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">About Us</a>
+                        <div class="relative">
+                            <button id="mobile-services-btn"
+                                class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
+                                Services
+                                <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                                <a href="./services/crewManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crew Management</a>
+                                <a href="./services/technicalManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Technical Management</a>
+                                <a href="./services/chatering.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
+                                <a href="./services/brokerage.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
+                                <a href="./services/crudeOil.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
+                            </div>
+                        </div>
+                        <a href="./gallery.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Gallery</a>
+                        <a href="./career.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Career</a>
+                        <a href="./contact.html"
+                            class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative hero-gradient py-24 lg:py-32 overflow-hidden">
+        <div class="floating-shapes"></div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    Our <span class="text-yellow-400">Gallery</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Discover the maritime excellence through our comprehensive collection of vessels, operations, and achievements
+                </p>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+        </div>
+        
+        <!-- Animated waves at bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-16">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Gallery Grid -->
+            <div class="masonry-grid" data-aos="fade-up" data-aos-delay="200">
+                
+                <!-- Gallery Item 1 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g1.jpg')">
+                        <img src="./asset/g1.JPG" 
+                             alt="Maritime Vessel" class="w-full gallery-image object-cover">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g2.JPG')">
+                        <img src="./asset/g2.JPG" 
+                             alt="Ship Operations" class="w-full gallery-image object-cover h-80">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g3.JPG')">
+                        <img src="./asset/g3.JPG" 
+                             alt="Port Operations" class="w-full gallery-image object-cover h-64">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g4.JPG')">
+                        <img src="./asset/g4.JPG" 
+                             alt="Crew Management" class="w-full gallery-image object-cover h-96">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g5.JPG')">
+                        <img src="./asset/g5.JPG" 
+                             alt="Technical Management" class="w-full gallery-image object-cover h-72">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g6.JPG')">
+                        <img src="./asset/g6.JPG" 
+                             alt="Maritime Technology" class="w-full gallery-image object-cover h-56">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g7.JPG')">
+                        <img src="./asset/g7.JPG" 
+                             alt="Offshore Operations" class="w-full gallery-image object-cover h-88">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g8.JPG')">
+                        <img src="./asset/g8.JPG" 
+                             alt="Fleet Management" class="w-full gallery-image object-cover h-64">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g9.JPG')">
+                        <img src="./asset/g9.JPG" 
+                             alt="Maritime Services" class="w-full gallery-image object-cover h-80">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('./asset/g10.JPG')">
+                        <img src="./asset/g10.JPG" 
+                             alt="Ship Navigation" class="w-full gallery-image object-cover h-72">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1565016514444-fb3adff2a46e?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1565016514444-fb3adff2a46e?w=800&q=80" 
+                             alt="Maritime Excellence" class="w-full gallery-image object-cover h-64">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Gallery Item 12 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1574090686393-593bfa3c6c77?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1574090686393-593bfa3c6c77?w=800&q=80" 
+                             alt="Vessel Operations" class="w-full gallery-image object-cover h-96">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Gallery Item 13 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1520452112805-c6692c840af0?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1520452112805-c6692c840af0?w=800&q=80" 
+                             alt="Maritime Safety" class="w-full gallery-image object-cover h-56">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Gallery Item 14 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80" 
+                             alt="Port Management" class="w-full gallery-image object-cover h-88">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Gallery Item 15 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=800&q=80" 
+                             alt="Maritime Industry" class="w-full gallery-image object-cover h-72">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Gallery Item 16 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" 
+                             alt="Ship Engineering" class="w-full gallery-image object-cover h-80">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Gallery Item 17 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=800&q=80" 
+                             alt="Maritime Logistics" class="w-full gallery-image object-cover h-64">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Gallery Item 18 -->
+                <!-- <div class="masonry-item">
+                    <div class="gallery-card cursor-pointer" onclick="openImageModal('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" 
+                             alt="Ocean Operations" class="w-full gallery-image object-cover h-96">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus text-4xl text-white"></i>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Zoom Modal -->
+    <div id="imageModal" class="zoom-overlay">
+        <button class="close-btn" onclick="closeImageModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="modalImage" class="zoom-image" src="" alt="Gallery Image">
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E3A8A] text-white">
+        <!-- Footer Top -->
+        <div class="container mx-auto px-4 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
+                    <p class="text-white-400 mb-6 badge">Fylde Ship Management provides innovative and cost-effective integrated solutions
+                        for fleet and offshoreoperations. Our commitment to excellence ensures reliable maritime
+                        services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li><a href="./about.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="./gallery.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                        <li><a href="./career.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Career</a></li>
+                        <!-- <li><a href="#blog"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Blog</a></li> -->
+                        <li><a href="./contact.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./services/crewManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
+                                Management</a></li>
+                        <li><a href="./services/technicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
+                                Management</a></li>
+                        
+                        <li><a href="./services/chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
+                                Chartering</a></li>
+                        <li><a href="./services/brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
+                        <li><a href="./services/crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
+                            <span class="text-white-400"> Office No.L2/321, The Great Eastern Galleria
+Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-white"></i>
+                            <span class="text-white-400"> 022 44813836</span>
+                        </li>
+  <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-white"></i>
+                            <span class="text-white-400">+91 9137793370</span>
+                        </li>
+
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-white"></i>
+                            <a href="mailto:fyldeship@gmail.com"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">info@fyldesm.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-800 ">
+            <div class="container mx-auto px-4 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                    <div class="mt-4 md:mt-0">
+                        <ul class="flex space-x-6">
+                            <li><a href="#"
+                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
+                                    Policy</a></li>
+                            <li><a href="#"
+                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Terms
+                                    of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top"
+        class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Main Script -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile services dropdown
+        document.getElementById('mobile-services-btn').addEventListener('click', function () {
+            const submenu = document.getElementById('mobile-services-menu');
+            const arrow = document.getElementById('mobile-services-arrow');
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        });
+
+        // Image Modal Functions
+        function openImageModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+
+        // Staggered animation for gallery items
+        window.addEventListener('load', function() {
+            const galleryItems = document.querySelectorAll('.masonry-item');
+            galleryItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Initialize gallery items with animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.masonry-item');
+            galleryItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
