@@ -886,7 +886,7 @@ Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span>
     </script>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
+     document.addEventListener('DOMContentLoaded', function() {
     const slider = document.getElementById('teamSlider');
     const slides = slider.querySelectorAll('.team-slide');
     const prevBtn = document.querySelector('.slider-prev');
@@ -967,6 +967,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     updateSlidesToShow();
     updateSlider();
+
+});
+
+
+
+// Mobile Services Dropdown Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileServicesBtn = document.getElementById('mobile-services-btn');
+    const mobileServicesMenu = document.getElementById('mobile-services-menu');
+    const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+
+    if (mobileServicesBtn && mobileServicesMenu && mobileServicesArrow) {
+        mobileServicesBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            mobileServicesMenu.classList.toggle('hidden');
+            mobileServicesArrow.classList.toggle('rotate-180');
+        });
+    }
 });
 </script>
 </body>
