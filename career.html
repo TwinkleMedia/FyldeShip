@@ -872,6 +872,91 @@ Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span>
                 e.target.classList.remove('border-red-500');
             }
         });
+
+            // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+
+                // for the drown down
+        document.getElementById('mobile-services-btn').addEventListener('click', function () {
+            const submenu = document.getElementById('mobile-services-menu');
+            const arrow = document.getElementById('mobile-services-arrow');
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        });
+
+        // ==========================================
+        // IMPROVED DROPDOWN FUNCTIONALITY
+        // ==========================================
+        
+        // Desktop Services Dropdown
+        const desktopServicesBtn = document.getElementById('desktop-services-btn');
+        const desktopServicesMenu = document.getElementById('desktop-services-menu');
+        
+        // Mobile Services Dropdown
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+        
+        // Toggle desktop services dropdown on click
+        desktopServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            desktopServicesMenu.classList.toggle('active');
+        });
+        
+        // Toggle mobile services dropdown on click
+        mobileServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            mobileServicesMenu.classList.toggle('active');
+            mobileServicesArrow.classList.toggle('rotate-180');
+        });
+        
+        // Close dropdown menus when clicking outside
+        document.addEventListener('click', function(e) {
+            // For desktop menu
+            if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
+                desktopServicesMenu.classList.remove('active');
+            }
+            
+            // For mobile menu
+            if (!mobileServicesBtn.contains(e.target) && !mobileServicesMenu.contains(e.target)) {
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+        
+        // Don't close dropdown when clicking inside it
+        desktopServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });     
+        
+        mobileServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Close dropdowns when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                desktopServicesMenu.classList.remove('active');
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+
+        // For accessibility - add keyboard navigation
+        desktopServicesBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                desktopServicesMenu.classList.toggle('active');
+            }
+        });
+        
     </script>
 </body>
 </html>
