@@ -143,6 +143,20 @@
             background: linear-gradient(90deg, transparent, #0EA5E9, transparent);
             margin: 3rem 0;
         }
+        .relative.group .absolute {
+            top: calc(100% - 10px); /* Pulls it up by 10px */
+            left: 0;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            }
+
+           .relative.group:hover .absolute {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
+            }
     </style>
 </head>
 
@@ -295,111 +309,58 @@
                 </div>
 
 
-                <!-- Desktop Navigation - Center (Hidden on mobile) -->
-                <div class="hidden lg:flex items-center justify-center flex-1">
-
-                    <div class="flex items-center space-x-6 xl:space-x-8">
-
-                        <!-- Home -->
-                        <a href="./index.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Home
-                        </a>
-
-
-                        <!-- About Us -->
-                        <a href="./about.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
-                            About Us
-                        </a>
-
-
-                        <!-- Services Dropdown -->
-                        <div class="relative group">
-
-                            <button
-                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
-
-                                Services
-
-                                <svg class="w-4 h-4 ml-1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M19 9l-7 7-7-7">
-                                    </path>
-
-                                </svg>
-
-                            </button>
-
-
-                            <!-- Services Dropdown Menu -->
-                            <div
-                                class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-
-                                <div class="py-1"
-                                    role="menu"
-                                    aria-orientation="vertical">
-
-                                    <a href="./crewManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crew Management
-                                    </a>
-
-                                    <a href="./technicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Technical Management
-                                    </a>
-
-                                    <a href="./chatering.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Chartering
-                                    </a>
-
-                                    <a href="./brokerage.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Maritime Brokerage
-                                    </a>
-
-                                    <a href="./crudeOil.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crude Oil Brokerage & Sourcing
-                                    </a>
-
+                    <!-- Desktop Navigation - Center (Hidden on mobile) -->
+                    <div class="hidden lg:flex items-center justify-center flex-1">
+                        <div class="flex items-center space-x-6 xl:space-x-8">
+                            <a href="./index.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Home
+                            </a>
+                            <a href="./about.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
+                                About Us
+                            </a>
+                            <div class="relative group">
+                                <button
+                                    class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
+                                    Services
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                                    <div class="py-1" role="menu" aria-orientation="vertical">
+                                        <a href="./crewManagement.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Crew Management</a>
+                                        <a href="./technicalManagement.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Technical Management</a>
+                                        <a href="./chatering.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Chartering</a>
+                                        <a href="./brokerage.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Maritime Brokerage</a>
+                                        <a href="./crudeOil.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Crude Oil Brokerage & Sourcing</a>     
+                                    </div>
                                 </div>
-
                             </div>
-
+                            <a href="./gallery.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Gallery
+                            </a>
+                            <a href="./career.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Career
+                            </a>
                         </div>
-
-
-                        <!-- Gallery -->
-                        <a href="./gallery.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Gallery
-                        </a>
-
-
-                        <!-- Career -->
-                        <a href="./career.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Career
-                        </a>
-
                     </div>
-
-                </div>
 
 
                 <!-- Contact Button - Right Side -->
@@ -669,10 +630,10 @@
                 
                 <div class="relative z-10">
                     <div class="text-center mb-12">
-                        <h3 class="text-4xl font-bold text-gradient mb-6 uppercase">END-TO-END BROKERAGE SERVICES</h3>
+                        <h3 class="text-4xl font-bold text-gradient mb-6 uppercase">END-TO-END S & P SERVICES</h3>
                         <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
                         <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-                            Comprehensive maritime brokerage solutions covering all vessel types and transaction phases
+                            Comprehensive maritime S & P solutions covering all vessel types and transaction phases
                         </p>
                     </div>
                     
@@ -866,9 +827,9 @@
                                     <li><a href="./technicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
                                             Management</a></li>
                                         
-                                        <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">Vessel
-                                                Chartering</a></li>
-                                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
+                                        <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
+                                                Chartering & Commodity Traders</a></li>
+                                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
                                         <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
                                     </ul>
                             </div>
@@ -879,17 +840,21 @@
                                     <ul class="space-y-4">
                                         <li class="flex items-start gap-3">
                                             <i class="fas fa-map-marker-alt text-light mt-1"></i>
-                                            <span class="text-white-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India -
-                                                400021</span>
+                                            <span class="text-white-400"> Office No.L2/321, The Great Eastern Galleria
+    Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span>
                                         </li>
                                         <li class="flex items-center gap-3">
                                             <i class="fas fa-phone text-white"></i>
-                                            <span class="text-white-400">+91 02231008314</span>
+                                            <span class="text-white-400">02244813836</span>
                                         </li>
+                                        <li class="flex items-center gap-3">
+                                <i class="fas fa-phone text-white"></i>
+                                <span class="text-white-400">+91 9137793370</span>
+                            </li>
                                         <li class="flex items-center gap-3">
                                             <i class="fas fa-envelope text-white"></i>
                                             <a href="mailto:fyldeship@gmail.com"
-                                                class="text-white-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                                                class="text-white-400 hover:text-accent transition-colors duration-300">info@fyldesm.com</a>
                                         </li>
                                     </ul>
                                 </div>

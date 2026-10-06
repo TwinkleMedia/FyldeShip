@@ -222,6 +222,20 @@
             min-height: 550px; /* Ensure minimum height for proper content display */
         }
     }
+    .relative.group .absolute {
+            top: calc(100% - 10px); /* Pulls it up by 10px */
+            left: 0;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            }
+
+           .relative.group:hover .absolute {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
+            }
 </style>
 </head>
 <body>
@@ -375,111 +389,58 @@
                 </div>
 
 
-                <!-- Desktop Navigation - Center (Hidden on mobile) -->
-                <div class="hidden lg:flex items-center justify-center flex-1">
-
-                    <div class="flex items-center space-x-6 xl:space-x-8">
-
-                        <!-- Home -->
-                        <a href="./index.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Home
-                        </a>
-
-
-                        <!-- About Us -->
-                        <a href="./about.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
-                            About Us
-                        </a>
-
-
-                        <!-- Services Dropdown -->
-                        <div class="relative group">
-
-                            <button
-                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
-
-                                Services
-
-                                <svg class="w-4 h-4 ml-1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M19 9l-7 7-7-7">
-                                    </path>
-
-                                </svg>
-
-                            </button>
-
-
-                            <!-- Services Dropdown Menu -->
-                            <div
-                                class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-
-                                <div class="py-1"
-                                    role="menu"
-                                    aria-orientation="vertical">
-
-                                    <a href="./crewManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crew Management
-                                    </a>
-
-                                    <a href="./technicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Technical Management
-                                    </a>
-
-                                    <a href="./chatering.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Chartering
-                                    </a>
-
-                                    <a href="./brokerage.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Maritime Brokerage
-                                    </a>
-
-                                    <a href="./crudeOil.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crude Oil Brokerage & Sourcing
-                                    </a>
-
+                    <!-- Desktop Navigation - Center (Hidden on mobile) -->
+                    <div class="hidden lg:flex items-center justify-center flex-1">
+                        <div class="flex items-center space-x-6 xl:space-x-8">
+                            <a href="./index.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Home
+                            </a>
+                            <a href="./about.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
+                                About Us
+                            </a>
+                            <div class="relative group">
+                                <button
+                                    class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
+                                    Services
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div
+                                    class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                                    <div class="py-1" role="menu" aria-orientation="vertical">
+                                        <a href="./crewManagement.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Crew Management</a>
+                                        <a href="./technicalManagement.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Technical Management</a>
+                                        <a href="./chatering.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Chartering</a>
+                                        <a href="./brokerage.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Maritime Brokerage</a>
+                                        <a href="./crudeOil.html"
+                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                            role="menuitem">Crude Oil Brokerage & Sourcing</a>     
+                                    </div>
                                 </div>
-
                             </div>
-
+                            <a href="./gallery.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Gallery
+                            </a>
+                            <a href="./career.html"
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                                Career
+                            </a>
                         </div>
-
-
-                        <!-- Gallery -->
-                        <a href="./gallery.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Gallery
-                        </a>
-
-
-                        <!-- Career -->
-                        <a href="./career.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Career
-                        </a>
-
                     </div>
-
-                </div>
 
 
                 <!-- Contact Button - Right Side -->
@@ -519,114 +480,48 @@
             </div>
 
 
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="lg:hidden hidden">
-
-                <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
-
-                    <!-- Home -->
-                    <a href="./index.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Home
-                    </a>
-
-
-                    <!-- About Us -->
-                    <a href="./about.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        About Us
-                    </a>
-
-
-                    <!-- Mobile Services -->
-                    <div class="relative">
-
-                        <button id="mobile-services-btn"
-                            class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-
-                            Services
-
-                            <svg class="w-4 h-4 mt-1 transition-transform duration-300"
-                                id="mobile-services-arrow"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-
-                            </svg>
-
-                        </button>
-
-
-                        <!-- Mobile Services Dropdown -->
-                        <div id="mobile-services-menu"
-                            class="hidden pl-4 pb-1 pt-1">
-
-                            <a href="./crewManagement.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Crew Management
-                            </a>
-
-                            <a href="./technicalManagement.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Technical Management
-                            </a>
-
-                            <a href="./chatering.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Chartering
-                            </a>
-
-                            <a href="./brokerage.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Maritime Brokerage
-                            </a>
-
-                            <a href="./crudeOil.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Crude Oil Brokerage & Sourcing
-                            </a>
-
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu" class="lg:hidden hidden">
+                    <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                        <a href="./index.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Home</a>
+                        <a href="./about.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">About Us</a>
+                        <div class="relative">
+                            <button id="mobile-services-btn"
+                                class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
+                                Services
+                                <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                                <a href="./crewManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crew Management</a>
+                                <a href="./technicalManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Technical Management</a>
+                                <a href="./chatering.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
+                                <a href="./brokerage.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
+                                <a href="./crudeOil.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
+                            </div>
                         </div>
-
+                        <a href="./gallery.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Gallery</a>
+                        <a href="./career.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Career</a>
+                        <a href="./contact.html"
+                            class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">Contact Us</a>
                     </div>
-
-
-                    <!-- Gallery -->
-                    <a href="./gallery.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Gallery
-                    </a>
-
-
-                    <!-- Career -->
-                    <a href="./career.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Career
-                    </a>
-
-
-                    <!-- Contact Us -->
-                    <a href="./contact.html"
-                        class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">
-                        Contact Us
-                    </a>
-
                 </div>
-
             </div>
-
-        </div>
-
-    </nav>
-
-</header>
+        </nav>
+    </header>
 
         <!-- Hero Section with Ship Background - FIXED MOBILE PADDING -->
       
@@ -640,7 +535,7 @@
                     <p class="text-gray-600 max-w-2xl mx-auto">Our maritime experts are ready to assist you with all your shipping and management needs.</p>
                 </div>
                 
-                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 sm:px-6">
                     <!-- Location Card -->
                     <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-accent group info-card" data-aos="fade-up">
                         <div class="shape-blob w-20 h-20 bg-accent/10 text-accent rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
@@ -673,9 +568,21 @@ Nerul (West) Navi Mumbai – 400 706, India</p>
                         <div class="shape-blob w-20 h-20 bg-primary/10 text-primary rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-primary">Email Us</h3>
-                        <p class="text-gray-600 mb-4">General: info@fyldesm.com <br>We respond within 24 hours</p>
-                        <a href="mailto:info@fyldesm.com" class="text-primary font-medium hover:text-accent transition inline-flex items-center gap-2">
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Chartering</h3>
+                        <p class="text-gray-600 mb-4">commercial@fyldesm.com <br>We respond within 24 hours</p>
+                        <a href="mailto:commercial@fyldesm.com" class="text-primary font-medium hover:text-accent transition inline-flex items-center gap-2">
+                            Email Now
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-primary group info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="shape-blob w-20 h-20 bg-primary/10 text-primary rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">Send Resume</h3>
+                        <p class="text-gray-600 mb-4">hr@fyldesm.com <br>We respond within 24 hours</p>
+                        <a href="mailto:hr@fyldesm.com" class="text-primary font-medium hover:text-accent transition inline-flex items-center gap-2">
                             Email Now
                             <i class="fas fa-long-arrow-alt-right"></i>
                         </a>
@@ -692,7 +599,8 @@ Nerul (West) Navi Mumbai – 400 706, India</p>
             
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-7xl mx-auto">
-                    <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+
                         <!-- Contact Form with Stylish Design -->
                         <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col" data-aos="fade-right">
                             <div class="bg-gradient-to-r from-primary to-secondary p-8">
@@ -702,7 +610,7 @@ Nerul (West) Navi Mumbai – 400 706, India</p>
                             
                             <div class="p-8">
                                 <form class="space-y-6">
-                                    <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                                         <div class="input-focus-effect">
                                             <label class="block text-gray-700 font-medium mb-2" for="name">Full Name</label>
                                             <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="John Doe">
@@ -713,7 +621,7 @@ Nerul (West) Navi Mumbai – 400 706, India</p>
                                         </div>
                                     </div>
                                     
-                                    <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                                         <div class="input-focus-effect">
                                             <label class="block text-gray-700 font-medium mb-2" for="phone">Phone Number</label>
                                             <input type="tel" id="phone" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent transition" placeholder="+1 (555) 123-4567">
@@ -750,7 +658,7 @@ Nerul (West) Navi Mumbai – 400 706, India</p>
                                     <p class="text-white/80">Find us at our Mumbai headquarters</p>
                                 </div>
                                 
-                                <div class="flex-grow relative" id="location-map">
+                                <div class="relative pb-[75%] sm:pb-[50%] md:flex-grow h-0 sm:h-auto" id="location-map">
                                     <!-- Google Map iframe -->
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127674.18625098077!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c30d1db88649%3A0x1924f2317c91d723!2sTwinkle%20Media%20Hub%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1743674105491!5m2!1sen!2sin" 
@@ -814,7 +722,7 @@ INDIA- 400 706.</p>
                     <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Find answers to common questions about our services and operations</p>
                 </div>
                 
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6">
                     <!-- FAQ Item 1 -->
                     <div class="mb-6 bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
                         <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none">
@@ -886,7 +794,7 @@ INDIA- 400 706.</p>
     <footer class="bg-[#1E3A8A] text-white">
         <!-- Footer Top -->
         <div class="container mx-auto px-4 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 px-4 sm:px-6">
                 <!-- Company Info -->
                 <div>
                     <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
@@ -939,8 +847,8 @@ INDIA- 400 706.</p>
                                 Management</a></li>
                         
                         <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
-                                Chartering</a></li>
-                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
+                               Chartering & Commodity Traders</a></li>
+                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
                         <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
                     </ul>
                 </div>
@@ -1056,6 +964,82 @@ INDIA- 400 706.</span>
             });
         });
         
+            //dropdown
+
+             // for the drown down
+        document.getElementById('mobile-services-btn').addEventListener('click', function () {
+            const submenu = document.getElementById('mobile-services-menu');
+            const arrow = document.getElementById('mobile-services-arrow');
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        });
+
+        // ==========================================
+        // IMPROVED DROPDOWN FUNCTIONALITY
+        // ==========================================
+        
+        // Desktop Services Dropdown
+        const desktopServicesBtn = document.getElementById('desktop-services-btn');
+        const desktopServicesMenu = document.getElementById('desktop-services-menu');
+        
+        // Mobile Services Dropdown
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+        
+        // Toggle desktop services dropdown on click
+        desktopServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            desktopServicesMenu.classList.toggle('active');
+        });
+        
+        // Toggle mobile services dropdown on click
+        mobileServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            mobileServicesMenu.classList.toggle('active');
+            mobileServicesArrow.classList.toggle('rotate-180');
+        });
+        
+        // Close dropdown menus when clicking outside
+        document.addEventListener('click', function(e) {
+            // For desktop menu
+            if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
+                desktopServicesMenu.classList.remove('active');
+            }
+            
+            // For mobile menu
+            if (!mobileServicesBtn.contains(e.target) && !mobileServicesMenu.contains(e.target)) {
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+        
+        // Don't close dropdown when clicking inside it
+        desktopServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });     
+        
+        mobileServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Close dropdowns when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                desktopServicesMenu.classList.remove('active');
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+
+        // For accessibility - add keyboard navigation
+        desktopServicesBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                desktopServicesMenu.classList.toggle('active');
+            }
+        });
+
         // FAQ Toggles
         const faqToggles = document.querySelectorAll('.faq-toggle');
         

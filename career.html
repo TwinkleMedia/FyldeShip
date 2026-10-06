@@ -108,6 +108,20 @@
         .notification.show {
             transform: translateX(0);
         }
+        .relative.group .absolute {
+            top: calc(100% - 10px); /* Pulls it up by 10px */
+            left: 0;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            }
+
+           .relative.group:hover .absolute {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
+            }
     </style>
 </head>
 
@@ -184,7 +198,7 @@
                                     </svg>
                                 </button>
                                 <div
-                                    class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                                    class="absolute left-0 mt-2 w-75 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
                                     <div class="py-1" role="menu" aria-orientation="vertical">
                                         <a href="./crewManagement.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
@@ -194,7 +208,7 @@
                                             role="menuitem">Technical Management</a>
                                         <a href="./chatering.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                            role="menuitem">Chartering</a>
+                                            role="menuitem">Chartering & Commodity Traders</a>
                                         <a href="./brokerage.html"
                                             class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                                             role="menuitem">Maritime Brokerage</a>
@@ -259,7 +273,7 @@
                                 <a href="./chatering.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
                                 <a href="./brokerage.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">S & P</a>
                                 <a href="./crudeOil.html"
                                     class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
                             </div>
@@ -610,8 +624,8 @@
                                 Management</a></li>
                         
                         <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
-                                Chartering</a></li>
-                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
+                                Chartering & Commodity Traders</a></li>
+                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
                         <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
                     </ul>
                 </div>
@@ -693,9 +707,9 @@ document.getElementById('menu-toggle').addEventListener('click', function() {
 });
         // EmailJS Configuration
         const EMAILJS_CONFIG = {
-            publicKey: 'WxHQ0YhdYDG9Q-FA2',        // Replace with your EmailJS public key
-            serviceId: 'service_xu7q0yi',        // Replace with your EmailJS service ID
-            templateId: 'template_v2e4k4g'       // Replace with your EmailJS template ID
+            publicKey: 'AErIp_Ys4zAg8mkvJ',        // Replace with your EmailJS public key
+            serviceId: 'service_6ylec0o',        // Replace with your EmailJS service ID
+            templateId: 'template_xjsgc0i'       // Replace with your EmailJS template ID
         };
 
         // Initialize EmailJS
@@ -877,6 +891,91 @@ document.getElementById('menu-toggle').addEventListener('click', function() {
                 e.target.classList.remove('border-red-500');
             }
         });
+
+            // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+
+                // for the drown down
+        document.getElementById('mobile-services-btn').addEventListener('click', function () {
+            const submenu = document.getElementById('mobile-services-menu');
+            const arrow = document.getElementById('mobile-services-arrow');
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        });
+
+        // ==========================================
+        // IMPROVED DROPDOWN FUNCTIONALITY
+        // ==========================================
+        
+        // Desktop Services Dropdown
+        const desktopServicesBtn = document.getElementById('desktop-services-btn');
+        const desktopServicesMenu = document.getElementById('desktop-services-menu');
+        
+        // Mobile Services Dropdown
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+        
+        // Toggle desktop services dropdown on click
+        desktopServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            desktopServicesMenu.classList.toggle('active');
+        });
+        
+        // Toggle mobile services dropdown on click
+        mobileServicesBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent click from immediately closing the dropdown
+            mobileServicesMenu.classList.toggle('active');
+            mobileServicesArrow.classList.toggle('rotate-180');
+        });
+        
+        // Close dropdown menus when clicking outside
+        document.addEventListener('click', function(e) {
+            // For desktop menu
+            if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
+                desktopServicesMenu.classList.remove('active');
+            }
+            
+            // For mobile menu
+            if (!mobileServicesBtn.contains(e.target) && !mobileServicesMenu.contains(e.target)) {
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+        
+        // Don't close dropdown when clicking inside it
+        desktopServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });     
+        
+        mobileServicesMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Close dropdowns when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                desktopServicesMenu.classList.remove('active');
+                mobileServicesMenu.classList.remove('active');
+                mobileServicesArrow.classList.remove('rotate-180');
+            }
+        });
+
+        // For accessibility - add keyboard navigation
+        desktopServicesBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                desktopServicesMenu.classList.toggle('active');
+            }
+        });
+        
     </script>
 </body>
 </html>

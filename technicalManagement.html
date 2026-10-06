@@ -143,6 +143,20 @@
             background: linear-gradient(90deg, transparent, #0EA5E9, transparent);
             margin: 3rem 0;
         }
+        .relative.group .absolute {
+            top: calc(100% - 10px); /* Pulls it up by 10px */
+            left: 0;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            }
+
+           .relative.group:hover .absolute {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
+            }
     </style>
 </head>
 
@@ -439,112 +453,48 @@
             </div>
 
 
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="lg:hidden hidden">
-
-                <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
-
-                    <!-- Home -->
-                    <a href="./index.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Home
-                    </a>
-
-
-                    <!-- About Us -->
-                    <a href="./about.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        About Us
-                    </a>
-
-
-                    <!-- Mobile Services -->
-                    <div class="relative">
-
-                        <button id="mobile-services-btn"
-                            class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-
-                            Services
-
-                            <svg class="w-4 h-4 mt-1 transition-transform duration-300"
-                                id="mobile-services-arrow"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-
-                            </svg>
-
-                        </button>
-
-
-                        <!-- Mobile Services Dropdown -->
-                        <div id="mobile-services-menu"
-                            class="hidden pl-4 pb-1 pt-1">
-
-                            <a href="./crewManagement.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Crew Management
-                            </a>
-
-                            <a href="./technicalManagement.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Technical Management
-                            </a>
-
-                            <a href="./chatering.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Chartering
-                            </a>
-
-                            <a href="./brokerage.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Maritime Brokerage
-                            </a>
-
-                            <a href="./crudeOil.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Crude Oil Brokerage & Sourcing
-                            </a>
-
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu" class="lg:hidden hidden">
+                    <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                        <a href="./index.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Home</a>
+                        <a href="./about.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">About Us</a>
+                        <div class="relative">
+                            <button id="mobile-services-btn"
+                                class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
+                                Services
+                                <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                                <a href="./crewManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crew Management</a>
+                                <a href="./technicalManagement.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Technical Management</a>
+                                <a href="./chatering.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
+                                <a href="./brokerage.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
+                                <a href="./crudeOil.html"
+                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
+                            </div>
                         </div>
-
+                        <a href="./gallery.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Gallery</a>
+                        <a href="./career.html"
+                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Career</a>
+                        <a href="./contact.html"
+                            class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">Contact Us</a>
                     </div>
-
-
-                    <!-- Gallery -->
-                    <a href="./gallery.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Gallery
-                    </a>
-
-
-                    <!-- Career -->
-                    <a href="./career.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Career
-                    </a>
-
-
-                    <!-- Contact Us -->
-                    <a href="./contact.html"
-                        class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">
-                        Contact Us
-                    </a>
-
                 </div>
-
             </div>
-
-        </div>
-
-    </nav>
+        </nav>
+    </header>
 
 </header>
     <!-- Hero Section -->
@@ -663,52 +613,6 @@
 
             <div class="section-divider"></div>
                 
-            <!-- Competent Crew Section -->
-            <!-- <div class="bg-white p-12 rounded-3xl shadow-2xl border-gradient relative overflow-hidden" data-aos="fade-up"> -->
-                <!-- Background Decoration -->
-                <!-- <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-accent/10 to-transparent rounded-full"></div>
-                <div class="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-primary/10 to-transparent rounded-full"></div>
-                
-                <div class="relative z-10">
-                    <div class="text-center mb-12">
-                        <h3 class="text-4xl font-bold text-gradient mb-6 uppercase">EXTENSIVE COMPETENT CREW POOL</h3>
-                        <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
-                    </div>
-                    
-                    <p class="text-gray-800 mb-12 text-lg leading-relaxed text-center max-w-4xl mx-auto">
-                        We have an extensive competent pool of crews who have served with us for years. Our rigorous selection process and continuous training programs ensure that only the most qualified and experienced maritime professionals serve on your vessels.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                        <div class="flex items-center justify-center p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl card-hover">
-                            <i class="fas fa-check-circle text-accent mr-3 text-xl"></i>
-                            <span class="text-gray-800 font-semibold uppercase">Certified Officers</span>
-                        </div>
-                        <div class="flex items-center justify-center p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl card-hover">
-                            <i class="fas fa-check-circle text-accent mr-3 text-xl"></i>
-                            <span class="text-gray-800 font-semibold uppercase">Skilled Engineers</span>
-                        </div>
-                        <div class="flex items-center justify-center p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl card-hover">
-                            <i class="fas fa-check-circle text-accent mr-3 text-xl"></i>
-                            <span class="text-gray-800 font-semibold uppercase">Experienced Ratings</span>
-                        </div>
-                        <div class="flex items-center justify-center p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl card-hover">
-                            <i class="fas fa-check-circle text-accent mr-3 text-xl"></i>
-                            <span class="text-gray-800 font-semibold uppercase">Regular Training</span>
-                        </div>
-                        <div class="flex items-center justify-center p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl card-hover">
-                            <i class="fas fa-check-circle text-accent mr-3 text-xl"></i>
-                            <span class="text-gray-800 font-semibold uppercase">Compliance Focus</span>
-                        </div>
-                        <div class="flex items-center justify-center p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl card-hover">
-                            <i class="fas fa-check-circle text-accent mr-3 text-xl"></i>
-                            <span class="text-gray-800 font-semibold uppercase">Safety Conscious</span>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            
-            <!-- <div class="section-divider"></div> -->
             
             <!-- CTA Section -->
             <div class="text-center relative" data-aos="fade-up">
@@ -787,9 +691,9 @@
                                     <li><a href="./technicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
                                             Management</a></li>
                                         
-                                        <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">Vessel
-                                                Chartering</a></li>
-                                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
+                                        <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
+                                               Chartering & Commodity Traders</a></li>
+                                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
                                         <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
                                     </ul>
                             </div>
@@ -800,18 +704,21 @@
                                     <ul class="space-y-4">
                                         <li class="flex items-start gap-3">
                                             <i class="fas fa-map-marker-alt text-light mt-1"></i>
-                                            <span class="text-white-400">OFFICE NO. 321, THE GREAT EASTERN GALLERIA PREMISES CSL. PLOT NO. 20,
-SECTOR-4, NERUL WEST, NAVI MUMBAI, DARAve, THANE, MAHARASHTRA,
-INDIA- 400 706.</span>
+                                            <span class="text-white-400">301 Sea Shell, 123 Marine Drive, Mumbai, Maharashtra, India -
+                                                400021</span>
                                         </li>
                                         <li class="flex items-center gap-3">
                                             <i class="fas fa-phone text-white"></i>
-                                            <span class="text-white-400">+91 02231008314</span>
+                                            <span class="text-white-400">02244813836</span>
                                         </li>
+                                        <li class="flex items-center gap-3">
+                                <i class="fas fa-phone text-white"></i>
+                                <span class="text-white-400">+91 9137793370</span>
+                            </li>
                                         <li class="flex items-center gap-3">
                                             <i class="fas fa-envelope text-white"></i>
                                             <a href="mailto:fyldeship@gmail.com"
-                                                class="text-white-400 hover:text-accent transition-colors duration-300">fyldeship@gmail.com</a>
+                                                class="text-white-400 hover:text-accent transition-colors duration-300">info@fyldesm.com</a>
                                         </li>
                                     </ul>
                                 </div>
