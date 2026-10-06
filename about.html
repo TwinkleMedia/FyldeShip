@@ -254,61 +254,135 @@
         .footer-link:hover {
             transform: translateX(5px);
         }
-        .relative.group .absolute {
-            top: calc(100% - 10px); /* Pulls it up by 10px */
-            left: 0;
-            margin-top: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            }
-
-           .relative.group:hover .absolute {
-            opacity: 1;
-            visibility: visible;
-            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
-            }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-    <!-- Header Section -->
-    <header class="relative z-50">
-        <!-- Top Bar -->
-        <div class="bg-blue-900 py-2">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex flex-wrap items-center justify-between">
-                    <div class="flex items-center text-white">
-                        <span class="flex items-center gap-3 text-light">
-                            <i class="fas fa-phone text-accent"></i>
-                            <span class="text-sm font-medium">02244813836</span>
+   <!-- Header Section -->
+<header class="relative z-50">
+
+    <!-- Top Bar -->
+    <div class="bg-blue-900 py-2">
+        <div class="container mx-auto px-4 lg:px-8">
+
+            <!-- Desktop / Tablet Top Bar -->
+            <div class="hidden md:flex relative items-center justify-between min-h-[28px]">
+
+                <!-- Left: Phone -->
+                <div class="flex items-center text-white flex-shrink-0">
+                    <span class="flex items-center gap-2 lg:gap-3 text-light">
+                        <i class="fas fa-phone text-accent"></i>
+                        <span class="text-xs lg:text-sm font-medium">
+                            02244813836
                         </span>
-                    </div>
-                    <div class="flex space-x-6">
-                        <a href="mailto:fyldeship@gmail.com"
-                            class="text-light transition-colors duration-300 flex items-center gap-2"
-                            aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                            <span class="text-sm font-medium hidden md:inline">info@fyldesm.com</span>
+                    </span>
+                </div>
+
+                <!-- Center: RSPL Information -->
+                <div class="absolute left-1/2 -translate-x-1/2 text-center whitespace-nowrap">
+                    <span class="text-white text-[10px] lg:text-xs xl:text-sm font-semibold tracking-wide">
+                        RSPL NO. 162354
+                        <span class="mx-1 lg:mx-2 opacity-60">|</span>
+                        DATE OF ISSUE: 11 AUG 2025
+                        <span class="mx-1 lg:mx-2 opacity-60">|</span>
+                        DATE OF EXPIRY: 11 AUG 2030
+                    </span>
+                </div>
+
+                <!-- Right: Email & Social Icons -->
+                <div class="flex items-center space-x-3 lg:space-x-6 flex-shrink-0">
+
+                    <!-- Email -->
+                    <a href="mailto:fyldeship@gmail.com"
+                        class="text-light transition-colors duration-300 flex items-center gap-2"
+                        aria-label="Email">
+
+                        <i class="fas fa-envelope"></i>
+
+                        <span class="text-xs lg:text-sm font-medium hidden lg:inline">
+                            info@fyldesm.com
+                        </span>
+                    </a>
+
+                    <!-- Social Icons -->
+                    <div class="flex space-x-3 lg:space-x-4">
+
+                        <a href="#"
+                            class="text-light hover:text-accent transition-colors duration-300"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                                aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                                aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="text-light hover:text-accent transition-colors duration-300"
-                                aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
+
+                        <a href="#"
+                            class="text-light hover:text-accent transition-colors duration-300"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#"
+                            class="text-light hover:text-accent transition-colors duration-300"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
                     </div>
                 </div>
+
             </div>
+
+
+            <!-- Mobile Top Bar -->
+            <div class="md:hidden">
+
+                <!-- RSPL Information -->
+                <div class="text-center px-1">
+                    <div class="text-white text-[9px] sm:text-[10px] font-semibold leading-relaxed tracking-wide">
+
+                        <span class="block">
+                            RSPL NO. 162354
+                        </span>
+
+                        <span class="block">
+                            DATE OF ISSUE: 11 AUG 2025
+                        </span>
+
+                        <span class="block">
+                            DATE OF EXPIRY: 11 AUG 2030
+                        </span>
+
+                    </div>
+                </div>
+
+                <!-- Mobile Contact Row -->
+                <div class="flex items-center justify-center gap-5 mt-1">
+
+                    <!-- Phone -->
+                    <a href="tel:02244813836"
+                        class="flex items-center gap-2 text-light text-xs"
+                        aria-label="Phone">
+
+                        <i class="fas fa-phone text-accent"></i>
+                        <span>02244813836</span>
+
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:fyldeship@gmail.com"
+                        class="flex items-center gap-2 text-light text-xs"
+                        aria-label="Email">
+
+                        <i class="fas fa-envelope"></i>
+                        <span>info@fyldesm.com</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
+    </div>
+
 
     <!-- Main Navbar -->
     <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
@@ -331,58 +405,111 @@
                 </div>
 
 
-                    <!-- Desktop Navigation - Center (Hidden on mobile) -->
-                    <div class="hidden lg:flex items-center justify-center flex-1">
-                        <div class="flex items-center space-x-6 xl:space-x-8">
-                            <a href="./index.html"
-                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                                Home
-                            </a>
-                            <a href="./about.html"
-                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
-                                About Us
-                            </a>
-                            <div class="relative group">
-                                <button
-                                    class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
-                                    Services
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <div
-                                    class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-                                    <div class="py-1" role="menu" aria-orientation="vertical">
-                                        <a href="./crewManagement.html"
-                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                            role="menuitem">Crew Management</a>
-                                        <a href="./technicalManagement.html"
-                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                            role="menuitem">Technical Management</a>
-                                        <a href="./chatering.html"
-                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                            role="menuitem">Chartering</a>
-                                        <a href="./brokerage.html"
-                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                            role="menuitem">Maritime Brokerage</a>
-                                        <a href="./crudeOil.html"
-                                            class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                            role="menuitem">Crude Oil Brokerage & Sourcing</a>     
-                                    </div>
+                <!-- Desktop Navigation - Center (Hidden on mobile) -->
+                <div class="hidden lg:flex items-center justify-center flex-1">
+
+                    <div class="flex items-center space-x-6 xl:space-x-8">
+
+                        <!-- Home -->
+                        <a href="./index.html"
+                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                            Home
+                        </a>
+
+
+                        <!-- About Us -->
+                        <a href="./about.html"
+                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
+                            About Us
+                        </a>
+
+
+                        <!-- Services Dropdown -->
+                        <div class="relative group">
+
+                            <button
+                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
+
+                                Services
+
+                                <svg class="w-4 h-4 ml-1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+
+                                </svg>
+
+                            </button>
+
+
+                            <!-- Services Dropdown Menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+
+                                <div class="py-1"
+                                    role="menu"
+                                    aria-orientation="vertical">
+
+                                    <a href="./crewManagement.html"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                        role="menuitem">
+                                        Crew Management
+                                    </a>
+
+                                    <a href="./technicalManagement.html"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                        role="menuitem">
+                                        Technical Management
+                                    </a>
+
+                                    <a href="./chatering.html"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                        role="menuitem">
+                                        Chartering
+                                    </a>
+
+                                    <a href="./brokerage.html"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                        role="menuitem">
+                                        Maritime Brokerage
+                                    </a>
+
+                                    <a href="./crudeOil.html"
+                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                                        role="menuitem">
+                                        Crude Oil Brokerage & Sourcing
+                                    </a>
+
                                 </div>
+
                             </div>
-                            <a href="./gallery.html"
-                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                                Gallery
-                            </a>
-                            <a href="./career.html"
-                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                                Career
-                            </a>
+
                         </div>
+
+
+                        <!-- Gallery -->
+                        <a href="./gallery.html"
+                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                            Gallery
+                        </a>
+
+
+                        <!-- Career -->
+                        <a href="./career.html"
+                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
+                            Career
+                        </a>
+
                     </div>
+
+                </div>
 
 
                 <!-- Contact Button - Right Side -->
@@ -601,7 +728,7 @@
             <div class="lg:w-1/2 w-full mt-8 lg:mt-0 relative">
                 <div class="elative z-10 rounded-2xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
                     <!-- Replace with your company image -->
-                    <img src="./asset/newimage/i1.jpeg" alt="Fylde Ship Management Company" class="w-full h-auto object-cover">
+                    <img src="./asset/newimage/i1.jpeg" alt="Fylde Ship Management Company" class="w-full h-auto object-cover max-h-[400px] md:max-h-none">
                     
                     <!-- Overlay with company highlights -->
                     <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent">
@@ -662,7 +789,7 @@
                     <div
                         class="relative z-10 rounded-2xl overflow-hidden  transform transition duration-500 hover:scale-105 floating">
                         <!-- <img src="./asset/ship.webp" alt="Marine Team" class="w-full h-auto"> -->
-                         <img src="./asset/anewimages/a2.jpg" alt="Marine Team" class="w-full h-auto">
+                         <img src="./asset/newimage/i2.jpeg" alt="Marine Team" class="w-full h-auto">
                     </div>
                     <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-yellow-400 rounded-full opacity-20 z-0">
                     </div>
@@ -675,7 +802,7 @@
                 <div class="lg:w-1/2 w-full order-2 lg:order-1">
                     <div
                         class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white transform transition duration-500 hover:scale-105 floating">
-                        <img src="./asset/anewimages/a4.jpg" alt="Marine Expedition" class="w-full h-auto">
+                        <img src="./asset/newimage/i3.jpeg" alt="Marine Expedition" class="w-full h-auto">
                     </div>
                     <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-600 rounded-full opacity-20 z-0"></div>
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400 rounded-full opacity-20 z-0"></div>
@@ -901,8 +1028,8 @@
                                 Management</a></li>
                         
                         <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
-                                Chartering & Commodity Traders</a></li>
-                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
+                                Chartering</a></li>
+                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">Maritime Brokerage</a></li>
                         <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
                     </ul>
                 </div>
@@ -913,9 +1040,8 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt text-light mt-1"></i>
-                            <span class="text-white-400"> OFFICE NO. 321, THE GREAT EASTERN GALLERIA PREMISES CSL. PLOT NO. 20,
-SECTOR-4, NERUL WEST, NAVI MUMBAI, DARAve, THANE, MAHARASHTRA,
-INDIA- 400 706.</span>
+                            <span class="text-white-400"> Office No.L2/321, The Great Eastern Galleria
+Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fas fa-phone text-white"></i>
@@ -1038,6 +1164,9 @@ INDIA- 400 706.</span>
     </script>
 
     <script>
+        
+        
+
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.getElementById('teamSlider');
     const slides = slider.querySelectorAll('.team-slide');
@@ -1119,24 +1248,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     updateSlidesToShow();
     updateSlider();
-
-});
-
-
-
-// Mobile Services Dropdown Toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileServicesBtn = document.getElementById('mobile-services-btn');
-    const mobileServicesMenu = document.getElementById('mobile-services-menu');
-    const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-
-    if (mobileServicesBtn && mobileServicesMenu && mobileServicesArrow) {
-        mobileServicesBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            mobileServicesMenu.classList.toggle('hidden');
-            mobileServicesArrow.classList.toggle('rotate-180');
-        });
-    }
 });
 </script>
 </body>
