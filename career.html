@@ -1,703 +1,830 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./asset/FYLDE SHIP LOGO PNG.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./asset/FYLDE SHIP LOGO PNG.png"
+      type="image/x-icon"
+    />
     <title>Fylde Ship Management | Careers</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
     <!-- Custom Tailwind Configuration -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0B2447',
-                        secondary: '#19376D',
-                        accent: '#0EA5E9',
-                        light: '#ECF2FF',
-                        dark: '#0F172A'
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                        display: ['Poppins', 'serif']
-                    },
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0B2447",
+              secondary: "#19376D",
+              accent: "#0EA5E9",
+              light: "#ECF2FF",
+              dark: "#0F172A",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+              display: ["Poppins", "serif"],
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        body {
-            scroll-behavior: smooth;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .gradient-overlay {
-            background: linear-gradient(180deg, rgba(11, 36, 71, 0.3) 0%, rgba(11, 36, 71, 0.9) 100%);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: #0EA5E9;
-            bottom: -4px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+      body {
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
 
-        .form-section {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
 
-        .file-upload-area {
-            border: 2px dashed #0EA5E9;
-            transition: all 0.3s ease;
-        }
+      .gradient-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(11, 36, 71, 0.3) 0%,
+          rgba(11, 36, 71, 0.9) 100%
+        );
+      }
 
-        .file-upload-area:hover {
-            border-color: #0B2447;
-            background-color: rgba(14, 165, 233, 0.05);
-        }
+      .nav-link {
+        position: relative;
+      }
 
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(11, 36, 71, 0.9) 0%, rgba(25, 55, 109, 0.9) 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="waves" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M0 100c50-50 100-50 150 0s100 50 150 0v100H0z" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23waves)"/></svg>');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-                .notification {
-            transform: translateX(400px);
-            transition: transform 0.3s ease-in-out;
-        }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #0ea5e9;
+        bottom: -4px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
 
-        .notification.show {
-            transform: translateX(0);
-        }
-        .relative.group .absolute {
-            top: calc(100% - 10px); /* Pulls it up by 10px */
-            left: 0;
-            margin-top: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            }
+      .nav-link:hover::after {
+        width: 100%;
+      }
 
-           .relative.group:hover .absolute {
-            opacity: 1;
-            visibility: visible;
-            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
-            }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .form-section {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .file-upload-area {
+        border: 2px dashed #0ea5e9;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload-area:hover {
+        border-color: #0b2447;
+        background-color: rgba(14, 165, 233, 0.05);
+      }
+
+      .hero-bg {
+        background:
+          linear-gradient(
+            135deg,
+            rgba(11, 36, 71, 0.9) 0%,
+            rgba(25, 55, 109, 0.9) 100%
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="waves" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M0 100c50-50 100-50 150 0s100 50 150 0v100H0z" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23waves)"/></svg>');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .notification {
+        transform: translateX(400px);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .notification.show {
+        transform: translateX(0);
+      }
+      .relative.group .absolute {
+        top: calc(100% - 10px); /* Pulls it up by 10px */
+        left: 0;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .relative.group:hover .absolute {
+        opacity: 1;
+        visibility: visible;
+        top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-light text-dark antialiased overflow-x-hidden">
+  <body class="bg-light text-dark antialiased overflow-x-hidden">
     <!-- Header Section -->
-<header class="relative z-50">
-
-    <!-- Top Bar -->
-    <div class="bg-blue-900 py-2">
+    <header class="relative z-50">
+      <!-- Top Bar -->
+      <div class="bg-blue-900 py-2">
         <div class="container mx-auto px-4 lg:px-8">
-
-            <!-- Desktop / Tablet Top Bar -->
-            <div class="hidden md:flex relative items-center justify-between min-h-[28px]">
-
-                <!-- Left: Phone -->
-                <div class="flex items-center text-white flex-shrink-0">
-                    <span class="flex items-center gap-2 lg:gap-3 text-light">
-                        <i class="fas fa-phone text-accent"></i>
-                        <span class="text-xs lg:text-sm font-medium">
-                            02244813836
-                        </span>
-                    </span>
-                </div>
-
-                <!-- Center: RSPL Information -->
-                <div class="absolute left-1/2 -translate-x-1/2 text-center whitespace-nowrap">
-                    <span class="text-white text-[10px] lg:text-xs xl:text-sm font-semibold tracking-wide">
-                        RSPL NO. 162354
-                        <span class="mx-1 lg:mx-2 opacity-60">|</span>
-                        DATE OF ISSUE: 11 AUG 2025
-                        <span class="mx-1 lg:mx-2 opacity-60">|</span>
-                        DATE OF EXPIRY: 11 AUG 2030
-                    </span>
-                </div>
-
-                <!-- Right: Email & Social Icons -->
-                <div class="flex items-center space-x-3 lg:space-x-6 flex-shrink-0">
-
-                    <!-- Email -->
-                    <a href="mailto:fyldeship@gmail.com"
-                        class="text-light transition-colors duration-300 flex items-center gap-2"
-                        aria-label="Email">
-
-                        <i class="fas fa-envelope"></i>
-
-                        <span class="text-xs lg:text-sm font-medium hidden lg:inline">
-                            info@fyldesm.com
-                        </span>
-                    </a>
-
-                    <!-- Social Icons -->
-                    <div class="flex space-x-3 lg:space-x-4">
-
-                        <a href="#"
-                            class="text-light hover:text-accent transition-colors duration-300"
-                            aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-
-                        <a href="#"
-                            class="text-light hover:text-accent transition-colors duration-300"
-                            aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                        <a href="#"
-                            class="text-light hover:text-accent transition-colors duration-300"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-
-                    </div>
-                </div>
-
+          <!-- Desktop / Tablet Top Bar -->
+          <div
+            class="hidden md:flex relative items-center justify-between min-h-[28px]"
+          >
+            <!-- Left: Phone -->
+            <div class="flex items-center text-white flex-shrink-0">
+              <span class="flex items-center gap-2 lg:gap-3 text-light">
+                <i class="fas fa-phone text-accent"></i>
+                <span class="text-xs lg:text-sm font-medium">
+                  02244813836
+                </span>
+              </span>
             </div>
 
-
-            <!-- Mobile Top Bar -->
-            <div class="md:hidden">
-
-                <!-- RSPL Information -->
-                <div class="text-center px-1">
-                    <div class="text-white text-[9px] sm:text-[10px] font-semibold leading-relaxed tracking-wide">
-
-                        <span class="block">
-                            RSPL NO. 162354
-                        </span>
-
-                        <span class="block">
-                            DATE OF ISSUE: 11 AUG 2025
-                        </span>
-
-                        <span class="block">
-                            DATE OF EXPIRY: 11 AUG 2030
-                        </span>
-
-                    </div>
-                </div>
-
-                <!-- Mobile Contact Row -->
-                <div class="flex items-center justify-center gap-5 mt-1">
-
-                    <!-- Phone -->
-                    <a href="tel:02244813836"
-                        class="flex items-center gap-2 text-light text-xs"
-                        aria-label="Phone">
-
-                        <i class="fas fa-phone text-accent"></i>
-                        <span>02244813836</span>
-
-                    </a>
-
-                    <!-- Email -->
-                    <a href="mailto:fyldeship@gmail.com"
-                        class="flex items-center gap-2 text-light text-xs"
-                        aria-label="Email">
-
-                        <i class="fas fa-envelope"></i>
-                        <span>info@fyldesm.com</span>
-
-                    </a>
-
-                </div>
-
+            <!-- Center: RSPL Information -->
+            <div
+              class="absolute left-1/2 -translate-x-1/2 text-center whitespace-nowrap"
+            >
+              <span
+                class="text-white text-[10px] lg:text-xs xl:text-sm font-semibold tracking-wide"
+              >
+                RSPL NO. 162354
+                <span class="mx-1 lg:mx-2 opacity-60">|</span>
+                DATE OF ISSUE: 11 AUG 2025
+                <span class="mx-1 lg:mx-2 opacity-60">|</span>
+                DATE OF EXPIRY: 11 AUG 2030
+              </span>
             </div>
 
+            <!-- Right: Email & Social Icons -->
+            <div class="flex items-center space-x-3 lg:space-x-6 flex-shrink-0">
+              <!-- Email -->
+              <a
+                href="mailto:fyldeship@gmail.com"
+                class="text-light transition-colors duration-300 flex items-center gap-2"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope"></i>
+
+                <span class="text-xs lg:text-sm font-medium hidden lg:inline">
+                  info@fyldesm.com
+                </span>
+              </a>
+
+              <!-- Social Icons -->
+              <div class="flex space-x-3 lg:space-x-4">
+                <a
+                  href="#"
+                  class="text-light hover:text-accent transition-colors duration-300"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a
+                  href="#"
+                  class="text-light hover:text-accent transition-colors duration-300"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+
+                <a
+                  href="#"
+                  class="text-light hover:text-accent transition-colors duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Top Bar -->
+          <div class="md:hidden">
+            <!-- RSPL Information -->
+            <div class="text-center px-1">
+              <div
+                class="text-white text-[9px] sm:text-[10px] font-semibold leading-relaxed tracking-wide"
+              >
+                <span class="block"> RSPL NO. 162354 </span>
+
+                <span class="block"> DATE OF ISSUE: 11 AUG 2025 </span>
+
+                <span class="block"> DATE OF EXPIRY: 11 AUG 2030 </span>
+              </div>
+            </div>
+
+            <!-- Mobile Contact Row -->
+            <div class="flex items-center justify-center gap-5 mt-1">
+              <!-- Phone -->
+              <a
+                href="tel:02244813836"
+                class="flex items-center gap-2 text-light text-xs"
+                aria-label="Phone"
+              >
+                <i class="fas fa-phone text-accent"></i>
+                <span>02244813836</span>
+              </a>
+
+              <!-- Email -->
+              <a
+                href="mailto:fyldeship@gmail.com"
+                class="flex items-center gap-2 text-light text-xs"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope"></i>
+                <span>info@fyldesm.com</span>
+              </a>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-
-    <!-- Main Navbar -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300" id="navbar">
-
+      <!-- Main Navbar -->
+      <nav
+        class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300"
+        id="navbar"
+      >
         <div class="container mx-auto px-4 lg:px-8">
+          <div class="flex items-center justify-between py-2">
+            <!-- Logo + Company Name - Left Side -->
+            <div class="flex items-center flex-shrink-0 min-w-0">
+              <a href="./index.html" class="flex items-center gap-2 md:gap-3">
+                <img
+                  src="./asset/FYLDE SHIP LOGO PNG.png"
+                  alt="Fylde Ship Logo"
+                  class="h-12 sm:h-14 md:h-16"
+                />
 
-            <div class="flex items-center justify-between py-2">
+                <span class="flex flex-col leading-tight">
+                  <span
+                    class="text-blue-900 font-extrabold uppercase tracking-wide text-[11px] sm:text-sm md:text-base lg:text-sm xl:text-xl whitespace-nowrap"
+                  >
+                    Fylde Ship Management
+                  </span>
+                  <span
+                    class="text-yellow-600 font-bold uppercase tracking-widest text-[9px] sm:text-[10px] md:text-xs xl:text-sm"
+                  >
+                    LLP
+                  </span>
+                </span>
+              </a>
+            </div>
 
-                <!-- Logo - Left Side -->
-                <div class="flex items-center flex-shrink-0">
+            <!-- Desktop Navigation - Center (Hidden on mobile) -->
+            <div class="hidden lg:flex items-center justify-center flex-1">
+              <div class="flex items-center space-x-6 xl:space-x-8">
+                <!-- Home -->
+                <a
+                  href="./index.html"
+                  class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase"
+                >
+                  Home
+                </a>
 
-                    <a href="./index.html" class="flex items-center">
+                <!-- About Us -->
+                <a
+                  href="./about.html"
+                  class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap"
+                >
+                  About Us
+                </a>
 
-                        <img src="./asset/FYLDE SHIP LOGO PNG.png"
-                            alt="Fylde Ship Logo"
-                            class="h-14 md:h-16">
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                  <button
+                    class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase"
+                  >
+                    Services
 
-                    </a>
-
-                </div>
-
-
-                <!-- Desktop Navigation - Center (Hidden on mobile) -->
-                <div class="hidden lg:flex items-center justify-center flex-1">
-
-                    <div class="flex items-center space-x-6 xl:space-x-8">
-
-                        <!-- Home -->
-                        <a href="./index.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Home
-                        </a>
-
-
-                        <!-- About Us -->
-                        <a href="./about.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap">
-                            About Us
-                        </a>
-
-
-                        <!-- Services Dropdown -->
-                        <div class="relative group">
-
-                            <button
-                                class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase">
-
-                                Services
-
-                                <svg class="w-4 h-4 ml-1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M19 9l-7 7-7-7">
-                                    </path>
-
-                                </svg>
-
-                            </button>
-
-
-                            <!-- Services Dropdown Menu -->
-                            <div
-                                class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
-
-                                <div class="py-1"
-                                    role="menu"
-                                    aria-orientation="vertical">
-
-                                    <a href="./crewManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crew Management
-                                    </a>
-
-                                    <a href="./technicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Technical Management
-                                    </a>
-
-                                    <a href="./chatering.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Chartering
-                                    </a>
-
-                                    <a href="./brokerage.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Maritime Brokerage
-                                    </a>
-
-                                    <a href="./crudeOil.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crude Oil Brokerage & Sourcing
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Gallery -->
-                        <a href="./gallery.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Gallery
-                        </a>
-
-
-                        <!-- Career -->
-                        <a href="./career.html"
-                            class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase">
-                            Career
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Contact Button - Right Side -->
-                <div class="hidden lg:flex items-center justify-end flex-shrink-0">
-
-                    <a href="./contact.html"
-                        class="bg-yellow-600 hover:bg-blue-900 text-white font-bold text-base xl:text-lg px-4 xl:px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg uppercase whitespace-nowrap">
-
-                        Contact Us
-
-                    </a>
-
-                </div>
-
-
-                <!-- Mobile Menu Button -->
-                <button id="menu-toggle"
-                    class="lg:hidden focus:outline-none"
-                    aria-label="Open navigation menu">
-
-                    <svg class="w-8 h-8 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-
-                        <path stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16">
-                        </path>
-
+                    <svg
+                      class="w-4 h-4 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
                     </svg>
+                  </button>
 
+                  <!-- Services Dropdown Menu -->
+                  <div
+                    class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50"
+                  >
+                    <div class="py-1" role="menu" aria-orientation="vertical">
+                      <a
+                        href="./crewManagement.html"
+                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                        role="menuitem"
+                      >
+                        Crew Management
+                      </a>
+
+                      <a
+                        href="./technicalManagement.html"
+                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                        role="menuitem"
+                      >
+                        Technical Management
+                      </a>
+
+                      <a
+                        href="./chatering.html"
+                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                        role="menuitem"
+                      >
+                        Chartering
+                      </a>
+
+                      <a
+                        href="./brokerage.html"
+                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                        role="menuitem"
+                      >
+                        Maritime Brokerage
+                      </a>
+
+                      <a
+                        href="./crudeOil.html"
+                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
+                        role="menuitem"
+                      >
+                        Crude Oil Brokerage & Sourcing
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gallery -->
+                <a
+                  href="./gallery.html"
+                  class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase"
+                >
+                  Gallery
+                </a>
+
+                <!-- Career -->
+                <a
+                  href="./career.html"
+                  class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase"
+                >
+                  Career
+                </a>
+              </div>
+            </div>
+
+            <!-- Contact Button - Right Side -->
+            <div class="hidden lg:flex items-center justify-end flex-shrink-0">
+              <a
+                href="./contact.html"
+                class="bg-yellow-600 hover:bg-blue-900 text-white font-bold text-base xl:text-lg px-4 xl:px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg uppercase whitespace-nowrap"
+              >
+                Contact Us
+              </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+              id="menu-toggle"
+              class="lg:hidden focus:outline-none"
+              aria-label="Open navigation menu"
+            >
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Navigation Menu -->
+          <div id="mobile-menu" class="lg:hidden hidden">
+            <div
+              class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200"
+            >
+              <!-- Home -->
+              <a
+                href="./index.html"
+                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase"
+              >
+                Home
+              </a>
+
+              <!-- About Us -->
+              <a
+                href="./about.html"
+                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase"
+              >
+                About Us
+              </a>
+
+              <!-- Mobile Services -->
+              <div class="relative">
+                <button
+                  id="mobile-services-btn"
+                  class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase"
+                >
+                  Services
+
+                  <svg
+                    class="w-4 h-4 mt-1 transition-transform duration-300"
+                    id="mobile-services-arrow"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
                 </button>
 
-            </div>
+                <!-- Mobile Services Dropdown -->
+                <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                  <a
+                    href="./crewManagement.html"
+                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase"
+                  >
+                    Crew Management
+                  </a>
 
+                  <a
+                    href="./technicalManagement.html"
+                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase"
+                  >
+                    Technical Management
+                  </a>
 
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="lg:hidden hidden">
+                  <a
+                    href="./chatering.html"
+                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase"
+                  >
+                    Chartering
+                  </a>
 
-                <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                  <a
+                    href="./brokerage.html"
+                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase"
+                  >
+                    Maritime Brokerage
+                  </a>
 
-                    <!-- Home -->
-                    <a href="./index.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Home
-                    </a>
-
-
-                    <!-- About Us -->
-                    <a href="./about.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        About Us
-                    </a>
-
-
-                    <!-- Mobile Services -->
-                    <div class="relative">
-
-                        <button id="mobile-services-btn"
-                            class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-
-                            Services
-
-                            <svg class="w-4 h-4 mt-1 transition-transform duration-300"
-                                id="mobile-services-arrow"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-
-                            </svg>
-
-                        </button>
-
-
-                        <!-- Mobile Services Dropdown -->
-                        <div id="mobile-services-menu"
-                            class="hidden pl-4 pb-1 pt-1">
-
-                            <a href="./crewManagement.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Crew Management
-                            </a>
-
-                            <a href="./technicalManagement.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Technical Management
-                            </a>
-
-                            <a href="./chatering.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Chartering
-                            </a>
-
-                            <a href="./brokerage.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Maritime Brokerage
-                            </a>
-
-                            <a href="./crudeOil.html"
-                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">
-                                Crude Oil Brokerage & Sourcing
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Gallery -->
-                    <a href="./gallery.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Gallery
-                    </a>
-
-
-                    <!-- Career -->
-                    <a href="./career.html"
-                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                        Career
-                    </a>
-
-
-                    <!-- Contact Us -->
-                    <a href="./contact.html"
-                        class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">
-                        Contact Us
-                    </a>
-
+                  <a
+                    href="./crudeOil.html"
+                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase"
+                  >
+                    Crude Oil Brokerage & Sourcing
+                  </a>
                 </div>
+              </div>
 
+              <!-- Gallery -->
+              <a
+                href="./gallery.html"
+                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase"
+              >
+                Gallery
+              </a>
+
+              <!-- Career -->
+              <a
+                href="./career.html"
+                class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase"
+              >
+                Career
+              </a>
+
+              <!-- Contact Us -->
+              <a
+                href="./contact.html"
+                class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase"
+              >
+                Contact Us
+              </a>
             </div>
-
+          </div>
         </div>
+      </nav>
+    </header>
 
-    </nav>
-
-</header>
-
- <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero-bg py-24 lg:py-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
-        <div class="container mx-auto px-4 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-shadow">
-                    Join Our Crew
-                </h1>
-                <p class="text-xl md:text-2xl text-light mb-8 leading-relaxed">
-                    Build Your Maritime Career with Fylde Ship Management
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                        <span class="text-light font-semibold">Global Opportunities</span>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                        <span class="text-light font-semibold">Professional Growth</span>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                        <span class="text-light font-semibold">Competitive Benefits</span>
-                    </div>
-                </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"
+      ></div>
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-shadow"
+          >
+            Join Our Crew
+          </h1>
+          <p class="text-xl md:text-2xl text-light mb-8 leading-relaxed">
+            Build Your Maritime Career with Fylde Ship Management
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <span class="text-light font-semibold">Global Opportunities</span>
             </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <span class="text-light font-semibold">Professional Growth</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <span class="text-light font-semibold">Competitive Benefits</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Career Form Section -->
-    <section class="py-16 lg:py-24 bg-gradient-to-br from-light to-white relative">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                
-                <!-- Form Header -->
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase">Career Application Form</h2>
-                    <p class="text-lg text-gray-600">Take the first step towards an exciting maritime career</p>
+    <section
+      class="py-16 lg:py-24 bg-gradient-to-br from-light to-white relative"
+    >
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <!-- Form Header -->
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase"
+            >
+              Career Application Form
+            </h2>
+            <p class="text-lg text-gray-600">
+              Take the first step towards an exciting maritime career
+            </p>
+          </div>
+
+          <!-- Application Form -->
+          <form
+            id="careerForm"
+            class="form-section rounded-2xl p-8 md:p-12 shadow-2xl"
+          >
+            <!-- 1. Basic Information Section -->
+            <div class="mb-10">
+              <h3
+                class="text-2xl font-bold text-primary mb-6 flex items-center"
+              >
+                <i class="fas fa-user text-accent mr-3"></i>
+                Basic Information
+              </h3>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Full Name -->
+                <div>
+                  <label
+                    for="fullName"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Full Name *</label
+                  >
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  />
                 </div>
 
-                <!-- Application Form -->
-                <form id="careerForm" class="form-section rounded-2xl p-8 md:p-12 shadow-2xl">
-                    
-                    <!-- 1. Basic Information Section -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
-                            <i class="fas fa-user text-accent mr-3"></i>
-                            Basic Information
-                        </h3>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Full Name -->
-                            <div>
-                                <label for="fullName" class="block text-sm font-semibold text-primary mb-2">Full Name *</label>
-                                <input type="text" id="fullName" name="fullName" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                            </div>
+                <!-- Date of Birth -->
+                <div>
+                  <label
+                    for="dob"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Date of Birth *</label
+                  >
+                  <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  />
+                </div>
 
-                            <!-- Date of Birth -->
-                            <div>
-                                <label for="dob" class="block text-sm font-semibold text-primary mb-2">Date of Birth *</label>
-                                <input type="date" id="dob" name="dob" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                            </div>
+                <!-- Email -->
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  />
+                </div>
 
-                            <!-- Email -->
-                            <div>
-                                <label for="email" class="block text-sm font-semibold text-primary mb-2">Email Address *</label>
-                                <input type="email" id="email" name="email" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                            </div>
+                <!-- Mobile Number -->
+                <div>
+                  <label
+                    for="mobile"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Mobile Number *</label
+                  >
+                  <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+              </div>
+            </div>
 
-                            <!-- Mobile Number -->
-                            <div>
-                                <label for="mobile" class="block text-sm font-semibold text-primary mb-2">Mobile Number *</label>
-                                <input type="tel" id="mobile" name="mobile" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                            </div>
-                        </div>
-                    </div>
+            <!-- 2. Position/Department Section -->
+            <div class="mb-10">
+              <h3
+                class="text-2xl font-bold text-primary mb-6 flex items-center"
+              >
+                <i class="fas fa-briefcase text-accent mr-3"></i>
+                Position Details
+              </h3>
 
-                    <!-- 2. Position/Department Section -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
-                            <i class="fas fa-briefcase text-accent mr-3"></i>
-                            Position Details
-                        </h3>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Position Applying For -->
-                            <div>
-                                <label for="position" class="block text-sm font-semibold text-primary mb-2">Position Applying For *</label>
-                                <select id="position" name="position" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                                    <option value="">Select Position</option>
-                                    <option value="deck-officer">Deck Officer</option>
-                                    <option value="engine-cadet">Engine Cadet</option>
-                                    <option value="crew-cook">Crew Cook</option>
-                                    <option value="electrical-officer">Electrical Officer</option>
-                                    <option value="shore-staff">Shore Staff</option>
-                                    <option value="chief-engineer">Chief Engineer</option>
-                                    <option value="captain">Captain</option>
-                                    <option value="marine-engineer">Marine Engineer</option>
-                                    <option value="radio-officer">Radio Officer</option>
-                                    <option value="able-seaman">Able Seaman</option>
-                                    <option value="ordinary-seaman">Ordinary Seaman</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Position Applying For -->
+                <div>
+                  <label
+                    for="position"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Position Applying For *</label
+                  >
+                  <select
+                    id="position"
+                    name="position"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="">Select Position</option>
+                    <option value="deck-officer">Deck Officer</option>
+                    <option value="engine-cadet">Engine Cadet</option>
+                    <option value="crew-cook">Crew Cook</option>
+                    <option value="electrical-officer">
+                      Electrical Officer
+                    </option>
+                    <option value="shore-staff">Shore Staff</option>
+                    <option value="chief-engineer">Chief Engineer</option>
+                    <option value="captain">Captain</option>
+                    <option value="marine-engineer">Marine Engineer</option>
+                    <option value="radio-officer">Radio Officer</option>
+                    <option value="able-seaman">Able Seaman</option>
+                    <option value="ordinary-seaman">Ordinary Seaman</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
 
-                            <!-- Expected Salary -->
-                            <!-- <div>
+                <!-- Expected Salary -->
+                <!-- <div>
                                 <label for="expectedSalary" class="block text-sm font-semibold text-primary mb-2">Expected Salary (Optional)</label>
                                 <input type="text" id="expectedSalary" name="expectedSalary" placeholder="" 
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
                             </div> -->
-                        </div>
-                    </div>
+              </div>
+            </div>
 
-                    <!-- 3. Experience Details Section -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
-                            <i class="fas fa-ship text-accent mr-3"></i>
-                            Experience Details
-                        </h3>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Years of Experience -->
-                            <div>
-                                <label for="experience" class="block text-sm font-semibold text-primary mb-2">Years of Experience *</label>
-                                <select id="experience" name="experience" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                                    <option value="">Select Experience</option>
-                                    <option value="0-1">0-1 Years</option>
-                                    <option value="2-5">2-5 Years</option>
-                                    <option value="6-10">6-10 Years</option>
-                                    <option value="11-15">11-15 Years</option>
-                                    <option value="15+">15+ Years</option>
-                                </select>
-                            </div>
+            <!-- 3. Experience Details Section -->
+            <div class="mb-10">
+              <h3
+                class="text-2xl font-bold text-primary mb-6 flex items-center"
+              >
+                <i class="fas fa-ship text-accent mr-3"></i>
+                Experience Details
+              </h3>
 
-                            <!-- Last Vessel/Company -->
-                            <div>
-                                <label for="lastVessel" class="block text-sm font-semibold text-primary mb-2">Last Vessel/Company Worked</label>
-                                <input type="text" id="lastVessel" name="lastVessel" 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                            </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Years of Experience -->
+                <div>
+                  <label
+                    for="experience"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Years of Experience *</label
+                  >
+                  <select
+                    id="experience"
+                    name="experience"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="">Select Experience</option>
+                    <option value="0-1">0-1 Years</option>
+                    <option value="2-5">2-5 Years</option>
+                    <option value="6-10">6-10 Years</option>
+                    <option value="11-15">11-15 Years</option>
+                    <option value="15+">15+ Years</option>
+                  </select>
+                </div>
 
-                            <!-- Rank Held -->
-                            <div>
-                                <label for="rankHeld" class="block text-sm font-semibold text-primary mb-2">Rank Held</label>
-                                <input type="text" id="rankHeld" name="rankHeld" 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                            </div>
+                <!-- Last Vessel/Company -->
+                <div>
+                  <label
+                    for="lastVessel"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Last Vessel/Company Worked</label
+                  >
+                  <input
+                    type="text"
+                    id="lastVessel"
+                    name="lastVessel"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  />
+                </div>
 
-                            <!-- Type of Vessel -->
-                            <div>
-                                <label for="vesselType" class="block text-sm font-semibold text-primary mb-2">Type of Vessel</label>
-                                <select id="vesselType" name="vesselType" 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300">
-                                    <option value="">Select Vessel Type</option>
-                                    <option value="bulk-carrier">Bulk Carrier</option>
-                                    <option value="tanker">Tanker</option>
-                                    <option value="container">Container Ship</option>
-                                    <option value="cargo">General Cargo</option>
-                                    <option value="cruise">Cruise Ship</option>
-                                    <option value="offshore">Offshore Vessel</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Rank Held -->
+                <div>
+                  <label
+                    for="rankHeld"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Rank Held</label
+                  >
+                  <input
+                    type="text"
+                    id="rankHeld"
+                    name="rankHeld"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  />
+                </div>
 
-                    <!-- 4. Resume Upload Section -->
-                        <!-- <div class="mb-10">
+                <!-- Type of Vessel -->
+                <div>
+                  <label
+                    for="vesselType"
+                    class="block text-sm font-semibold text-primary mb-2"
+                    >Type of Vessel</label
+                  >
+                  <select
+                    id="vesselType"
+                    name="vesselType"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="">Select Vessel Type</option>
+                    <option value="bulk-carrier">Bulk Carrier</option>
+                    <option value="tanker">Tanker</option>
+                    <option value="container">Container Ship</option>
+                    <option value="cargo">General Cargo</option>
+                    <option value="cruise">Cruise Ship</option>
+                    <option value="offshore">Offshore Vessel</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Resume Upload Section -->
+            <!-- <div class="mb-10">
                             <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
                                 <i class="fas fa-file-alt text-accent mr-3"></i>
                                 Resume Upload
@@ -716,502 +843,662 @@
                             </div>
                         </div> -->
 
-                    <!-- 5. Additional Notes Section -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
-                            <i class="fas fa-comment-alt text-accent mr-3"></i>
-                            Additional Notes
-                        </h3>
-                        
-                        <div>
-                            <label for="additionalNotes" class="block text-sm font-semibold text-primary mb-2">Additional Information</label>
-                            <textarea id="additionalNotes" name="additionalNotes" rows="6" 
-                                placeholder="Please share any additional information such as preferences, family details, reason for job change, etc."
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 resize-none"></textarea>
-                        </div>
-                    </div>
+            <!-- 5. Additional Notes Section -->
+            <div class="mb-10">
+              <h3
+                class="text-2xl font-bold text-primary mb-6 flex items-center"
+              >
+                <i class="fas fa-comment-alt text-accent mr-3"></i>
+                Additional Notes
+              </h3>
 
-                    <!-- 6. Declaration Section -->
-                    <div class="mb-8">
-                        <div class="bg-gray-50 rounded-lg p-6">
-                            <label class="flex items-start gap-3 cursor-pointer">
-                                <input type="checkbox" id="declaration" name="declaration" required class="mt-1 text-accent focus:ring-accent">
-                                <span class="text-sm text-gray-700">
-                                    <strong>Declaration:</strong> I hereby declare that the information provided is true and accurate to the best of my knowledge. I understand that any false information may result in the rejection of my application or termination of employment if discovered later.
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- 7. Submit Button -->
-                    <div class="text-center">
-                        <button type="submit" 
-                            class="bg-gradient-to-r from-accent to-secondary text-white font-bold text-lg px-12 py-4 rounded-full hover:from-secondary hover:to-accent transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Submit Application
-                        </button>
-                    </div>
-                </form>
+              <div>
+                <label
+                  for="additionalNotes"
+                  class="block text-sm font-semibold text-primary mb-2"
+                  >Additional Information</label
+                >
+                <textarea
+                  id="additionalNotes"
+                  name="additionalNotes"
+                  rows="6"
+                  placeholder="Please share any additional information such as preferences, family details, reason for job change, etc."
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 resize-none"
+                ></textarea>
+              </div>
             </div>
+
+            <!-- 6. Declaration Section -->
+            <div class="mb-8">
+              <div class="bg-gray-50 rounded-lg p-6">
+                <label class="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    id="declaration"
+                    name="declaration"
+                    required
+                    class="mt-1 text-accent focus:ring-accent"
+                  />
+                  <span class="text-sm text-gray-700">
+                    <strong>Declaration:</strong> I hereby declare that the
+                    information provided is true and accurate to the best of my
+                    knowledge. I understand that any false information may
+                    result in the rejection of my application or termination of
+                    employment if discovered later.
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 7. Submit Button -->
+            <div class="text-center">
+              <button
+                type="submit"
+                class="bg-gradient-to-r from-accent to-secondary text-white font-bold text-lg px-12 py-4 rounded-full hover:from-secondary hover:to-accent transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>
+                Submit Application
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </section>
 
     <!-- Success/Error Messages -->
-    <div id="successMessage" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg notification z-50">
-        <i class="fas fa-check-circle mr-2"></i>
-        Application submitted successfully!
+    <div
+      id="successMessage"
+      class="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg notification z-50"
+    >
+      <i class="fas fa-check-circle mr-2"></i>
+      Application submitted successfully!
     </div>
 
-    <div id="errorMessage" class="fixed top-4 right-4 bg-red-500 text-white px-6 py-4 rounded-lg shadow-lg notification z-50">
-        <i class="fas fa-exclamation-triangle mr-2"></i>
-        <span id="errorText">Please fill in all required fields.</span>
+    <div
+      id="errorMessage"
+      class="fixed top-4 right-4 bg-red-500 text-white px-6 py-4 rounded-lg shadow-lg notification z-50"
+    >
+      <i class="fas fa-exclamation-triangle mr-2"></i>
+      <span id="errorText">Please fill in all required fields.</span>
     </div>
 
     <!-- Why Join Us Section -->
     <section class="py-16 lg:py-24 bg-primary text-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase">Why Choose Fylde Ship Management?</h2>
-                <p class="text-xl text-light">Join a company that values your growth and success</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-accent/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-globe-americas text-3xl text-accent"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Global Opportunities</h3>
-                    <p class="text-light">Work on vessels operating worldwide with diverse trading routes and experiences.</p>
-                </div>
-                
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-accent/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-chart-line text-3xl text-accent"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Career Growth</h3>
-                    <p class="text-light">Structured career progression with continuous training and development opportunities.</p>
-                </div>
-                
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-accent/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-shield-alt text-3xl text-accent"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Safety First</h3>
-                    <p class="text-light">Commitment to the highest safety standards and crew welfare at all times.</p>
-                </div>
-            </div>
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase">
+            Why Choose Fylde Ship Management?
+          </h2>
+          <p class="text-xl text-light">
+            Join a company that values your growth and success
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="bg-accent/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-globe-americas text-3xl text-accent"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Global Opportunities</h3>
+            <p class="text-light">
+              Work on vessels operating worldwide with diverse trading routes
+              and experiences.
+            </p>
+          </div>
+
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="bg-accent/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-chart-line text-3xl text-accent"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Career Growth</h3>
+            <p class="text-light">
+              Structured career progression with continuous training and
+              development opportunities.
+            </p>
+          </div>
+
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="bg-accent/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-shield-alt text-3xl text-accent"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Safety First</h3>
+            <p class="text-light">
+              Commitment to the highest safety standards and crew welfare at all
+              times.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-[#1E3A8A] text-white">
-        <!-- Footer Top -->
-        <div class="container mx-auto px-4 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <!-- Company Info -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
-                    <p class="text-white-400 mb-6 badge">Fylde Ship Management provides innovative and cost-effective integrated solutions
-                        for fleet and offshoreoperations. Our commitment to excellence ensures reliable maritime
-                        services.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
-                            aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
-                            aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
+      <!-- Footer Top -->
+      <div class="container mx-auto px-4 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <!-- Company Info -->
+          <div>
+            <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
+            <p class="text-white-400 mb-6 badge">
+              Fylde Ship Management provides innovative and cost-effective
+              integrated solutions for fleet and offshoreoperations. Our
+              commitment to excellence ensures reliable maritime services.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-white hover:text-accent transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-accent transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-accent transition-colors duration-300"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="./index.html"
-                                class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
-                        <li><a href="./about.html"
-                                class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
-                        <li><a href="./gallery.html"
-                                class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
-                        <li><a href="./career.html"
-                                class="text-white-400 hover:text-accent transition-colors duration-300">Career</a></li>
-                        <!-- <li><a href="#blog"
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white text-xl font-bold mb-6 uppercase">
+              Quick Links
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./index.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./gallery.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./career.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >Career</a
+                >
+              </li>
+              <!-- <li><a href="#blog"
                                 class="text-white-400 hover:text-accent transition-colors duration-300">Blog</a></li> -->
-                        <li><a href="./contact.html"
-                                class="text-white-400 hover:text-accent transition-colors duration-300">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
+              <li>
+                <a
+                  href="./contact.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
 
-                <!-- Services -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="./crewManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
-                                Management</a></li>
-                        <li><a href="./technicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
-                                Management</a></li>
-                        
-                        <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
-                                Chartering & Commodity Traders</a></li>
-                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
-                        <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
-                    </ul>
-                </div>
+          <!-- Services -->
+          <div>
+            <h4 class="text-white text-xl font-bold mb-6 uppercase">
+              Our Services
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./crewManagement.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >Crew Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./technicalManagement.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >Technical Management</a
+                >
+              </li>
 
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Contact Us</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
-                            <span class="text-white-400"> Office No.L2/321, The Great Eastern Galleria
-Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-white"></i>
-                            <span class="text-white-400"> 022 44813836</span>
-                        </li>
-  <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-white"></i>
-                            <span class="text-white-400">+91 9137793370</span>
-                        </li>
+              <li>
+                <a
+                  href="./chatering.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                >
+                  Chartering & Commodity Traders</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./brokerage.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >S & P</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./crudeOil.html"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >Crude Oil Brokerage & Sourcing</a
+                >
+              </li>
+            </ul>
+          </div>
 
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-white"></i>
-                            <a href="mailto:fyldeship@gmail.com"
-                                class="text-white-400 hover:text-accent transition-colors duration-300">info@fyldesm.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-white text-xl font-bold mb-6 uppercase">
+              Contact Us
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-map-marker-alt text-light mt-1"></i>
+                <span class="text-white-400">
+                  Office No.L2/321, The Great Eastern Galleria Plot No.20,
+                  Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-phone text-white"></i>
+                <span class="text-white-400"> 022 44813836</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-phone text-white"></i>
+                <span class="text-white-400">+91 9137793370</span>
+              </li>
+
+              <li class="flex items-center gap-3">
+                <i class="fas fa-envelope text-white"></i>
+                <a
+                  href="mailto:fyldeship@gmail.com"
+                  class="text-white-400 hover:text-accent transition-colors duration-300"
+                  >info@fyldesm.com</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <!-- Footer Bottom -->
-        <div class="border-t border-gray-800 ">
-            <div class="container mx-auto px-4 lg:px-8 py-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-white-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
-                    <div class="mt-4 md:mt-0">
-                        <ul class="flex space-x-6">
-                            <li><a href="#"
-                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
-                                    Policy</a></li>
-                            <li><a href="#"
-                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Terms
-                                    of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-800">
+        <div class="container mx-auto px-4 lg:px-8 py-6">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-white-500 text-sm">
+              &copy; 2025 Fylde Ship Management. All rights reserved.
+            </p>
+            <div class="mt-4 md:mt-0">
+              <ul class="flex space-x-6">
+                <li>
+                  <a
+                    href="#"
+                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm"
+                    >Terms of Service</a
+                  >
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
+      </div>
     </footer>
 
-    <!-- Back to Top Button --> 
-    <a href="#" id="back-to-top"
-        class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Back to Top Button -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible"
+    >
+      <i class="fas fa-arrow-up"></i>
     </a>
 
     <!-- Success/Error Messages -->
-    <div id="successMessage" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg hidden z-50">
-        <i class="fas fa-check-circle mr-2"></i>
-        Application submitted successfully!
+    <div
+      id="successMessage"
+      class="fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg hidden z-50"
+    >
+      <i class="fas fa-check-circle mr-2"></i>
+      Application submitted successfully!
     </div>
 
-    <div id="errorMessage" class="fixed top-4 right-4 bg-red-500 text-white px-6 py-4 rounded-lg shadow-lg hidden z-50">
-        <i class="fas fa-exclamation-triangle mr-2"></i>
-        Please fill in all required fields.
+    <div
+      id="errorMessage"
+      class="fixed top-4 right-4 bg-red-500 text-white px-6 py-4 rounded-lg shadow-lg hidden z-50"
+    >
+      <i class="fas fa-exclamation-triangle mr-2"></i>
+      Please fill in all required fields.
     </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+
     <!-- Custom JavaScript -->
     <script>
+      // Mobile menu toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+      // EmailJS Configuration
+      const EMAILJS_CONFIG = {
+        publicKey: "AErIp_Ys4zAg8mkvJ", // Replace with your EmailJS public key
+        serviceId: "service_6ylec0o", // Replace with your EmailJS service ID
+        templateId: "template_xjsgc0i", // Replace with your EmailJS template ID
+      };
 
-        // Mobile menu toggle
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
-});
-        // EmailJS Configuration
-        const EMAILJS_CONFIG = {
-            publicKey: 'AErIp_Ys4zAg8mkvJ',        // Replace with your EmailJS public key
-            serviceId: 'service_6ylec0o',        // Replace with your EmailJS service ID
-            templateId: 'template_xjsgc0i'       // Replace with your EmailJS template ID
-        };
+      // Initialize EmailJS
+      (function () {
+        emailjs.init(EMAILJS_CONFIG.publicKey);
+      })();
 
-        // Initialize EmailJS
-        (function() {
-            emailjs.init(EMAILJS_CONFIG.publicKey);
-        })();
+      // Form elements
+      const careerForm = document.getElementById("careerForm");
+      const successMessage = document.getElementById("successMessage");
+      const errorMessage = document.getElementById("errorMessage");
+      const errorText = document.getElementById("errorText");
 
-        // Form elements
-        const careerForm = document.getElementById('careerForm');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-        const errorText = document.getElementById('errorText');
+      // File upload handling
+      // const fileInput = document.getElementById('resume');
+      // fileInput.addEventListener('change', function() {
+      //     const label = this.nextElementSibling;
+      //     if (this.files && this.files.length > 0) {
+      //         const fileName = this.files[0].name;
+      //         const fileSize = (this.files[0].size / 1024 / 1024).toFixed(2); // Size in MB
 
-        // File upload handling
-        // const fileInput = document.getElementById('resume');
-        // fileInput.addEventListener('change', function() {
-        //     const label = this.nextElementSibling;
-        //     if (this.files && this.files.length > 0) {
-        //         const fileName = this.files[0].name;
-        //         const fileSize = (this.files[0].size / 1024 / 1024).toFixed(2); // Size in MB
-                
-        //         if (this.files[0].size > 5 * 1024 * 1024) { // 5MB limit
-        //             showError('File size must be less than 5MB');
-        //             this.value = '';
-        //             return;
-        //         }
-                
-        //         const fileInfo = label.querySelector('p:last-child');
-        //         fileInfo.textContent = `${fileName} (${fileSize} MB)`;
-        //         fileInfo.classList.add('text-green-600', 'font-semibold');
-        //     }
-        // });
+      //         if (this.files[0].size > 5 * 1024 * 1024) { // 5MB limit
+      //             showError('File size must be less than 5MB');
+      //             this.value = '';
+      //             return;
+      //         }
 
-        // Show success message
-        function showSuccess(message = 'Application submitted successfully!') {
-            successMessage.querySelector('span') ? 
-                successMessage.querySelector('span').textContent = message :
-                successMessage.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${message}`;
-            
-            successMessage.classList.add('show');
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
+      //         const fileInfo = label.querySelector('p:last-child');
+      //         fileInfo.textContent = `${fileName} (${fileSize} MB)`;
+      //         fileInfo.classList.add('text-green-600', 'font-semibold');
+      //     }
+      // });
+
+      // Show success message
+      function showSuccess(message = "Application submitted successfully!") {
+        successMessage.querySelector("span")
+          ? (successMessage.querySelector("span").textContent = message)
+          : (successMessage.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${message}`);
+
+        successMessage.classList.add("show");
+        setTimeout(() => {
+          successMessage.classList.remove("show");
+        }, 5000);
+      }
+
+      // Show error message
+      function showError(message = "Please fill in all required fields.") {
+        errorText.textContent = message;
+        errorMessage.classList.add("show");
+        setTimeout(() => {
+          errorMessage.classList.remove("show");
+        }, 5000);
+      }
+
+      // Form validation
+      function validateForm() {
+        const requiredFields = careerForm.querySelectorAll("[required]");
+        let isValid = true;
+        let firstInvalidField = null;
+
+        requiredFields.forEach((field) => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add("border-red-500");
+            if (!firstInvalidField) {
+              firstInvalidField = field;
+            }
+          } else {
+            field.classList.remove("border-red-500");
+          }
+        });
+
+        // Scroll to first invalid field
+        if (firstInvalidField) {
+          firstInvalidField.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+          firstInvalidField.focus();
         }
 
-        // Show error message
-        function showError(message = 'Please fill in all required fields.') {
-            errorText.textContent = message;
-            errorMessage.classList.add('show');
-            setTimeout(() => {
-                errorMessage.classList.remove('show');
-            }, 5000);
+        return isValid;
+      }
+
+      // Convert file to base64
+      function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = (error) => reject(error);
+        });
+      }
+
+      // Form submission
+      careerForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        if (!validateForm()) {
+          showError("Please fill in all required fields.");
+          return;
         }
 
-        // Form validation
-        function validateForm() {
-            const requiredFields = careerForm.querySelectorAll('[required]');
-            let isValid = true;
-            let firstInvalidField = null;
+        const submitBtn = careerForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
 
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                    if (!firstInvalidField) {
-                        firstInvalidField = field;
-                    }
-                } else {
-                    field.classList.remove('border-red-500');
-                }
-            });
+        // Show loading state
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+        submitBtn.disabled = true;
 
-            // Scroll to first invalid field
-            if (firstInvalidField) {
-                firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                firstInvalidField.focus();
+        try {
+          // Prepare form data
+          const formData = new FormData(careerForm);
+          const emailParams = {};
+
+          // Get all form values
+          for (let [key, value] of formData.entries()) {
+            if (key !== "resume") {
+              emailParams[key] = value;
             }
+          }
 
-            return isValid;
+          // Handle file upload
+          // const resumeFile = formData.get('resume');
+          // if (resumeFile && resumeFile.size > 0) {
+          //     try {
+          //         const base64 = await fileToBase64(resumeFile);
+          //         emailParams.resume_attachment = base64;
+          //         emailParams.resume_filename = resumeFile.name;
+          //         emailParams.resume_size = (resumeFile.size / 1024 / 1024).toFixed(2) + ' MB';
+          //     } catch (error) {
+          //         console.error('Error converting file:', error);
+          //         emailParams.resume_info = `File: ${resumeFile.name} (${(resumeFile.size / 1024 / 1024).toFixed(2)} MB) - Could not attach`;
+          //     }
+          // } else {
+          //     emailParams.resume_info = 'No resume uploaded';
+          // }
+
+          // Add additional formatted information
+          emailParams.application_date = new Date().toLocaleString();
+          emailParams.formatted_experience = `${emailParams.experience || "Not specified"} years`;
+          emailParams.formatted_position =
+            emailParams.position || "Not specified";
+
+          // Send email via EmailJS
+          const response = await emailjs.send(
+            EMAILJS_CONFIG.serviceId,
+            EMAILJS_CONFIG.templateId,
+            emailParams,
+          );
+
+          console.log("Email sent successfully:", response);
+          showSuccess(
+            "Application submitted successfully! We will contact you soon.",
+          );
+
+          // Reset form
+          careerForm.reset();
+
+          // Reset file upload display
+          const fileLabel = fileInput.nextElementSibling;
+          const fileInfo = fileLabel.querySelector("p:last-child");
+          fileInfo.textContent = "PDF or DOCX format, max 5MB";
+          fileInfo.classList.remove("text-green-600", "font-semibold");
+        } catch (error) {
+          console.error("EmailJS error:", error);
+
+          let errorMsg = "Failed to send application. Please try again.";
+          if (error.text) {
+            errorMsg += ` Error: ${error.text}`;
+          }
+
+          showError(errorMsg);
+        } finally {
+          // Reset button
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      });
+
+      // Real-time validation
+      careerForm.addEventListener("input", function (e) {
+        if (e.target.hasAttribute("required") && e.target.value.trim()) {
+          e.target.classList.remove("border-red-500");
+        }
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // for the drown down
+      document
+        .getElementById("mobile-services-btn")
+        .addEventListener("click", function () {
+          const submenu = document.getElementById("mobile-services-menu");
+          const arrow = document.getElementById("mobile-services-arrow");
+          submenu.classList.toggle("hidden");
+          arrow.classList.toggle("rotate-180");
+        });
+
+      // ==========================================
+      // IMPROVED DROPDOWN FUNCTIONALITY
+      // ==========================================
+
+      // Desktop Services Dropdown
+      const desktopServicesBtn = document.getElementById(
+        "desktop-services-btn",
+      );
+      const desktopServicesMenu = document.getElementById(
+        "desktop-services-menu",
+      );
+
+      // Mobile Services Dropdown
+      const mobileServicesBtn = document.getElementById("mobile-services-btn");
+      const mobileServicesMenu = document.getElementById(
+        "mobile-services-menu",
+      );
+      const mobileServicesArrow = document.getElementById(
+        "mobile-services-arrow",
+      );
+
+      // Toggle desktop services dropdown on click
+      desktopServicesBtn.addEventListener("click", function (e) {
+        e.stopPropagation(); // Prevent click from immediately closing the dropdown
+        desktopServicesMenu.classList.toggle("active");
+      });
+
+      // Toggle mobile services dropdown on click
+      mobileServicesBtn.addEventListener("click", function (e) {
+        e.stopPropagation(); // Prevent click from immediately closing the dropdown
+        mobileServicesMenu.classList.toggle("active");
+        mobileServicesArrow.classList.toggle("rotate-180");
+      });
+
+      // Close dropdown menus when clicking outside
+      document.addEventListener("click", function (e) {
+        // For desktop menu
+        if (
+          !desktopServicesBtn.contains(e.target) &&
+          !desktopServicesMenu.contains(e.target)
+        ) {
+          desktopServicesMenu.classList.remove("active");
         }
 
-        // Convert file to base64
-        function fileToBase64(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = error => reject(error);
-            });
+        // For mobile menu
+        if (
+          !mobileServicesBtn.contains(e.target) &&
+          !mobileServicesMenu.contains(e.target)
+        ) {
+          mobileServicesMenu.classList.remove("active");
+          mobileServicesArrow.classList.remove("rotate-180");
         }
+      });
 
-        // Form submission
-        careerForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            if (!validateForm()) {
-                showError('Please fill in all required fields.');
-                return;
-            }
+      // Don't close dropdown when clicking inside it
+      desktopServicesMenu.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
 
-            const submitBtn = careerForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
-            submitBtn.disabled = true;
+      mobileServicesMenu.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
 
-            try {
-                // Prepare form data
-                const formData = new FormData(careerForm);
-                const emailParams = {};
-                
-                // Get all form values
-                for (let [key, value] of formData.entries()) {
-                    if (key !== 'resume') {
-                        emailParams[key] = value;
-                    }
-                }
+      // Close dropdowns when pressing Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          desktopServicesMenu.classList.remove("active");
+          mobileServicesMenu.classList.remove("active");
+          mobileServicesArrow.classList.remove("rotate-180");
+        }
+      });
 
-                // Handle file upload
-                // const resumeFile = formData.get('resume');
-                // if (resumeFile && resumeFile.size > 0) {
-                //     try {
-                //         const base64 = await fileToBase64(resumeFile);
-                //         emailParams.resume_attachment = base64;         
-                //         emailParams.resume_filename = resumeFile.name;
-                //         emailParams.resume_size = (resumeFile.size / 1024 / 1024).toFixed(2) + ' MB';
-                //     } catch (error) {
-                //         console.error('Error converting file:', error);
-                //         emailParams.resume_info = `File: ${resumeFile.name} (${(resumeFile.size / 1024 / 1024).toFixed(2)} MB) - Could not attach`;
-                //     }
-                // } else {
-                //     emailParams.resume_info = 'No resume uploaded';
-                // }
-
-                // Add additional formatted information
-                emailParams.application_date = new Date().toLocaleString();
-                emailParams.formatted_experience = `${emailParams.experience || 'Not specified'} years`;
-                emailParams.formatted_position = emailParams.position || 'Not specified';
-
-                // Send email via EmailJS
-                const response = await emailjs.send(
-                    EMAILJS_CONFIG.serviceId,
-                    EMAILJS_CONFIG.templateId,
-                    emailParams
-                );
-
-                console.log('Email sent successfully:', response);
-                showSuccess('Application submitted successfully! We will contact you soon.');
-                
-                // Reset form
-                careerForm.reset();
-                
-                // Reset file upload display
-                const fileLabel = fileInput.nextElementSibling;
-                const fileInfo = fileLabel.querySelector('p:last-child');
-                fileInfo.textContent = 'PDF or DOCX format, max 5MB';
-                fileInfo.classList.remove('text-green-600', 'font-semibold');
-
-            } catch (error) {
-                console.error('EmailJS error:', error);
-                
-                let errorMsg = 'Failed to send application. Please try again.';
-                if (error.text) {
-                    errorMsg += ` Error: ${error.text}`;
-                }
-                
-                showError(errorMsg);
-            } finally {
-                // Reset button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Real-time validation
-        careerForm.addEventListener('input', function(e) {
-            if (e.target.hasAttribute('required') && e.target.value.trim()) {
-                e.target.classList.remove('border-red-500');
-            }
-        });
-
-            // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-
-
-                // for the drown down
-        document.getElementById('mobile-services-btn').addEventListener('click', function () {
-            const submenu = document.getElementById('mobile-services-menu');
-            const arrow = document.getElementById('mobile-services-arrow');
-            submenu.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-180');
-        });
-
-        // ==========================================
-        // IMPROVED DROPDOWN FUNCTIONALITY
-        // ==========================================
-        
-        // Desktop Services Dropdown
-        const desktopServicesBtn = document.getElementById('desktop-services-btn');
-        const desktopServicesMenu = document.getElementById('desktop-services-menu');
-        
-        // Mobile Services Dropdown
-        const mobileServicesBtn = document.getElementById('mobile-services-btn');
-        const mobileServicesMenu = document.getElementById('mobile-services-menu');
-        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-        
-        // Toggle desktop services dropdown on click
-        desktopServicesBtn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent click from immediately closing the dropdown
-            desktopServicesMenu.classList.toggle('active');
-        });
-        
-        // Toggle mobile services dropdown on click
-        mobileServicesBtn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent click from immediately closing the dropdown
-            mobileServicesMenu.classList.toggle('active');
-            mobileServicesArrow.classList.toggle('rotate-180');
-        });
-        
-        // Close dropdown menus when clicking outside
-        document.addEventListener('click', function(e) {
-            // For desktop menu
-            if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
-                desktopServicesMenu.classList.remove('active');
-            }
-            
-            // For mobile menu
-            if (!mobileServicesBtn.contains(e.target) && !mobileServicesMenu.contains(e.target)) {
-                mobileServicesMenu.classList.remove('active');
-                mobileServicesArrow.classList.remove('rotate-180');
-            }
-        });
-        
-        // Don't close dropdown when clicking inside it
-        desktopServicesMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });     
-        
-        mobileServicesMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-        
-        // Close dropdowns when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                desktopServicesMenu.classList.remove('active');
-                mobileServicesMenu.classList.remove('active');
-                mobileServicesArrow.classList.remove('rotate-180');
-            }
-        });
-
-        // For accessibility - add keyboard navigation
-        desktopServicesBtn.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                desktopServicesMenu.classList.toggle('active');
-            }
-        });
-        
+      // For accessibility - add keyboard navigation
+      desktopServicesBtn.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          desktopServicesMenu.classList.toggle("active");
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
