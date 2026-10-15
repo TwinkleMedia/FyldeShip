@@ -262,25 +262,10 @@
         background: rgba(255, 255, 255, 0.3);
         transform: scale(1.1);
       }
-      .relative.group .absolute {
-        top: calc(100% - 10px); /* Pulls it up by 10px */
-        left: 0;
-        margin-top: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .relative.group:hover .absolute {
-        opacity: 1;
-        visibility: visible;
-        top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
-      }
     </style>
   </head>
 
   <body class="bg-white text-dark antialiased overflow-x-hidden">
-    <!-- Header Section -->
     <header class="relative z-50">
       <!-- Top Bar -->
       <div class="bg-blue-900 py-2">
@@ -406,45 +391,51 @@
       >
         <div class="container mx-auto px-4 lg:px-8">
           <div class="flex items-center justify-between py-2">
-           <!-- Logo + Company Name - Left Side -->
-<div class="flex items-center flex-shrink-0 min-w-0">
+            <!-- Logo + Company Name - Left Side -->
+            <div class="flex items-center flex-shrink-0 min-w-0">
+              <a href="./index.html" class="flex items-center gap-2 md:gap-3">
+                <img
+                  src="./asset/FYLDE SHIP LOGO PNG.png"
+                  alt="Fylde Ship Logo"
+                  class="h-12 sm:h-14 md:h-16"
+                />
 
-    <a href="./index.html" class="flex items-center gap-2 md:gap-3">
-
-        <img src="./asset/FYLDE SHIP LOGO PNG.png"
-            alt="Fylde Ship Logo"
-            class="h-12 sm:h-14 md:h-16">
-
-        <span class="flex flex-col leading-tight">
-            <span class="text-blue-900 font-extrabold uppercase tracking-wide text-[11px] sm:text-sm md:text-base lg:text-sm xl:text-xl whitespace-nowrap">
-                Fylde Ship Management LLP
-            </span>
-        </span>
-
-    </a>
-
-</div>
+                <span class="flex flex-col leading-tight">
+                  <span
+                    class="text-blue-900 font-extrabold uppercase tracking-wide text-[11px] sm:text-sm md:text-base lg:text-sm xl:text-xl whitespace-nowrap"
+                  >
+                    Fylde Ship Management LLP
+                  </span>
+                </span>
+              </a>
+            </div>
 
             <!-- Desktop Navigation - Center (Hidden on mobile) -->
             <div class="hidden lg:flex items-center justify-center flex-1">
               <div class="flex items-center space-x-6 xl:space-x-8">
+                <!-- Home -->
                 <a
                   href="./index.html"
                   class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase"
                 >
                   Home
                 </a>
+
+                <!-- About Us -->
                 <a
                   href="./about.html"
                   class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase whitespace-nowrap"
                 >
                   About Us
                 </a>
+
+                <!-- Services Dropdown -->
                 <div class="relative group">
                   <button
                     class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 flex items-center uppercase"
                   >
                     Services
+
                     <svg
                       class="w-4 h-4 ml-1"
                       fill="none"
@@ -460,34 +451,44 @@
                       ></path>
                     </svg>
                   </button>
+
+                  <!-- Services Dropdown Menu -->
                   <div
-                    class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50"
+                    class="absolute left-0 top-full pt-2 w-64 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200"
                   >
-                    <div class="py-1" role="menu" aria-orientation="vertical">
+                    <div
+                      class="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                    >
                       <a
                         href="./crewManagement.html"
                         class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                         role="menuitem"
                         >Crew Management</a
                       >
+
                       <a
                         href="./technicalManagement.html"
                         class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                         role="menuitem"
                         >Technical Management</a
                       >
+
                       <a
                         href="./chatering.html"
                         class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                         role="menuitem"
                         >Chartering</a
                       >
+
                       <a
                         href="./brokerage.html"
                         class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
                         role="menuitem"
                         >Maritime Brokerage</a
                       >
+
                       <a
                         href="./crudeOil.html"
                         class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
@@ -497,12 +498,17 @@
                     </div>
                   </div>
                 </div>
+                <!-- closes "relative group" -->
+
+                <!-- Gallery -->
                 <a
                   href="./gallery.html"
                   class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase"
                 >
                   Gallery
                 </a>
+
+                <!-- Career -->
                 <a
                   href="./career.html"
                   class="nav-link px-3 xl:px-4 py-4 text-primary font-bold text-base xl:text-lg relative hover:text-accent transition-colors duration-300 uppercase"
@@ -1181,110 +1187,6 @@
       AOS.init({
         duration: 800,
         once: true,
-      });
-
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Navbar scroll effect
-      const navbar = document.getElementById("navbar");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 100) {
-          navbar.classList.add("py-2");
-          navbar.classList.remove("py-4");
-        } else {
-          navbar.classList.add("py-4");
-          navbar.classList.remove("py-2");
-        }
-      });
-
-      // Back to top button
-      const backToTopButton = document.getElementById("back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          backToTopButton.classList.remove("opacity-0", "invisible");
-          backToTopButton.classList.add("opacity-100", "visible");
-        } else {
-          backToTopButton.classList.add("opacity-0", "invisible");
-          backToTopButton.classList.remove("opacity-100", "visible");
-        }
-      });
-
-      backToTopButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Mobile services dropdown
-      document
-        .getElementById("mobile-services-btn")
-        .addEventListener("click", function () {
-          const submenu = document.getElementById("mobile-services-menu");
-          const arrow = document.getElementById("mobile-services-arrow");
-          submenu.classList.toggle("hidden");
-          arrow.classList.toggle("rotate-180");
-        });
-
-      // Image Modal Functions
-      function openImageModal(imageSrc) {
-        const modal = document.getElementById("imageModal");
-        const modalImage = document.getElementById("modalImage");
-        modalImage.src = imageSrc;
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeImageModal() {
-        const modal = document.getElementById("imageModal");
-        modal.classList.remove("active");
-        document.body.style.overflow = "auto";
-      }
-
-      // Close modal when clicking outside the image
-      document
-        .getElementById("imageModal")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            closeImageModal();
-          }
-        });
-
-      // Close modal with Escape key
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closeImageModal();
-        }
-      });
-
-      // Staggered animation for gallery items
-      window.addEventListener("load", function () {
-        const galleryItems = document.querySelectorAll(".masonry-item");
-        galleryItems.forEach((item, index) => {
-          setTimeout(() => {
-            item.style.opacity = "1";
-            item.style.transform = "translateY(0)";
-          }, index * 100);
-        });
-      });
-
-      // Initialize gallery items with animation
-      document.addEventListener("DOMContentLoaded", function () {
-        const galleryItems = document.querySelectorAll(".masonry-item");
-        galleryItems.forEach((item) => {
-          item.style.opacity = "0";
-          item.style.transform = "translateY(30px)";
-          item.style.transition = "all 0.6s ease";
-        });
       });
     </script>
   </body>

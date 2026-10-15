@@ -123,20 +123,6 @@
                 height: 150px;
             }
            
-           .relative.group .absolute {
-            top: calc(100% - 10px); /* Pulls it up by 10px */
-            left: 0;
-            margin-top: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            }
-
-           .relative.group:hover .absolute {
-            opacity: 1;
-            visibility: visible;
-            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
-            }
         </style>
     </head>
 
@@ -176,7 +162,7 @@
                 <div class="flex items-center space-x-3 lg:space-x-6 flex-shrink-0">
 
                     <!-- Email -->
-                    <a href="mailto:fyldeship@gmail.com"
+                    <a href="mailto: info@fyldesm.com"
                         class="text-light transition-colors duration-300 flex items-center gap-2"
                         aria-label="Email">
 
@@ -336,50 +322,25 @@
 
                             </button>
 
-
                             <!-- Services Dropdown Menu -->
-                            <div
-                                class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                            <div class="absolute left-0 top-full pt-2 w-64 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
 
-                                <div class="py-1"
-                                    role="menu"
-                                    aria-orientation="vertical">
+                                <div class="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1" role="menu" aria-orientation="vertical">
 
-                                    <a href="./crewManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crew Management
-                                    </a>
+                                    <a href="./crewManagement.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Crew Management</a>
 
-                                    <a href="./technicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Technical Management
-                                    </a>
+                                    <a href="./technicalManagement.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Technical Management</a>
 
-                                    <a href="./chatering.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Chartering
-                                    </a>
+                                    <a href="./chatering.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Chartering</a>
 
-                                    <a href="./brokerage.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Maritime Brokerage
-                                    </a>
+                                    <a href="./brokerage.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Maritime Brokerage</a>
 
-                                    <a href="./crudeOil.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crude Oil Brokerage & Sourcing
-                                    </a>
+                                    <a href="./crudeOil.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Crude Oil Brokerage & Sourcing</a>
 
                                 </div>
-
                             </div>
 
-                        </div>
+                        </div> <!-- closes "relative group" -->
 
 
                         <!-- Gallery -->
@@ -707,7 +668,7 @@
                                 </h3>
                         </a>
 
-                        <p class="text-gray-600 text-base leading-relaxed">Elevate your vessel's operational efficiency and safety with our meticulously vetted, highly competent, and fully compliant global crew. We ensure seamless manning, dedicated welfare, and optimal crew retention, providing the human capital essential for your fleet's continuous success.</p>
+                        <p class="text-gray-600 text-base leading-relaxed">Elevate your vessel's operational efficiency and safety with our meticulously vetted, highly competent, and fully compliant global crew. We ensure seamless manning, dedicated welfare, and optimal crew retention, providing the human capital essential for your fleet's continuous success.</p>
                     </div>
                 </div>
 
@@ -722,7 +683,7 @@
                         <a href="./technicalManagement.html">
                         <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Technical Management</h3>
                         </a>
-                        <p class="text-gray-600 text-base leading-relaxed">Safeguard your investment and maximize uptime with our comprehensive technical management services. Our expert team oversees maintenance, compliance, and operational efficiency, ensuring your vessels perform optimally, extend their lifespan, and adhere to all regulatory standards.</p>
+                        <p class="text-gray-600 text-base leading-relaxed">Safeguard your investment and maximize uptime with our comprehensive technical management services. Our expert team oversees maintenance, compliance, and operational efficiency, ensuring your vessels perform optimally, extend their lifespan, and adhere to all regulatory standards.</p>
                     </div>
                 </div>
 
@@ -737,7 +698,7 @@
                         <a href="./chatering.html">
                         <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Chartering</h3>
                         </a>
-                        <p class="text-gray-600 text-base leading-relaxed">Unlock peak profitability and utilization for your vessels with our expert chartering services. Leveraging deep commercial knowledge and an expansive global network, we strategically match vessels with optimal cargo or project requirements, ensuring seamless and highly profitable voyages for our clients.</p>
+                        <p class="text-gray-600 text-base leading-relaxed">Unlock peak profitability and utilization for your vessels with our expert chartering services. Leveraging deep commercial knowledge and an expansive global network, we strategically match vessels with optimal cargo or project requirements, ensuring seamless and highly profitable voyages for our clients.</p>
                     </div>
                 </div>
 
@@ -752,7 +713,7 @@
                         <a href="./brokerage.html">
                         <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Maritime Brokerage</h3>
                         </a>
-                        <p class="text-gray-600 text-base leading-relaxed">Navigate the complexities of vessel sale, purchase, or newbuild contracts with confidence. Our experienced maritime brokerage team provides unparalleled market insights, transparent valuations, and strong negotiation power, guiding you through every step to achieve optimal outcomes and accelerate your strategic growth.</p>
+                        <p class="text-gray-600 text-base leading-relaxed">Navigate the complexities of vessel sale, purchase, or newbuild contracts with confidence. Our experienced maritime brokerage team provides unparalleled market insights, transparent valuations, and strong negotiation power, guiding you through every step to achieve optimal outcomes and accelerate your strategic growth.</p>
                     </div>
                 </div>
 
@@ -767,7 +728,8 @@
                         <a href="./crudeOil.html">
                         <h3 class="text-xl font-bold text-primary mb-4 uppercase cursor-pointer hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</h3>
                         </a>
-                        <p class="text-gray-600 text-base leading-relaxed">Gain strategic access to various categories of crude oil globally at highly competitive market rates. We leverage deep market intelligence and robust networks to facilitate seamless procurement and sales, optimizing your supply chain and enhancing your bottom line.
+                        <p class="text-gray-600 text-base leading-relaxed">Gain strategic access to various categories of crude oil globally at highly competitive market rates. We leverage deep market intelligence and robust networks to facilitate seamless procurement and sales, optimizing your supply chain and enhancing your bottom line.</p>
+                    </div>
                 </div>
 
             
@@ -1040,78 +1002,12 @@ Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India</span>
                 });
             });
 
-            // for the drown down
+            // Mobile services dropdown
             document.getElementById('mobile-services-btn').addEventListener('click', function () {
                 const submenu = document.getElementById('mobile-services-menu');
                 const arrow = document.getElementById('mobile-services-arrow');
                 submenu.classList.toggle('hidden');
                 arrow.classList.toggle('rotate-180');
-            });
-
-            // ==========================================
-            // IMPROVED DROPDOWN FUNCTIONALITY
-            // ==========================================
-            
-            // Desktop Services Dropdown
-            const desktopServicesBtn = document.getElementById('desktop-services-btn');
-            const desktopServicesMenu = document.getElementById('desktop-services-menu');
-            
-            // Mobile Services Dropdown
-            const mobileServicesBtn = document.getElementById('mobile-services-btn');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-            
-            // Toggle desktop services dropdown on click
-            desktopServicesBtn.addEventListener('click', function(e) {
-                e.stopPropagation(); // Prevent click from immediately closing the dropdown
-                desktopServicesMenu.classList.toggle('active');
-            });
-            
-            // Toggle mobile services dropdown on click
-            mobileServicesBtn.addEventListener('click', function(e) {
-                e.stopPropagation(); // Prevent click from immediately closing the dropdown
-                mobileServicesMenu.classList.toggle('active');
-                mobileServicesArrow.classList.toggle('rotate-180');
-            });
-            
-            // Close dropdown menus when clicking outside
-            document.addEventListener('click', function(e) {
-                // For desktop menu
-                if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
-                    desktopServicesMenu.classList.remove('active');
-                }
-                
-                // For mobile menu
-                if (!mobileServicesBtn.contains(e.target) && !mobileServicesMenu.contains(e.target)) {
-                    mobileServicesMenu.classList.remove('active');
-                    mobileServicesArrow.classList.remove('rotate-180');
-                }
-            });
-            
-            // Don't close dropdown when clicking inside it
-            desktopServicesMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });     
-            
-            mobileServicesMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-            
-            // Close dropdowns when pressing Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    desktopServicesMenu.classList.remove('active');
-                    mobileServicesMenu.classList.remove('active');
-                    mobileServicesArrow.classList.remove('rotate-180');
-                }
-            });
-
-            // For accessibility - add keyboard navigation
-            desktopServicesBtn.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    desktopServicesMenu.classList.toggle('active');
-                }
             });
 
         </script>

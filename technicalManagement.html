@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./asset/FYLDE SHIP LOGO PNG.png" type="image/x-icon">
-    <title>Fylde Ship Management | Maritime Excellence</title>
+    <title>Fylde Ship Management | Technical Management</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -59,7 +59,26 @@
     <style>
         body {
             scroll-behavior: smooth;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #0EA5E9;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .gradient-bg {
@@ -143,25 +162,10 @@
             background: linear-gradient(90deg, transparent, #0EA5E9, transparent);
             margin: 3rem 0;
         }
-        .relative.group .absolute {
-            top: calc(100% - 10px); /* Pulls it up by 10px */
-            left: 0;
-            margin-top: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            }
-
-           .relative.group:hover .absolute {
-            opacity: 1;
-            visibility: visible;
-            top: calc(100% - 5px); /* Adjust this value to fine-tune positioning */
-            }
     </style>
 </head>
 
 <body class="bg-white text-dark antialiased overflow-x-hidden">
-    <!-- Header Section -->
     <!-- Header Section -->
 <header class="relative z-50">
 
@@ -197,7 +201,7 @@
                 <div class="flex items-center space-x-3 lg:space-x-6 flex-shrink-0">
 
                     <!-- Email -->
-                    <a href="mailto:fyldeship@gmail.com"
+                    <a href="mailto:info@fyldesm.com"
                         class="text-light transition-colors duration-300 flex items-center gap-2"
                         aria-label="Email">
 
@@ -294,24 +298,25 @@
         <div class="container mx-auto px-4 lg:px-8">
 
             <div class="flex items-center justify-between py-2">
-<!-- Logo + Company Name - Left Side -->
-<div class="flex items-center flex-shrink-0 min-w-0">
 
-    <a href="./index.html" class="flex items-center gap-2 md:gap-3">
+                <!-- Logo + Company Name - Left Side -->
+                <div class="flex items-center flex-shrink-0 min-w-0">
 
-        <img src="./asset/FYLDE SHIP LOGO PNG.png"
-            alt="Fylde Ship Logo"
-            class="h-12 sm:h-14 md:h-16">
+                    <a href="./index.html" class="flex items-center gap-2 md:gap-3">
 
-        <span class="flex flex-col leading-tight">
-            <span class="text-blue-900 font-extrabold uppercase tracking-wide text-[11px] sm:text-sm md:text-base lg:text-sm xl:text-xl whitespace-nowrap">
-                Fylde Ship Management LLP
-            </span>
-        </span>
+                        <img src="./asset/FYLDE SHIP LOGO PNG.png"
+                            alt="Fylde Ship Logo"
+                            class="h-12 sm:h-14 md:h-16">
 
-    </a>
+                        <span class="flex flex-col leading-tight">
+                            <span class="text-blue-900 font-extrabold uppercase tracking-wide text-[11px] sm:text-sm md:text-base lg:text-sm xl:text-xl whitespace-nowrap">
+                                Fylde Ship Management LLP
+                            </span>
+                        </span>
 
-</div>
+                    </a>
+
+                </div>
 
 
                 <!-- Desktop Navigation - Center (Hidden on mobile) -->
@@ -357,50 +362,25 @@
 
                             </button>
 
-
                             <!-- Services Dropdown Menu -->
-                            <div
-                                class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block transition-all duration-300 z-50">
+                            <div class="absolute left-0 top-full pt-2 w-64 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
 
-                                <div class="py-1"
-                                    role="menu"
-                                    aria-orientation="vertical">
+                                <div class="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1" role="menu" aria-orientation="vertical">
 
-                                    <a href="./crewManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crew Management
-                                    </a>
+                                    <a href="./crewManagement.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Crew Management</a>
 
-                                    <a href="./technicalManagement.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Technical Management
-                                    </a>
+                                    <a href="./technicalManagement.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Technical Management</a>
 
-                                    <a href="./chatering.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Chartering
-                                    </a>
+                                    <a href="./chatering.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Chartering</a>
 
-                                    <a href="./brokerage.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Maritime Brokerage
-                                    </a>
+                                    <a href="./brokerage.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Maritime Brokerage</a>
 
-                                    <a href="./crudeOil.html"
-                                        class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap"
-                                        role="menuitem">
-                                        Crude Oil Brokerage & Sourcing
-                                    </a>
+                                    <a href="./crudeOil.html" class="block px-4 py-2 text-sm text-dark hover:bg-light hover:text-accent uppercase whitespace-nowrap" role="menuitem">Crude Oil Brokerage & Sourcing</a>
 
                                 </div>
-
                             </div>
 
-                        </div>
+                        </div> <!-- closes "relative group" -->
 
 
                         <!-- Gallery -->
@@ -458,50 +438,52 @@
             </div>
 
 
-                <!-- Mobile Navigation Menu -->
-                <div id="mobile-menu" class="lg:hidden hidden">
-                    <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
-                        <a href="./index.html"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Home</a>
-                        <a href="./about.html"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">About Us</a>
-                        <div class="relative">
-                            <button id="mobile-services-btn"
-                                class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
-                                Services
-                                <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
-                                <a href="./crewManagement.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crew Management</a>
-                                <a href="./technicalManagement.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Technical Management</a>
-                                <a href="./chatering.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
-                                <a href="./brokerage.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
-                                <a href="./crudeOil.html"
-                                    class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
-                            </div>
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden">
+                <div class="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-gray-200">
+                    <a href="./index.html"
+                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Home</a>
+                    <a href="./about.html"
+                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">About Us</a>
+                    <div class="relative">
+                        <button id="mobile-services-btn"
+                            class="flex justify-between w-full px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">
+                            Services
+                            <svg class="w-4 h-4 mt-1 transition-transform duration-300" id="mobile-services-arrow"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-services-menu" class="hidden pl-4 pb-1 pt-1">
+                            <a href="./crewManagement.html"
+                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crew Management</a>
+                            <a href="./technicalManagement.html"
+                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Technical Management</a>
+                            <a href="./chatering.html"
+                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Chartering</a>
+                            <a href="./brokerage.html"
+                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Maritime Brokerage</a>
+                            <a href="./crudeOil.html"
+                                class="block px-3 py-2 text-sm text-primary hover:bg-light rounded-lg uppercase">Crude Oil Brokerage & Sourcing</a>
                         </div>
-                        <a href="./gallery.html"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Gallery</a>
-                        <a href="./career.html"
-                            class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Career</a>
-                        <a href="./contact.html"
-                            class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">Contact Us</a>
                     </div>
+                    <a href="./gallery.html"
+                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Gallery</a>
+                    <a href="./career.html"
+                        class="block px-3 py-2 text-primary font-medium hover:bg-light rounded-lg uppercase">Career</a>
+                    <a href="./contact.html"
+                        class="block px-3 py-2 mt-4 bg-yellow-600 text-white font-medium rounded-lg text-center uppercase">Contact Us</a>
                 </div>
             </div>
-        </nav>
-    </header>
+
+        </div>
+
+    </nav>
 
 </header>
+
     <!-- Hero Section -->
     <section class="relative py-24 gradient-bg hero-pattern overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
@@ -641,250 +623,182 @@
     </section>
 
     <!-- Footer -->
-            <footer class="bg-[#1E3A8A] text-white">
-                <!-- Footer Top -->
-                <div class="container mx-auto px-4 lg:px-8 py-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                        <!-- Company Info -->
-                        <div>
-                            <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
-                            <p class="text-white-400 mb-6 badge">Fylde Ship Management provides innovative and cost-effective integrated solutions
-                                for fleet and offshoreoperations. Our commitment to excellence ensures reliable maritime
-                                services.</p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-white hover:text-accent transition-colors duration-300"
-                                    aria-label="Facebook">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-accent transition-colors duration-300"
-                                    aria-label="Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="text-white hover:text-accent transition-colors duration-300"
-                                    aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
+    <footer class="bg-[#1E3A8A] text-white">
+        <!-- Footer Top -->
+        <div class="container mx-auto px-4 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">About</h4>
+                    <p class="text-white-400 mb-6 badge">Fylde Ship Management provides innovative and cost-effective integrated solutions
+                        for fleet and offshoreoperations. Our commitment to excellence ensures reliable maritime
+                        services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-accent transition-colors duration-300"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
 
-                        <!-- Quick Links -->
-                        <div>
-                            <h4 class="text-white text-xl font-bold mb-6 uppercase">Quick Links</h4>
-                            <ul class="space-y-3">
-                                <li><a href="./index.html"
-                                        class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
-                                <li><a href="./about.html"
-                                        class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
-                                    <li><a href="./gallery"
-                                            class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
-                                    <li><a href="./career.html"
-                                            class="text-white-400 hover:text-accent transition-colors duration-300">Career</a></li>
-                                    <!-- <li><a href="#blog"
-                                            class="text-white-400 hover:text-accent transition-colors duration-300">Blog</a></li> -->
-                                    <li><a href="./contact.html"
-                                            class="text-white-400 hover:text-accent transition-colors duration-300">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li><a href="./about.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="./gallery.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Gallery</a></li>
+                        <li><a href="./career.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Career</a></li>
+                        <!-- <li><a href="#blog"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Blog</a></li> -->
+                        <li><a href="./contact.html"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
 
-                            <!-- Services -->
-                            <div>
-                                <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
-                                <ul class="space-y-3">
-                                    <li><a href="./crewManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
-                                            Management</a></li>
-                                    <li><a href="./technicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
-                                            Management</a></li>
-                                        
-                                        <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
-                                               Chartering & Commodity Traders</a></li>
-                                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
-                                        <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
-                                    </ul>
-                            </div>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./crewManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crew
+                                Management</a></li>
+                        <li><a href="./technicalManagement.html" class="text-white-400 hover:text-accent transition-colors duration-300">Technical
+                                Management</a></li>
 
-                                <!-- Contact Info -->
-                                <div>
-                                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Contact Us</h4>
-                                    <ul class="space-y-4">
-                                        <li class="flex items-start gap-3">
-                                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
-                                            <span class="text-white-400">Office No.321, The Great Eastern Galleria Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India
-</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-phone text-white"></i>
-                                            <span class="text-white-400">02244813836</span>
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                <i class="fas fa-phone text-white"></i>
-                                <span class="text-white-400">+91 9137793370</span>
-                            </li>
-                                        <li class="flex items-center gap-3">
-                                            <i class="fas fa-envelope text-white"></i>
-                                            <a href="mailto:info@fyldesm.com"
-                                                class="text-white-400 hover:text-accent transition-colors duration-300">info@fyldesm.com</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <li><a href="./chatering.html" class="text-white-400 hover:text-accent transition-colors duration-300">
+                                Chartering & Commodity Traders</a></li>
+                        <li><a href="./brokerage.html" class="text-white-400 hover:text-accent transition-colors duration-300">S & P</a></li>
+                        <li><a href="./crudeOil.html" class="text-white-400 hover:text-accent transition-colors duration-300">Crude Oil Brokerage & Sourcing</a></li>
+                    </ul>
+                </div>
 
-                        <!-- Footer Bottom -->
-                        <div class="border-t border-gray-800 ">
-                            <div class="container mx-auto px-4 lg:px-8 py-6">
-                                <div class="flex flex-col md:flex-row justify-between items-center">
-                                    <p class="text-white-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
-                                    <div class="mt-4 md:mt-0">
-                                        <ul class="flex space-x-6">
-                                            <li><a href="#"
-                                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
-                                                    Policy</a></li>
-                                            <li><a href="#"
-                                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Terms
-                                                    of Service</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-xl font-bold mb-6 uppercase">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-light mt-1"></i>
+                            <span class="text-white-400">Office No.321, The Great Eastern Galleria Plot No.20, Sector-4, Nerul (West) Navi Mumbai – 400 706, India
+                            </span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-white"></i>
+                            <span class="text-white-400">02244813836</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-white"></i>
+                            <span class="text-white-400">+91 9137793370</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-white"></i>
+                            <a href="mailto:info@fyldesm.com"
+                                class="text-white-400 hover:text-accent transition-colors duration-300">info@fyldesm.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-        <!-- Back to Top Button -->
-        <a href="#" id="back-to-top"
-            class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
-            <i class="fas fa-arrow-up"></i>
-        </a>
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-800 ">
+            <div class="container mx-auto px-4 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white-500 text-sm">&copy; 2025 Fylde Ship Management. All rights reserved.</p>
+                    <div class="mt-4 md:mt-0">
+                        <ul class="flex space-x-6">
+                            <li><a href="#"
+                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Privacy
+                                    Policy</a></li>
+                            <li><a href="#"
+                                    class="text-white-500 hover:text-accent transition-colors duration-300 text-sm">Terms
+                                    of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        <!-- AOS Animation Library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top"
+        class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-        <!-- Main Script -->
-        <script>
-            // Initialize AOS animation
-            AOS.init({
-                duration: 800,
-                once: true
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Main Script -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
+        });
 
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
+        // Mobile services dropdown
+        document.getElementById('mobile-services-btn').addEventListener('click', function () {
+            const submenu = document.getElementById('mobile-services-menu');
+            const arrow = document.getElementById('mobile-services-arrow');
+            submenu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        });
+    </script>
+</body>
 
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    navbar.classList.add('py-2');
-                    navbar.classList.remove('py-4');
-                } else {
-                    navbar.classList.add('py-4');
-                    navbar.classList.remove('py-2');
-                }
-            });
-
-            // Back to top button
-            const backToTopButton = document.getElementById('back-to-top');
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.remove('opacity-0', 'invisible');
-                    backToTopButton.classList.add('opacity-100', 'visible');
-                } else {
-                    backToTopButton.classList.add('opacity-0', 'invisible');
-                    backToTopButton.classList.remove('opacity-100', 'visible');
-                }
-            });
-
-            backToTopButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // for the drown down
-            document.getElementById('mobile-services-btn').addEventListener('click', function () {
-                const submenu = document.getElementById('mobile-services-menu');
-                const arrow = document.getElementById('mobile-services-arrow');
-                submenu.classList.toggle('hidden');
-                arrow.classList.toggle('rotate-180');
-            });
-
-
-            // ==========================================
-            // IMPROVED DROPDOWN FUNCTIONALITY
-            // ==========================================
-            
-            // Desktop Services Dropdown
-            const desktopServicesBtn = document.getElementById('desktop-services-btn');
-            const desktopServicesMenu = document.getElementById('desktop-services-menu');
-            
-            // Mobile Services Dropdown
-            const mobileServicesBtn = document.getElementById('mobile-services-btn');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-            
-            // Toggle desktop services dropdown on click
-            desktopServicesBtn.addEventListener('click', function(e) {
-                e.stopPropagation(); // Prevent click from immediately closing the dropdown
-                desktopServicesMenu.classList.toggle('active');
-            });
-            
-            // Toggle mobile services dropdown on click
-            mobileServicesBtn.addEventListener('click', function(e) {
-                e.stopPropagation(); // Prevent click from immediately closing the dropdown
-                mobileServicesMenu.classList.toggle('active');
-                mobileServicesArrow.classList.toggle('rotate-180');
-            });
-            
-            // Close dropdown menus when clicking outside
-            document.addEventListener('click', function(e) {
-                // For desktop menu
-                if (!desktopServicesBtn.contains(e.target) && !desktopServicesMenu.contains(e.target)) {
-                    desktopServicesMenu.classList.remove('active');
-                }
-                
-                // For mobile menu
-                if (!mobileServicesBtn.contains(e.target) && !mobileServicesMenu.contains(e.target)) {
-                    mobileServicesMenu.classList.remove('active');
-                    mobileServicesArrow.classList.remove('rotate-180');
-                }
-            });
-            
-            // Don't close dropdown when clicking inside it
-            desktopServicesMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-            
-            mobileServicesMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-            
-            // Close dropdowns when pressing Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    desktopServicesMenu.classList.remove('active');
-                    mobileServicesMenu.classList.remove('active');
-                    mobileServicesArrow.classList.remove('rotate-180');
-                }
-            });
-
-            // For accessibility - add keyboard navigation
-            desktopServicesBtn.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    desktopServicesMenu.classList.toggle('active');
-                }
-            });
-
-        </script>
-    </body>
-
-    </html>
+</html>
